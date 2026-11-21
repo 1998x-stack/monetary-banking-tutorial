@@ -15,8 +15,8 @@
       "id": "m1-revision",
       "claim": "中国自 2025 年 1 月起采用修订后的 M1 口径，新增个人活期存款和非银行支付机构客户备付金。",
       "kind": "statistical_definition",
-      "source_url": "https://english.scio.gov.cn/m/pressroom/node_8021725_3.html",
-      "locator": "PBOC explanation of revised M1 scope",
+      "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2025/12/2025121517172611493.pdf",
+      "locator": "Depository Corporations Survey, note 1: revised M1 scope effective January 2025",
       "status": "verified",
       "notes": "文中提醒新旧序列需按可比口径分析。"
     },
@@ -24,8 +24,8 @@
       "id": "m1-components",
       "claim": "修订后的 M1 包括 M0、单位活期存款、个人活期存款和非银行支付机构客户备付金。",
       "kind": "statistical_definition",
-      "source_url": "https://www.stats.gov.cn/english/PressRelease/202602/t20260228_1962661.html",
-      "locator": "Footnote 53",
+      "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2025/12/2025121517172611493.pdf",
+      "locator": "Depository Corporations Survey, note 1: revised M1 scope effective January 2025",
       "status": "verified",
       "notes": "使用官方统计公报的脚注定义。"
     },
@@ -37,6 +37,15 @@
       "locator": "2025 National Economic and Social Development Statistical Communiqué, money supply paragraph",
       "status": "verified",
       "notes": "时点数据；增速分别为 8.5%、3.8%、10.2%。"
+    },
+    {
+      "id": "m2-quasi-money",
+      "claim": "中国人民银行的存款性公司统计将 M2 区分为 M1 与准货币，准货币包括定期存款和其他存款；定期存款包括单位和个人定期存款。",
+      "kind": "statistical_definition",
+      "source_url": "https://www.pbc.gov.cn/diaochatongjisi/attachDir/2025/12/2025121517172611493.pdf",
+      "locator": "Depository Corporations Survey, note 2",
+      "status": "verified",
+      "notes": "用于解释 M2 较 M1 更广的统计边界。"
     }
   ]
 }
