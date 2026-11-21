@@ -8,6 +8,10 @@ from scripts.validate_site import CHAPTERS, REBUILT, validate
 class SiteValidationTests(unittest.TestCase):
     def test_repository_validation(self):
         self.assertEqual(validate(),[])
+    def test_homepage_shows_rebuilt_progress_and_all_cards(self):
+        raw=(ROOT/"index.html").read_text(encoding="utf-8")
+        self.assertIn('<strong>21</strong><span>章节已深度重构</span>',raw)
+        self.assertEqual(raw.count('class="chapter-card"'),28)
     def test_course_metadata_covers_all_chapters(self):
         data=json.loads((ROOT/"courses.json").read_text(encoding="utf-8"))
         self.assertEqual(len(data["chapters"]),28)
@@ -60,6 +64,10 @@ class SiteValidationTests(unittest.TestCase):
         raw=(ROOT/"20.html").read_text(encoding="utf-8")
         self.assertIn("PCE 使用 Fisher 理想指数公式",raw)
         self.assertIn("GDP 平减指数",raw)
+    def test_transmission_lags_are_not_described_as_fixed(self):
+        raw=(ROOT/"18.html").read_text(encoding="utf-8")
+        self.assertIn("长、可变且不确定",raw)
+        self.assertIn("信贷渠道",raw)
     def test_deflation_is_distinguished_from_disinflation(self):
         raw=(ROOT/"21.html").read_text(encoding="utf-8")
         self.assertIn("通胀放缓（disinflation）",raw)
