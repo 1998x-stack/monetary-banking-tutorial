@@ -1,0 +1,51 @@
+{
+  "article": "17.html",
+  "title": "货币政策工具与操作",
+  "claims": [
+    {
+      "id": "pboc-policy-instruments",
+      "claim": "中国人民银行 2025 年第一季度报告说明其综合使用存款准备金、公开市场操作、中期借贷便利、再贷款再贴现和结构性工具。",
+      "kind": "institutional_fact",
+      "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125227/125957/f5c4690f2cbd40918bf24c2d39ac58af/2025091218344076234/2025081517321679368.pdf",
+      "locator": "2025 Q1 Monetary Policy Report, monetary policy operations and structural tools",
+      "status": "verified",
+      "notes": "文中不把 2025 年某个具体政策利率当作 2026 年当前值。"
+    },
+    {
+      "id": "fed-policy-tools",
+      "claim": "美联储政策工具包括公开市场操作、贴现窗口、准备金要求、准备金余额付息、隔夜逆回购、定期存款和常备回购等。",
+      "kind": "institutional_fact",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/policytools.htm",
+      "locator": "Policy Tools list, last updated 15 December 2025",
+      "status": "verified",
+      "notes": "用于说明美国操作框架，明确不同央行制度并不相同。"
+    },
+    {
+      "id": "iorb-implementation",
+      "claim": "美联储通过调整准备金余额付息利率，帮助把联邦基金利率引导至 FOMC 目标区间。",
+      "kind": "operating_framework",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/iorb-faqs.htm",
+      "locator": "IORB FAQs, Why does the Fed pay interest on reserves?",
+      "status": "verified",
+      "notes": "此为美国利率下限框架示例。"
+    },
+    {
+      "id": "repo-operation",
+      "claim": "央行逆回购通常是以证券为基础提供有期限资金，到期按约定回收资金；实际会计和抵押品安排取决于交易制度。",
+      "kind": "balance_sheet_mechanism",
+      "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125227/125957/f5c4690f2cbd40918bf24c2d39ac58af/2025091218344076234/2025081517321679368.pdf",
+      "locator": "2025 Q1 Monetary Policy Report, open market operation section",
+      "status": "derived",
+      "notes": "作为一般回购机制的教学性归纳，具体交易按央行公告和市场规则执行。"
+    },
+    {
+      "id": "policy-tool-exercise",
+      "claim": "交互演示分别解释政策利率、逆回购、准备金率和结构性再贷款的主要操作方向。",
+      "kind": "illustrative_calculation",
+      "source_url": "",
+      "locator": "Chapter 17 interactive tool selector",
+      "status": "illustrative",
+      "notes": "为简化机制示意，不代表某次实际操作的数量影响。"
+    }
+  ]
+}

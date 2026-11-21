@@ -1,0 +1,60 @@
+{
+  "article": "20.html",
+  "title": "通货膨胀理论与测量",
+  "claims": [
+    {
+      "id": "cpi-definition",
+      "claim": "美国 CPI 衡量消费者代表性商品和服务篮子价格随时间的平均变化。",
+      "kind": "statistical_definition",
+      "source_url": "https://www.bls.gov/cpi/questions-and-answers.htm",
+      "locator": "CPI FAQs, What is the CPI?",
+      "status": "verified",
+      "notes": "这是美国 CPI 的定义示例，不替代其他国家的消费价格统计。"
+    },
+    {
+      "id": "pce-cpi-differences",
+      "claim": "PCE 与 CPI 的差异来自公式、权重、覆盖范围和其他因素；BEA 说明 PCE 使用 Fisher 理想公式、CPI 使用修正 Laspeyres 公式。",
+      "kind": "statistical_definition",
+      "source_url": "https://bea.gov/help/faq/555",
+      "locator": "BEA FAQ, What accounts for differences in PCE and CPI?",
+      "status": "verified",
+      "notes": "该比较针对美国 BEA 与 BLS 的指标。"
+    },
+    {
+      "id": "gdp-deflator",
+      "claim": "GDP 平减指数衡量国内生产商品和服务的价格变化，覆盖出口并排除进口价格。",
+      "kind": "statistical_definition",
+      "source_url": "https://www.bea.gov/data/prices-inflation/gdp-price-deflator",
+      "locator": "GDP Price Deflator, definition",
+      "status": "verified",
+      "notes": "美国 BEA 口径。"
+    },
+    {
+      "id": "inflation-causes",
+      "claim": "通胀可能来自供给成本冲击、需求扩张和预期惯性，政策选择应考虑冲击来源。",
+      "kind": "economic_mechanism",
+      "source_url": "https://www.imf.org/en/publications/fandd/issues/series/back-to-basics/inflation",
+      "locator": "Ceyda Oner (2019), Inflation: Prices on the Rise, causes and policy",
+      "status": "verified",
+      "notes": "文中把三类来源作为分析框架，不把任何单一因素当作所有通胀的解释。"
+    },
+    {
+      "id": "phillips-curve",
+      "claim": "简化短期菲利普斯曲线将通胀与预期通胀、劳动力市场松紧和供给冲击联系起来。",
+      "kind": "model",
+      "source_url": "https://www.imf.org/en/publications/fandd/issues/series/back-to-basics/inflation",
+      "locator": "Inflation expectations and persistence discussion",
+      "status": "derived",
+      "notes": "方程是教学型简化表达；自然失业率和预期通胀不可直接观测。"
+    },
+    {
+      "id": "broad-price-definition",
+      "claim": "通胀指商品和服务价格的广泛上涨，而非单一商品的相对价格变化。",
+      "kind": "definition",
+      "source_url": "https://www.ecb.europa.eu/ecb-and-you/explainers/tell-me-more/html/what_is_inflation.en.html",
+      "locator": "ECB explainer, Broad increase in prices",
+      "status": "verified",
+      "notes": "用于区分总体价格水平变化与个别商品价格变化。"
+    }
+  ]
+}

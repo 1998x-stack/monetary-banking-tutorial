@@ -1,0 +1,60 @@
+{
+  "article": "21.html",
+  "title": "通货紧缩、债务通缩与流动性陷阱",
+  "claims": [
+    {
+      "id": "fisher-debt-deflation",
+      "claim": "Fisher 1933 年债务通缩理论分析过度负债、被迫抛售、价格下降和实际债务负担上升之间的反馈。",
+      "kind": "historical_theory",
+      "source_url": "https://cooperative-individualism.org/fisher-irving_the-debt-deflation-theory-of-great-depressions-1933-oct.pdf",
+      "locator": "Fisher (1933), The Debt-Deflation Theory of Great Depressions, Econometrica 1(4), pp.337–357",
+      "status": "verified",
+      "notes": "文章将其作为经典机制，不认为每次通缩都会产生相同的螺旋。"
+    },
+    {
+      "id": "real-debt-burden",
+      "claim": "当名义债务固定而价格水平下降时，名义债务折算的实际购买力负担上升。",
+      "kind": "economic_identity",
+      "source_url": "https://www.imf.org/en/news/articles/2015/09/28/04/54/tr030529",
+      "locator": "IMF forum, causes, channels and costs of deflation",
+      "status": "derived",
+      "notes": "由实际债务 D/P 的定义推导。"
+    },
+    {
+      "id": "japan-deflation-lessons",
+      "claim": "美联储对日本 1990 年代经验的研究指出，通缩风险未被充分预见；通胀转负且短期利率接近零下限后，重新激活经济更困难。",
+      "kind": "empirical_research",
+      "source_url": "https://www.federalreserve.gov/econres/ifdp/preventing-deflation-lessons-from-japan39s-experience-in-the-1990s.htm",
+      "locator": "Ahearne et al. (2002), abstract",
+      "status": "verified",
+      "notes": "研究讨论日本历史，不将结论机械推广到其他国家。"
+    },
+    {
+      "id": "liquidity-trap-not-inevitable-ineffectiveness",
+      "claim": "接近零的短期名义利率不足以单独证明货币政策完全失效；操作方式、期限工具和预期管理仍可能影响金融条件。",
+      "kind": "policy_research",
+      "source_url": "https://www.federalreserve.gov/econres/feds/monetary-policy-in-deflation-the-liquidity-trap-in-history-and-practice.htm",
+      "locator": "Orphanides (2004), abstract and conclusions",
+      "status": "verified",
+      "notes": "该研究属于作者研究观点，不应被当作联储官方政策声明。"
+    },
+    {
+      "id": "boj-unconventional-history",
+      "claim": "日本银行历史上使用过零利率政策、量化宽松、QQE、负利率和收益率曲线控制等非常规工具。",
+      "kind": "institutional_history",
+      "source_url": "https://www.boj.or.jp/en/mopo/outline/bpreview/data/ref240422.pdf",
+      "locator": "Overview of Unconventional Monetary Policy Measures from the Late 1990s, table covering ZIRP, QE, QQE, negative rates and YCC",
+      "status": "verified",
+      "notes": "文章按历史阶段描述，不暗示这些工具当前仍全部适用。"
+    },
+    {
+      "id": "deflation-distinction",
+      "claim": "通缩与流动性陷阱并非同义词：前者是总体价格水平持续下降，后者是低名义利率环境下常规货币工具受到约束的理论情形。",
+      "kind": "conceptual_distinction",
+      "source_url": "https://www.imf.org/external/pubs/ft/scr/2003/cr03149.pdf",
+      "locator": "IMF Country Report 03/149, discussion of liquidity trap and deflation",
+      "status": "verified",
+      "notes": "两者可能互相强化，但不是逻辑等价。"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "article": "18.html",
+  "title": "货币政策传导机制",
+  "claims": [
+    {
+      "id": "ecb-lags",
+      "claim": "欧洲央行指出货币政策传导具有长、可变且不确定的时滞，因此政策行动对经济和物价的精确效果难以预测。",
+      "kind": "policy_mechanism",
+      "source_url": "https://www.ecb.europa.eu/mopo/intro/transmission/html/index.en.html",
+      "locator": "Transmission mechanism of monetary policy, opening definition",
+      "status": "verified",
+      "notes": "文中以此支持不把传导视为即时、固定比例的管道。"
+    },
+    {
+      "id": "transmission-channels",
+      "claim": "主要货币政策传导渠道包括利率、信贷、资产价格、汇率和预期，渠道之间存在互动。",
+      "kind": "policy_mechanism",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewBulletin.aspx?Id=22929",
+      "locator": "RBI Bulletin, Transmission Channels and Stylised Facts",
+      "status": "verified",
+      "notes": "按 RBI 对传导文献的归纳进行概述。"
+    },
+    {
+      "id": "rate-pass-through",
+      "claim": "政策利率变化可直接影响货币市场利率，并间接影响银行对客户的存贷款利率。",
+      "kind": "policy_mechanism",
+      "source_url": "https://www.ecb.europa.eu/mopo/intro/transmission/html/index.en.html",
+      "locator": "Change in official interest rates; affects banks and money-market interest rates",
+      "status": "verified",
+      "notes": "具体传导程度受合同重定价、风险溢价和市场结构影响。"
+    },
+    {
+      "id": "balance-sheet-channel",
+      "claim": "借款人的资产负债表、抵押品和银行资本状况可能放大或削弱政策利率变化对信贷供给的影响。",
+      "kind": "financial_mechanism",
+      "source_url": "https://www.rbi.org.in/Scripts/BS_ViewBulletin.aspx?Id=22929",
+      "locator": "Transmission channels, credit and asset price channels",
+      "status": "derived",
+      "notes": "作为金融加速器和信贷渠道的机制归纳。"
+    },
+    {
+      "id": "transmission-demo",
+      "claim": "交互练习以五种渠道为索引，展示各自的直接变量与关键摩擦。",
+      "kind": "illustrative_calculation",
+      "source_url": "",
+      "locator": "Chapter 18 interactive channel selector",
+      "status": "illustrative",
+      "notes": "不模拟任何实际国家的政策乘数。"
+    }
+  ]
+}

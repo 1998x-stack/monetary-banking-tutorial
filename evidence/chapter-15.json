@@ -1,0 +1,51 @@
+{
+  "article": "15.html",
+  "title": "货币供给理论与现代货币创造",
+  "claims": [
+    {
+      "id": "monetary-base-definition",
+      "claim": "美国联储将货币基础定义为流通货币与存款机构在联储持有的准备金余额之和。",
+      "kind": "statistical_definition",
+      "source_url": "https://www.federalreserve.gov/faqs/money_12845.htm",
+      "locator": "What is the money supply? Is it important?, monetary base definition",
+      "status": "verified",
+      "notes": "美国统计定义；不同国家的货币统计口径可能不同。"
+    },
+    {
+      "id": "bank-loans-create-deposits",
+      "claim": "现代经济中大部分货币由商业银行发放贷款时创造；银行并非简单把储户既有存款转贷，也不机械地把央行货币乘数化。",
+      "kind": "balance_sheet_mechanism",
+      "source_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
+      "locator": "McLeay, Radia and Thomas (2014), opening summary",
+      "status": "verified",
+      "notes": "贷款创造存款是资产负债表机制，银行仍受资本、风险、流动性和需求约束。"
+    },
+    {
+      "id": "qe-and-money",
+      "claim": "中央银行可通过资产购买或量化宽松直接影响货币和准备金数量，但这不意味着准备金会自动按固定乘数转化为贷款。",
+      "kind": "policy_mechanism",
+      "source_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
+      "locator": "Opening summary, monetary policy and quantitative easing",
+      "status": "derived",
+      "notes": "由央行资产购买和银行贷款机制综合解释，具体会计结果取决于交易对手。"
+    },
+    {
+      "id": "pboc-tool-set",
+      "claim": "中国人民银行 2025 年第一季度报告列明综合运用存款准备金、公开市场操作、中期借贷便利、再贷款再贴现及结构性工具。",
+      "kind": "institutional_fact",
+      "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125227/125957/f5c4690f2cbd40918bf24c2d39ac58af/2025091218344076234/2025081517321679368.pdf",
+      "locator": "2025 Q1 Monetary Policy Report, monetary policy implementation and outlook",
+      "status": "verified",
+      "notes": "该报告是历史时期的制度与操作例证，不把其具体利率视为当前报价。"
+    },
+    {
+      "id": "money-multiplier-model",
+      "claim": "简化模型 M=m×MB 且 m=(1+c)/(c+rr+e)，其中 c 为现金存款比、rr 为法定准备金存款比、e 为超额准备金存款比。",
+      "kind": "textbook_model",
+      "source_url": "",
+      "locator": "Chapter 15 derivation and calculator",
+      "status": "illustrative",
+      "notes": "静态教学模型；假设比率固定，不能视为现代银行贷款的机械因果规律。"
+    }
+  ]
+}

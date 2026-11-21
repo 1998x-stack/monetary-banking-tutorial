@@ -8,7 +8,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 CHAPTERS = [f"{n:02d}.html" for n in range(1, 29)]
-REBUILT = CHAPTERS[:13]
+REBUILT = CHAPTERS[:21]
 STATUSES = {"verified", "derived", "illustrative", "unverified"}
 BANNED = ("讲义介绍了", "课件介绍了", "上一章已经讲过", "如前文所述")
 
@@ -50,7 +50,7 @@ def validate():
         raw=(ROOT/"index.html").read_text(encoding="utf-8")
         if raw.count('class="chapter-card"')!=28: errors.append("index.html must contain 28 static chapter cards")
         if "fetch('courses.json')" in raw or 'fetch("courses.json")' in raw: errors.append("index.html must not fetch courses.json")
-        if 'class="stat"><strong>13</strong>' not in raw: errors.append("index.html progress count should show 13 rebuilt chapters")
+        if 'class="stat"><strong>21</strong>' not in raw: errors.append("index.html progress count should show 21 rebuilt chapters")
     for chapter in REBUILT:
         path=ROOT/chapter
         if not path.is_file(): continue
@@ -103,7 +103,7 @@ def main():
         return 1
     print("SITE VALIDATION PASSED")
     print("- 28 chapter files and course metadata")
-    print("- chapters 01–13: standalone structure, local assets, links and evidence ledgers")
+    print("- chapters 01–21: standalone structure, local assets, links and evidence ledgers")
     print("- SVG accessibility metadata and offline runtime dependencies")
     return 0
 
