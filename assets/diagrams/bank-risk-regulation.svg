@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="fig-title fig-desc"><title id="fig-title">银行风险与审慎缓冲</title><desc id="fig-desc">信用、市场、利率、流动性和操作风险相互作用，资本、流动性和监管治理提供缓冲。</desc><defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#147f80"/></marker><marker id="arr-warm" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#d06d4d"/></marker></defs><rect width="960" height="480" rx="24" fill="#fffdf9"/>
+<rect x="45" y="90" width="250" height="75" rx="16" fill="#e8f4f1" stroke="#147f80" stroke-width="2"/><text x="63" y="124" fill="#203035" font-size="20" font-weight="700">信用风险</text><text x="63" y="156" fill="#42565a" font-size="16">借款人未能偿付</text>
+<rect x="355" y="90" width="250" height="75" rx="16" fill="#fbf4df" stroke="#916c22" stroke-width="2"/><text x="373" y="124" fill="#203035" font-size="20" font-weight="700">市场 / 利率风险</text><text x="373" y="156" fill="#42565a" font-size="16">价格、利率与估值变化</text>
+<rect x="665" y="90" width="250" height="75" rx="16" fill="#fff0e9" stroke="#d06d4d" stroke-width="2"/><text x="683" y="124" fill="#203035" font-size="20" font-weight="700">流动性风险</text><text x="683" y="156" fill="#42565a" font-size="16">到期支付与融资中断</text>
+<rect x="355" y="220" width="250" height="75" rx="16" fill="#f0edfa" stroke="#7461ba" stroke-width="2"/><text x="373" y="254" fill="#203035" font-size="20" font-weight="700">操作风险</text><text x="373" y="286" fill="#42565a" font-size="16">流程、人员、系统、外部事件</text>
+<path d="M295 127 H350 M605 127 H660 M480 165 V215 M780 165 V190 H610" stroke="#147f80" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+<rect x="150" y="340" width="660" height="88" rx="18" fill="#203035"/>
+<text x="480" y="376" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">审慎缓冲与治理</text>
+<text x="480" y="405" text-anchor="middle" font-size="16" fill="#d8e7e1">资本吸收损失 · 流动性履约 · 压力测试 · 披露与处置</text>
+<path d="M480 295 V335" stroke="#d06d4d" stroke-width="3" marker-end="url(#arr-warm)"/></svg>

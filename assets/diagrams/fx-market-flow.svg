@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="fig-title fig-desc"><title id="fig-title">外汇市场与国际收支</title><desc id="fig-desc">商品和服务贸易形成经常账户交易，跨境投资和融资形成金融账户交易，外汇市场通过即期、远期和掉期工具完成兑换与风险管理。</desc><defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#147f80"/></marker><marker id="arr-warm" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#d06d4d"/></marker></defs><rect width="960" height="480" rx="24" fill="#fffdf9"/>
+<rect x="45" y="105" width="255" height="95" rx="16" fill="#e8f4f1" stroke="#147f80" stroke-width="2"/><text x="63" y="139" fill="#203035" font-size="20" font-weight="700">贸易与收入</text><text x="63" y="171" fill="#42565a" font-size="16">进口 / 出口 · 服务 · 投资收益</text>
+<rect x="355" y="105" width="250" height="95" rx="16" fill="#e8f4f1" stroke="#147f80" stroke-width="2"/><text x="373" y="139" fill="#203035" font-size="20" font-weight="700">外汇市场</text><text x="373" y="171" fill="#42565a" font-size="16">即期 · 远期 · 掉期 · 期权</text>
+<rect x="660" y="105" width="255" height="95" rx="16" fill="#fbf4df" stroke="#916c22" stroke-width="2"/><text x="678" y="139" fill="#203035" font-size="20" font-weight="700">跨境投资</text><text x="678" y="171" fill="#42565a" font-size="16">直接投资 · 证券投资 · 借贷</text>
+<path d="M305 150 H345 M615 150 H650" stroke="#147f80" stroke-width="4" marker-end="url(#arr)"/>
+<path d="M785 215 V295 H175 V215" fill="none" stroke="#d06d4d" stroke-width="3" marker-end="url(#arr-warm)"/>
+<rect x="255" y="315" width="450" height="85" rx="18" fill="#203035"/>
+<text x="480" y="350" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">汇率与国际收支</text>
+<text x="480" y="378" text-anchor="middle" font-size="15" fill="#d8e7e1">价格变化 · 资本流动 · 官方储备 · 风险对冲</text></svg>

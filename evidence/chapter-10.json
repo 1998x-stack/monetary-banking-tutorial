@@ -1,0 +1,51 @@
+{
+  "article": "10.html",
+  "title": "中央银行如何管理货币与金融稳定？",
+  "claims": [
+    {
+      "id": "pboc-mandate",
+      "claim": "中国人民银行是中国中央银行，在国务院领导下制定和执行货币政策、防范化解金融风险并维护金融稳定。",
+      "kind": "legal_fact",
+      "source_url": "https://fgw.sh.gov.cn/ys-hqjrfw-1.3.1.1-h5/20240820/c7ba9f9a4f40406ba6f2fe2e89c881c5.html",
+      "locator": "《中国人民银行法》第二条至第四条",
+      "status": "verified",
+      "notes": "区分中国人民银行与其他金融监管部门。"
+    },
+    {
+      "id": "pboc-tools",
+      "claim": "中国人民银行法列明准备金、中央银行基准利率、再贴现、向商业银行贷款和公开市场操作等货币政策工具。",
+      "kind": "legal_fact",
+      "source_url": "https://fgw.sh.gov.cn/ys-hqjrfw-1.3.1.1-h5/20240820/c7ba9f9a4f40406ba6f2fe2e89c881c5.html",
+      "locator": "第二十三条",
+      "status": "verified",
+      "notes": "没有把央行资产购买误写为直接财政融资。"
+    },
+    {
+      "id": "reserve-liability",
+      "claim": "银行准备金是中央银行负债，也是持有准备金的商业银行资产，只有央行可以创造本币准备金。",
+      "kind": "balance_sheet_mechanism",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/iorb-faqs.htm",
+      "locator": "What are reserves, why are they important, and how do they work?",
+      "status": "verified",
+      "notes": "使用美联储作为准备金会计机制说明。"
+    },
+    {
+      "id": "fed-functions",
+      "claim": "中央银行通常承担货币政策、金融稳定、金融机构监督和支付清算等职能，但各国法定授权不同。",
+      "kind": "institutional_comparison",
+      "source_url": "https://www.federalreserve.gov/aboutthefed.htm",
+      "locator": "About the Fed: five general functions",
+      "status": "verified",
+      "notes": "比较段落明确各经济体制度不同。"
+    },
+    {
+      "id": "last-resort",
+      "claim": "最后贷款人功能需要区分暂时流动性困难与资不抵债，支持安排需结合抵押品、损失承担和处置机制。",
+      "kind": "policy_principle",
+      "source_url": "https://www.federalreserve.gov/pubs/oss/oss3/ssbf03/append_Y/25AppendixY_FRB_Structure_Functions_Brochure.pdf",
+      "locator": "Discount Window Loans",
+      "status": "derived",
+      "notes": "白芝浩原则作为经典分析框架，而非跨国统一法律规则。"
+    }
+  ]
+}

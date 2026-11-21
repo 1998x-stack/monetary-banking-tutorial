@@ -1,0 +1,51 @@
+{
+  "article": "07.html",
+  "title": "收益率曲线如何讲述未来？",
+  "claims": [
+    {
+      "id": "yield-curve-definition",
+      "claim": "收益率曲线描述债务证券剩余期限与收益率之间的关系。",
+      "kind": "definition",
+      "source_url": "https://www.federalreserve.gov/data/yield-curve-models.htm",
+      "locator": "About: yield curve / term structure definition",
+      "status": "verified",
+      "notes": "比较时需控制发行人、币种、信用和债券类型。"
+    },
+    {
+      "id": "term-premium",
+      "claim": "长期收益率可以分解为预期短期利率路径和期限溢价等部分，期限溢价模型属于估计而非直接观测。",
+      "kind": "model",
+      "source_url": "https://www.federalreserve.gov/data/three-factor-nominal-term-structure-model.htm",
+      "locator": "Q&A: definition of term premiums",
+      "status": "verified",
+      "notes": "强调模型估计可能修订。"
+    },
+    {
+      "id": "bond-price-yield",
+      "claim": "固定利率债券市场收益率上升时，既有债券价格通常下降。",
+      "kind": "mechanism",
+      "source_url": "https://www.sec.gov/files/ib_interestraterisk.pdf",
+      "locator": "Interest Rate Risk: When Interest Rates Go Up, Prices of Fixed-Rate Bonds Fall",
+      "status": "verified",
+      "notes": "价格关系基于固定现金流折现。"
+    },
+    {
+      "id": "curve-recession",
+      "claim": "期限利差具有一定衰退预测信息，但预测表现依赖模型和其他变量，不能用来确定衰退发生日期。",
+      "kind": "empirical_research",
+      "source_url": "https://www.federalreserve.gov/econres/feds/the-yield-curve-and-predicting-recessions.htm",
+      "locator": "Wright (2006), abstract and probit model comparisons",
+      "status": "verified",
+      "notes": "正文指出期限利差与政策利率水平等变量联合使用的价值。"
+    },
+    {
+      "id": "yield-curve-shapes",
+      "claim": "向上、平坦和倒挂描述特定时点期限结构形态，不直接决定未来宏观结果。",
+      "kind": "interpretation",
+      "source_url": "https://www.federalreserve.gov/data/yield-curve-models.htm",
+      "locator": "Yield curve uses and model caveats",
+      "status": "derived",
+      "notes": "用多因素框架解释形态，不作机械预测。"
+    }
+  ]
+}

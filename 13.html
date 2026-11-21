@@ -1,222 +1,50 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-    <title>第13章 外汇市场与国际金融</title>
-    <link rel="stylesheet" href="theme.css">
-</head>
-<body>
-<div class="double-border">
-<div class="container">
-    <div class="sidebar">
-        <h3>🏦 课程目录</h3>
-        <ul class="chapter-list">
-            <li><a href="01.html">第1章 货币银行学概述</a></li>
-            <li><a href="02.html">第2章 货币的起源与本质</a></li>
-            <li><a href="03.html">第3章 货币的职能与计量</a></li>
-            <li><a href="04.html">第4章 货币制度演变</a></li>
-            <li><a href="05.html">第5章 信用与信用体系</a></li>
-            <li><a href="06.html">第6章 利息与利率理论</a></li>
-            <li><a href="07.html">第7章 利率结构与收益率曲线</a></li>
-            <li><a href="08.html">第8章 商业银行：业务与管理</a></li>
-            <li><a href="09.html">第9章 商业银行：风险与监管</a></li>
-            <li><a href="10.html">第10章 中央银行制度</a></li>
-            <li><a href="11.html">第11章 货币市场</a></li>
-            <li><a href="12.html">第12章 资本市场</a></li>
-            <li><a href="13.html" class="active">第13章 外汇市场与国际金融</a></li>
-            <li><a href="14.html">第14章 非银行金融机构</a></li>
-            <li><a href="15.html">第15章 货币供给理论</a></li>
-            <li><a href="16.html">第16章 货币需求理论</a></li>
-            <li><a href="17.html">第17章 货币政策工具与操作</a></li>
-            <li><a href="18.html">第18章 货币政策传导与效应</a></li>
-            <li><a href="19.html">第19章 IS-LM模型</a></li>
-            <li><a href="20.html">第20章 通货膨胀理论</a></li>
-            <li><a href="21.html">第21章 通货紧缩与流动性陷阱</a></li>
-            <li><a href="22.html">第22章 金融危机与系统性风险</a></li>
-            <li><a href="23.html">第23章 货币政策报告解读</a></li>
-            <li><a href="24.html">第24章 金融数据分析实战</a></li>
-            <li><a href="25.html">第25章 宏观经济预测入门</a></li>
-            <li><a href="26.html">第26章 数字人民币与CBDC</a></li>
-            <li><a href="27.html">第27章 金融科技与货币未来</a></li>
-            <li><a href="28.html">第28章 综合实战项目</a></li>
-        </ul>
-    </div>
-    <div class="main-content">
-
-        <h2>汇率决定理论——为什么1美元能换7块多人民币</h2>
-
-        <p>你有没有想过一个问题：为什么1美元能换7块多人民币，而不是3块或者20块？这个"兑换比例"到底由什么决定？</p>
-
-        <p>这就是汇率决定理论研究的核心问题。一百多年来，经济学家提出了几种不同的理论来解释汇率的决定和变动：</p>
-
-        <h3>购买力平价（PPP）——"一价定律"</h3>
-
-        <p>最简单的理论：同样一件商品，在不同国家应该卖同样的价格（扣除运输成本和关税后）。假设一个麦当劳巨无霸汉堡在中国卖25元，在美国卖5美元，那么按照PPP理论，人民币对美元的合理汇率应该是25÷5=5。也就是说，1美元应该值5元人民币。</p>
-
-        <p>但现实中的汇率常常偏离PPP。还是用巨无霸指数（The Economist杂志每年发布的指标）举例：2025年初，中国的巨无霸是25元，美国是5.69美元，PPP汇率为4.40，但实际汇率是7.20左右——这意味着人民币被"低估"了约39%。但汇率低估对中国这样的出口导向型经济体来说，反而有利于出口竞争力。</p>
-
-        <h3>利率平价（IRP）——"套利"的力量</h3>
-
-        <p>如果中国的一年期利率是2.5%，美国是4.5%，那么理性投资者会怎么操作？他们会借人民币（在中国借，利率2.5%），换成美元，然后存到美国赚4.5%的利息。但这样做有汇率风险——一年后美元兑人民币的汇率如果变了，可能把利息差全吃掉。</p>
-
-        <p>利率平价理论说的就是：<strong>两国的利率差应该等于汇率的预期变化率</strong>。如果中国利率低、美国利率高，那么市场预期人民币会升值（或美元会贬值），正好抵消利率差，让套利变得无利可图。</p>
-
-        <p>咱们来具体算一下：</p>
-
-<pre><code>// 利率平价公式 (Covered Interest Rate Parity)
-// (1 + r_CN) = (F / S) × (1 + r_US)
-// 其中: r_CN = 人民币利率, r_US = 美元利率
-//       S = 即期汇率, F = 远期汇率
-
-const irp = {
-  spotRate: 7.20,    // 即期汇率: 1 USD = 7.20 CNY
-  cnRate: 0.025,     // 人民币一年期利率 2.5%
-  usRate: 0.045,     // 美元一年期利率 4.5%
-  period: 1           // 1年
-};
-
-// 根据利率平价计算理论远期汇率
-const forwardRate = irp.spotRate *
-  (1 + irp.cnRate) / (1 + irp.usRate);
-
-// 实际远期汇率（假设市场报价）
-const marketForwardRate = 7.05;
-
-console.log(`即期汇率 (S): ${irp.spotRate}`);
-console.log(`人民币利率 (r_CN): ${irp.cnRate * 100}%`);
-console.log(`美元利率 (r_US): ${irp.usRate * 100}%`);
-console.log(`---`);
-console.log(`理论远期汇率 (F): ${forwardRate.toFixed(4)}`);
-console.log(`市场远期汇率: ${marketForwardRate}`);
-console.log(`预期人民币升/贬值: ${((irp.spotRate - forwardRate) / irp.spotRate * 100).toFixed(2)}%`);
-
-// 中国利率低 → 远期汇率低于即期汇率 → 人民币预期升值
-// 中美利差倒挂时，方向相反
-console.log(`判断: 中美利差 ${(irp.usRate - irp.cnRate) * 100}% 意味着`);
-console.log(`理论上远期人民币应升值约 ${((irp.usRate - irp.cnRate) * 100).toFixed(2)}%`);</code></pre>
-
-        <h3>资产市场说——从"贸易流"到"资本流"</h3>
-
-        <p>以上理论在今天的现实世界中越来越不够用了——因为全球外汇市场每天的交易量超过6万亿美元，其中90%以上跟国际贸易无关，而是纯粹的投资和投机。这就催生了"资产市场说"：汇率不再是"买商品的价格"，而是"买资产的价格"。如果外国投资者看好中国的股票市场或债券市场，资本会流入，人民币就会升值；如果资本流出，人民币就会贬值。</p>
-
-        <h2>人民币汇率制度</h2>
-
-        <p>人民币汇率制度是中国金融体系中最重要的制度设计之一。2005年以来，人民币汇率制度经历了几次重大变革：</p>
-
-        <h3>"811汇改"（2015年8月11日）</h3>
-
-        <p>这是人民币汇率形成机制最重要的一次改革。2015年8月11日，央行宣布调整人民币兑美元汇率中间价报价机制——做市商参考前一日银行间外汇市场收盘汇率，向中国外汇交易中心提供中间价报价。简单说：从"央行自己定"变成"跟着市场走"。</p>
-
-        <h3>中间价形成机制</h3>
-
-        <p>目前人民币汇率中间价的形成机制是"收盘价+一篮子货币汇率变化+逆周期因子"：</p>
-
-        <ul>
-            <li><strong>收盘价：</strong>前一日银行间市场下午4:30的收盘汇率，反映市场供求。</li>
-            <li><strong>一篮子货币：</strong>参考CFETS（中国外汇交易中心）人民币汇率指数，保持汇率相对一篮子货币的基本稳定。</li>
-            <li><strong>逆周期因子：</strong>2017年引入的调节工具。当市场出现过度投机和"羊群效应"时，央行通过逆周期因子来避免汇率超调。2025年，逆周期因子仍然在发挥"稳定器"作用。</li>
-        </ul>
-
-        <h2>国际收支平衡表</h2>
-
-        <p>国际收支平衡表（Balance of Payments, BOP）记录了一国在一定时期内与世界其他地方的全部经济交易。它分为三个主要账户：</p>
-
-        <ul>
-            <li><strong>经常账户：</strong>记录商品贸易（出口-进口，即贸易顺差/逆差）、服务贸易、投资收益和经常转移。中国过去二十年一直保持经常账户顺差（出口>进口），2025年顺差约8000亿美元。</li>
-            <li><strong>资本账户（含金融账户）：</strong>记录资本流入和流出，包括直接投资（FDI）、证券投资（股票债券）、其他投资（贷款存款）等。</li>
-            <li><strong>官方储备资产：</strong>央行持有的外汇储备变动。当资本流入过多时，央行买入外汇、吐出本币，外汇储备增加；反之减少。</li>
-        </ul>
-
-        <p>国际收支平衡表的基本原则是"有借必有贷、借贷必相等"——经常账户顺差意味着资本账户逆差（资金流出），反之亦然。现实中，中国长期的"双顺差"（经常账户和资本账户都顺差）导致了外汇储备的持续积累——2025年末中国外汇储备约3.2万亿美元，仍然位居全球第一。</p>
-
-        <h2>不可能三角（三元悖论）</h2>
-
-        <p>在国际金融领域，有一个最基本的"不可能三角"（Impossible Trinity / 三元悖论）。它说的是：<strong>一国不可能同时实现以下三个目标——货币政策独立性、资本自由流动、固定汇率制度。最多只能选两个。</strong></p>
-
-        <p>咱们用一个表格来看看不同国家是怎么选择的：</p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>国家/地区</th>
-                    <th>货币政策独立性</th>
-                    <th>资本自由流动</th>
-                    <th>汇率稳定</th>
-                    <th>选择的路径</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>美国</td>
-                    <td>✓ 完全独立</td>
-                    <td>✓ 完全自由流动</td>
-                    <td>✗ 浮动汇率</td>
-                    <td>放弃汇率稳定（浮动汇率制）</td>
-                </tr>
-                <tr>
-                    <td>中国</td>
-                    <td>✓ 独立</td>
-                    <td>✗ 资本管制（有管理）</td>
-                    <td>✓ 有管理的浮动</td>
-                    <td>放弃资本自由流动（资本账户管制）</td>
-                </tr>
-                <tr>
-                    <td>香港</td>
-                    <td>✗ 跟随美联储</td>
-                    <td>✓ 完全自由流动</td>
-                    <td>✓ 联系汇率（7.75-7.85）</td>
-                    <td>放弃货币政策独立性（联系汇率制度）</td>
-                </tr>
-                <tr>
-                    <td>欧元区</td>
-                    <td>✗ 受限于ECB</td>
-                    <td>✓ 区内自由流动</td>
-                    <td>✓ 单一货币</td>
-                    <td>放弃各成员国货币政策独立性</td>
-                </tr>
-                <tr>
-                    <td>日本</td>
-                    <td>✓ 独立</td>
-                    <td>✓ 自由流动</td>
-                    <td>✗ 浮动汇率</td>
-                    <td>放弃汇率稳定（浮动汇率制）</td>
-                </tr>
-                <tr>
-                    <td>新加坡</td>
-                    <td>✗ 以汇率政策为核心</td>
-                    <td>✓ 自由流动</td>
-                    <td>✓ 管理浮动（NEER制度）</td>
-                    <td>放弃货币政策独立性（汇率主导）</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>中国选择了"独立的货币政策+有管理的浮动汇率"（稳定的汇率），代价是保留了一定程度的资本管制。这就是为什么你个人每年换汇有5万美元的额度限制，企业跨境资金流动需要审批。这套"防火墙"在2008年金融危机、2015年汇改波动中起到了重要的稳定作用。</p>
-
-        <div class="highlight">
-            <strong>🔑 深入理解：</strong> 不可能三角是理解当前国际货币体系的关键框架。2025年，中国正在稳步推进"资本项目可兑换"和"人民币国际化"——这意味着在不可能三角中，中国正在尝试向"更多资本自由流动"的方向移动。但这是渐进的过程，因为过快放开资本账户可能导致热钱大进大出，引发金融不稳定。人民币国际化与资本账户开放之间的关系，是当前金融改革中最核心的权衡之一。
-        </div>
-
-        <div class="warning">
-            <strong>⚠️ 踩坑故事：2015年8月11日汇改——人民币单日贬值2%，全球市场震荡</strong><br><br>
-            2015年8月11日，央行突然宣布调整人民币中间价定价机制。当天，人民币中间价一次性贬值1.9%（从6.1162下调到6.2298），创下二十年来最大单日跌幅。全球市场瞬间震动——亚洲股市暴跌、新兴市场货币齐跌、大宗商品价格重挫。<br><br>
-            为什么一个中间价的调整会引起这么大的连锁反应？因为市场把它解读为"中国主动引导人民币贬值"的信号，人们开始担心中国经济比表面看起来要差得多。更糟的是，市场预期人民币会继续贬值，于是资本开始加速外流——2015年四季度到2016年，中国外汇储备从约3.8万亿美元下降到3.2万亿美元，外流了6000亿美元。<br><br>
-            小张是一家外贸公司的老板，2015年8月10日他刚签了一笔100万美元的出口合同，约定以人民币结算。按照8月10日的汇率（6.1162），这笔合同值611.62万人民币。8月11日汇率调整后，等值变为622.98万人民币——什么都没做，凭空多了11万人民币。但他一个做进口生意的朋友就没那么幸运了——同样100万美元的进口合同，成本一下子多了11万人民币。<br><br>
-            811汇改的最大教训是什么？<strong>汇率改革需要充分的市场沟通和预期管理。</strong>事后央行行长周小川也承认，汇改的沟通工作做得不够充分，导致市场预期失控。从那以后，央行在重要政策出台前都会通过多种渠道（货币政策报告、官员讲话、媒体吹风）释放"政策信号"，让市场有充分的心理准备。811汇改也推动了中国汇率形成机制的进一步完善——引入"一篮子货币"参考和逆周期因子，让汇率在保持弹性的同时更加稳定。
-        </div>
-
-        <p>外汇市场是连接各国金融体系的"桥梁"。汇率变动不仅影响进出口企业的利润，也影响跨国投资的收益、国家的外债负担和货币政策的操作空间。在全球化的今天，理解和把握汇率变动规律，是每个金融从业者的必修课。</p>
-
-        <p>到现在为止，咱们已经走过了货币市场、资本市场、外汇市场——金融市场的三大支柱。但市场上还有一个重要的参与者群体：<strong>非银行金融机构</strong>。它们虽然不是银行，但体量巨大、影响深远——甚至有些"影子银行"的规模堪比真正的银行体系。下一章：<strong>非银行金融机构</strong>。</p>
-
-        <div class="footer-nav">
-            <a href="12.html">← 上一章</a>
-            <a href="index.html">📖 返回目录</a>
-            <a href="14.html">下一章 →</a>
-        </div>
-    </div>
-</div>
-</div>
-</body>
-</html>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="从汇率报价、即期与远期交易、购买力平价和利率平价出发，理解国际收支、汇率制度、不可能三角与外汇风险管理。"><title>第 13 章｜外汇市场如何连接不同货币与不同经济体？ · 货币银行学</title><link rel="stylesheet" href="assets/css/article.css"></head><body><a class="skip-link" href="#content">跳转至正文</a><div class="article-shell"><div class="article-topline"><a href="index.html">← 返回课程目录</a><span>货币银行学 · 利率与金融机构 / 13</span></div><div class="article-layout"><nav class="article-toc" aria-label="文章目录"><h2>本页目录</h2><ol><li><a href="#quote">汇率报价：先看清谁是基准货币</a></li><li><a href="#instruments">即期、远期、掉期与期权</a></li><li><a href="#theories">汇率由什么力量影响</a></li><li><a href="#parity">利率平价与远期汇率</a></li><li><a href="#bop">国际收支：经常账户与金融账户</a></li><li><a href="#regime">汇率制度与不可能三角</a></li><li><a href="#market">全球外汇市场的规模</a></li><li><a href="#practice">交互练习：换汇与远期定价</a></li><li><a href="#summary">核心结论</a></li><li><a href="#references">参考资料</a></li></ol></nav><details class="mobile-toc"><summary>本页目录</summary><ol><li><a href="#quote">汇率报价：先看清谁是基准货币</a></li><li><a href="#instruments">即期、远期、掉期与期权</a></li><li><a href="#theories">汇率由什么力量影响</a></li><li><a href="#parity">利率平价与远期汇率</a></li><li><a href="#bop">国际收支：经常账户与金融账户</a></li><li><a href="#regime">汇率制度与不可能三角</a></li><li><a href="#market">全球外汇市场的规模</a></li><li><a href="#practice">交互练习：换汇与远期定价</a></li><li><a href="#summary">核心结论</a></li><li><a href="#references">参考资料</a></li></ol></details><main id="content" class="article-main"><article><header class="article-header"><p class="eyebrow">货币银行学 · 第 13 章</p><h1>外汇市场如何连接不同货币与不同经济体？</h1><p class="dek">从汇率报价、即期与远期交易、购买力平价和利率平价出发，理解国际收支、汇率制度、不可能三角与外汇风险管理。</p><div class="article-meta"><span>金融机制</span><span>独立阅读</span><span>含图解与练习</span></div></header>
+<p class="lead">一家日本企业进口美国设备，合同金额是 100 万美元，但企业收入主要是日元。签约到付款之间，美元兑日元可能变化：如果美元升值，企业需要更多日元才能支付同样的美元账单。外汇市场提供货币兑换和风险管理工具；国际金融理论则帮助解释汇率如何与价格、利率、资本流动和政策制度联系起来。</p>
+<section id="quote"><h2>汇率报价：先看清谁是基准货币</h2>
+<p>汇率是两种货币之间的兑换价格。若报价为 1 美元 = 7.20 元人民币，通常写作 7.20 CNY/USD，表示购买 1 美元需要 7.20 元人民币。这里人民币是报价货币（terms currency），美元是基准货币（base currency）。如果 CNY/USD 从 7.20 上升到 7.30，表示美元相对人民币升值、人民币相对美元贬值。</p>
+<p>反过来，如果报价写作 USD/CNY，就必须重新判断数值上升或下降代表什么。很多汇率分析错误不是理论错误，而是把报价方向搞反了。阅读任何汇率数据，先写出“1 单位什么货币 = 多少单位什么货币”。</p>
+</section>
+<section id="instruments"><h2>即期、远期、掉期与期权</h2>
+<ul>
+<li><strong>即期（spot）：</strong>约定按即期汇率兑换货币，按市场惯例在短期结算日交割。</li>
+<li><strong>远期（outright forward）：</strong>今天约定未来某日的汇率和金额，用于锁定未来外币现金流的本币价值。</li>
+<li><strong>外汇掉期（FX swap）：</strong>通常把一笔即期交易与一笔方向相反的远期交易组合起来，常用于跨币种短期融资和流动性管理。</li>
+<li><strong>货币期权（FX option）：</strong>买方支付期权费，获得在约定条件下按执行汇率买入或卖出货币的权利，而非必须履行的义务。</li>
+</ul>
+<p>这些工具的用途和风险不同。远期可锁定汇率，但可能产生保证金、交易对手和提前终止成本；期权保留有利汇率变化的参与空间，但需要支付期权费；掉期可解决短期币种融资需求，但仍有展期、基差和对手方风险。</p>
+</section>
+<section id="theories"><h2>汇率由什么力量影响</h2>
+<h3>购买力平价（PPP）</h3><p>购买力平价从可贸易商品的价格比较出发。若相同商品在不同国家以共同货币计价长期差异过大，贸易和套利可能推动价格与汇率调整。绝对 PPP 要求一篮子商品价格水平按汇率换算后相等；相对 PPP 则关注两国通胀差与汇率变化的长期关系。运输成本、关税、非贸易品、生产率和消费篮子差异会让现实汇率长期偏离 PPP，因此汉堡价格指数适合做直观比较，不是精确的均衡汇率公式。</p>
+<h3>利率平价（IRP）</h3><p>利率平价从跨币种投资回报比较出发。若投资者能够借入一种货币、兑换成另一种货币并用远期合同锁定汇率，那么在忽略交易成本、信用风险、税收和资本限制的理想条件下，套期保值后的两种货币投资回报应趋于一致。实际市场中，跨币种基差、融资约束、信用和监管摩擦会让平价关系出现偏离。</p>
+<h3>资产市场与预期</h3><p>外汇价格是金融资产价格，也会对未来政策、增长、风险偏好、资本流动和地缘事件作出反应。贸易收支只是影响外汇供求的一个来源；投资组合调整、跨境融资、套期保值和衍生品交易同样重要。短期汇率可能对预期变化非常敏感，而长期基本面分析也不能准确给出短期汇率路径。</p>
+</section>
+<section id="parity"><h2>利率平价与远期汇率</h2>
+<p>假设汇率 S 的单位是“本币 / 外币”，本币利率为 r<sub>d</sub>，外币利率为 r<sub>f</sub>，期限均为一年。在理想的有担保利率平价（covered interest parity, CIP）条件下：</p>
+<div class="math-scroll" tabindex="0" role="region" aria-label="有担保利率平价公式"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="远期汇率等于即期汇率乘以一加本币利率除以一加外币利率"><mrow><mi>F</mi><mo>=</mo><mi>S</mi><mo>×</mo><mfrac><mrow><mn>1</mn><mo>+</mo><msub><mi>r</mi><mi>d</mi></msub></mrow><mrow><mn>1</mn><mo>+</mo><msub><mi>r</mi><mi>f</mi></msub></mrow></mfrac></mrow></math><p class="formula-caption">S、F 的单位相同；r_d、r_f 必须与合约期限和计息规则一致。多期或非简单计息时需改用对应复利因子。</p></div>
+<p>例如，假设 S = 7.20 CNY/USD，本币一年利率 2%，美元一年利率 4%，则理论远期汇率约为 7.20 × 1.02 / 1.04 = 7.0615 CNY/USD。这个远期汇率低于即期汇率，表示美元远期相对本币贴水。它不是对未来即期汇率的无偏预测，而是与两种货币利率和套期保值条件相联系的无套利价格。</p>
+</section>
+<section id="bop"><h2>国际收支：经常账户与金融账户</h2>
+<p>国际收支平衡表（Balance of Payments, BOP）记录一个经济体居民与非居民在一定时期内发生的经济交易。按照 IMF《国际收支和国际投资头寸手册》第六版（BPM6），经常账户包括货物、服务、初次收入和二次收入；资本账户记录资本转移与非生产非金融资产交易；金融账户记录金融资产和负债的净获得与净发生<a href="#ref-1">[1]</a>。</p>
+<p>国际收支采用复式记账原则，一笔交易通常需要对应记录。经常账户顺差意味着该经济体在经常交易中对外净提供资源；从宏观核算看，经常账户与资本账户合计的净贷出 / 净借入，在概念上对应金融账户的净额，实际统计会出现净误差与遗漏。不能把“经常账户顺差”简单等同于“外汇储备必然增加”，因为金融账户、汇率干预、估值变化和其他因素也会影响储备。</p>
+</section>
+<section id="regime"><h2>汇率制度与不可能三角</h2>
+<p>汇率制度从硬盯住、货币局、固定汇率到管理浮动和自由浮动形成连续谱系。制度选择会影响汇率波动、货币政策自主性、资本流动管理和外汇储备需求。一个经济体不一定在所有时期都使用同一种安排，制度分类还要区分法律承诺与实际运行方式。</p>
+<p>不可能三角（impossible trinity）指出，在资本自由流动的条件下，固定汇率与独立货币政策难以同时维持：若本国利率偏离锚货币利率，跨境资本流动会对汇率承诺形成压力。政策当局通常需要在汇率稳定、资本流动自由和货币政策自主之间作出取舍。IMF 对汇率安排的技术手册也解释了这一约束及其与利率平价的关系，同时指出现实中存在交易摩擦和资本流动管理措施<a href="#ref-2">[2]</a>。</p>
+<p>人民币汇率形成机制经历了渐进改革。人民银行在 2015 年 8 月 11 日完善人民币兑美元中间价报价机制，之后的政策说明强调参考前一日银行间外汇市场收盘汇率，并加大参考一篮子货币的力度；2016 年人民银行报告将机制概括为“收盘汇率 + 一篮子货币汇率变化”<a href="#ref-3">[3]</a>。因此，不宜把人民币中间价简化成“央行随意定价”或“完全由市场自由浮动”。</p>
+</section>
+<section id="market"><h2>全球外汇市场的规模</h2>
+<p>BIS 2025 年三年期调查显示，2025 年 4 月全球场外外汇市场日均成交额约 9.6 万亿美元，比 2022 年调查增加 28%；外汇掉期仍是交易量最大的工具，美元出现在约 89% 的外汇交易一侧<a href="#ref-4">[4]</a>。该统计是全球交易商报告的 OTC 市场成交额，不是跨境贸易额，也不是净资本流动，更不能据此推断每天有 9.6 万亿美元真实资金跨境转移。</p>
+</section>
+<section id="practice"><h2>交互练习：换汇与远期定价</h2>
+<p>输入即期报价和投资利率，计算一笔外币兑换的本币金额，以及理想 CIP 条件下的一年期理论远期汇率。汇率单位为 CNY/USD。</p>
+<div class="demo" data-demo="fx-parity"><div class="demo-grid"><label class="demo-field">美元金额（USD）<input name="usd" type="number" min="0" step="100" value="10000"></label><label class="demo-field">即期汇率 S（CNY/USD）<input name="spot" type="number" min="0.0001" step="0.01" value="7.2"></label><label class="demo-field">人民币利率（%）<input name="domestic-rate" type="number" min="-99" max="200" step="0.1" value="2"></label><label class="demo-field">美元利率（%）<input name="foreign-rate" type="number" min="-99" max="200" step="0.1" value="4"></label></div><p class="demo-output" data-demo-output aria-live="polite">兑换成本 72,000 元人民币；CIP 理论远期汇率约 7.0615 CNY/USD。</p></div>
+</section>
+<section id="summary" class="article-summary"><h2>核心结论</h2><p>外汇市场既服务于跨境支付，也服务于跨币种融资、投资和风险管理。理解汇率先要读懂报价方向，再区分即期、远期、掉期和期权；PPP、利率平价和资产市场分析分别强调价格、回报和资产组合因素。国际收支采用复式记账，而汇率制度选择受不可能三角约束。</p></section>
+<section id="references"><h2>参考资料</h2><ol class="source-list">
+<li id="ref-1">International Monetary Fund, <a href="https://data.imf.org/-/media/iData/External-Storage/Documents/73FBCD5B6CDE4D289C60B9B0CAA40622/en/2-bpm6.pdf" target="_blank" rel="noopener noreferrer">Balance of Payments and International Investment Position Manual, Sixth Edition (BPM6)</a>，第二章。</li>
+<li id="ref-2">International Monetary Fund, <a href="https://www.imf.org/-/media/files/publications/miscellaneous/english/2022/mcm-technical-assistance-handbook/choice-of-exchange-rate-arrangement.pdf" target="_blank" rel="noopener noreferrer">Monetary Policy Frameworks: Choice of Exchange Rate Arrangement</a>，不可能三角与利率平价。</li>
+<li id="ref-3">中国人民银行，<a href="https://www.pbc.gov.cn/zhengcehuobisi/125207/125227/125957/3066656/8ec329151a994928abd2960bf1cfc0d4/2016081218113287278.pdf" target="_blank" rel="noopener noreferrer">2016 年第二季度中国货币政策执行报告</a>，人民币汇率形成机制说明。</li>
+<li id="ref-4">Bank for International Settlements, <a href="https://www.bis.org/media-releases/20250930-global-fx-trading-hits-96-trillion-day-april-2025-and-otc-interest-rate-derivatives-surge-79" target="_blank" rel="noopener noreferrer">Global FX trading hits $9.6 trillion per day in April 2025</a>，2025 年 9 月 30 日。</li>
+<li id="ref-5">Bank for International Settlements, <a href="https://www.bis.org/publications/triennial-central-bank-survey-foreign-exchange-and-over-the-counter-otc-derivatives-markets-2025" target="_blank" rel="noopener noreferrer">Triennial Central Bank Survey 2025</a>。</li>
+</ol></section>
+<nav class="chapter-nav" aria-label="章节导航"><a href="12.html">← 上一主题</a><a href="index.html">课程目录</a><a href="14.html">继续阅读下一主题 →</a></nav></article></main></div></div><footer class="site-footer">货币银行学 · 从货币、信用与银行机制理解金融体系</footer><script src="assets/js/article-demos.js" defer></script></body></html>

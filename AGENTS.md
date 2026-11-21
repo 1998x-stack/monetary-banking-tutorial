@@ -1,7 +1,7 @@
 # Repository authoring rules
 
 ## Purpose
-Maintain a trustworthy, independently readable Chinese monetary-and-banking course. The first five chapters define the editorial and engineering standard for later migrations.
+Maintain a trustworthy, independently readable Chinese monetary-and-banking course. The first thirteen chapters define the editorial and engineering standard for later migrations.
 
 ## Non-negotiable article rules
 1. Every chapter must stand alone. A reader who opens one URL directly must be able to understand the question, background, terms, mechanism, equations, examples, caveats and conclusion without reading another chapter first.
@@ -30,8 +30,8 @@ Use progressive disclosure: each figure should answer one question. Captions mus
 - Label expected-loss equations and risk parameters as model estimates, not certain predictions.
 
 ## Repository workflow
-1. Preserve existing chapter URLs unless an explicit migration plan includes redirects.
-2. Update `courses.json` whenever chapter title, topic, group or file path changes.
+1. Preserve existing chapter URLs unless an explicit migration plan includes redirects. Chapters 01–13 use the shared article design system.
+2. Update `courses.json` whenever chapter title, topic, group or file path changes; keep the homepage's 28 static chapter cards in sync.
 3. Add/update the corresponding evidence ledger when facts or citations change.
 4. Run `python scripts/validate_site.py`, unit tests and Chromium browser checks.
 5. Inspect desktop, tablet, 390px and 360px mobile layouts; check print mode and at least one real interaction per interactive article.

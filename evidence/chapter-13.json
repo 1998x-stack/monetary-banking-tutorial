@@ -1,0 +1,51 @@
+{
+  "article": "13.html",
+  "title": "外汇市场如何连接不同货币与不同经济体？",
+  "claims": [
+    {
+      "id": "bop-accounts",
+      "claim": "BPM6 将国际收支划分为经常账户、资本账户和金融账户，并采用复式记账原则记录居民与非居民交易。",
+      "kind": "statistical_standard",
+      "source_url": "https://data.imf.org/-/media/iData/External-Storage/Documents/73FBCD5B6CDE4D289C60B9B0CAA40622/en/2-bpm6.pdf",
+      "locator": "BPM6 Chapter 2, paragraphs 2.12–2.18",
+      "status": "verified",
+      "notes": "资本账户与金融账户明确分开，不将二者合并。"
+    },
+    {
+      "id": "impossible-trinity",
+      "claim": "固定汇率、资本自由流动和独立货币政策无法在同一时间被完全实现，不可能三角与利率平价约束有关。",
+      "kind": "macro_theory",
+      "source_url": "https://www.imf.org/-/media/files/publications/miscellaneous/english/2022/mcm-technical-assistance-handbook/choice-of-exchange-rate-arrangement.pdf",
+      "locator": "Section B: Consistency and integration of policy frameworks; impossible trinity",
+      "status": "verified",
+      "notes": "IMF 同时指出现实套利存在摩擦。"
+    },
+    {
+      "id": "bis-fx-turnover",
+      "claim": "BIS 2025 年调查显示，2025 年 4 月全球 OTC 外汇市场日均成交额约 9.6 万亿美元，比 2022 年调查高 28%。",
+      "kind": "market_statistic",
+      "source_url": "https://www.bis.org/media-releases/20250930-global-fx-trading-hits-96-trillion-day-april-2025-and-otc-interest-rate-derivatives-surge-79",
+      "locator": "30 September 2025 media release; FX turnover",
+      "status": "verified",
+      "notes": "成交额不等于贸易额或净资本流动。"
+    },
+    {
+      "id": "rmb-fixing",
+      "claim": "2015 年 8 月后人民币兑美元中间价报价机制参考前一日银行间外汇市场收盘汇率，并增加对一篮子货币汇率变化的参考。",
+      "kind": "institutional_fact",
+      "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125227/125957/3066656/8ec329151a994928abd2960bf1cfc0d4/2016081218113287278.pdf",
+      "locator": "2016 Q2 Monetary Policy Report, Box 2: operation of RMB exchange-rate formation mechanism",
+      "status": "verified",
+      "notes": "文章明确制度演进，不称为纯自由浮动。"
+    },
+    {
+      "id": "covered-interest-parity",
+      "claim": "在忽略交易成本、信用、资本约束等条件下，有担保利率平价可由两种货币投资回报无套利关系推导。",
+      "kind": "no_arbitrage_relation",
+      "source_url": "https://www.imf.org/-/media/files/publications/miscellaneous/english/2022/mcm-technical-assistance-handbook/choice-of-exchange-rate-arrangement.pdf",
+      "locator": "Impossible trinity discussion and interest rate parity footnote",
+      "status": "derived",
+      "notes": "远期汇率公式按本币/外币报价方向推导。"
+    }
+  ]
+}

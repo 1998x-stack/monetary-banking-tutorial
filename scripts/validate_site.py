@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 """Static validation for the monetary-banking tutorial."""
 from __future__ import annotations
-import json, re, sys
+import json, sys
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 CHAPTERS = [f"{n:02d}.html" for n in range(1, 29)]
+REBUILT = CHAPTERS[:13]
 STATUSES = {"verified", "derived", "illustrative", "unverified"}
 BANNED = ("讲义介绍了", "课件介绍了", "上一章已经讲过", "如前文所述")
 
 class Document(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.ids=set(); self.h1=0; self.images=[]; self.links=[]; self.scripts=[]; self.styles=[]; self.article=False
+        self.ids=set(); self.h1=0; self.images=[]; self.links=[]; self.scripts=[]; self.styles=[]; self.article_count=0
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
         if a.get("id"): self.ids.add(a["id"])
@@ -23,16 +24,18 @@ class Document(HTMLParser):
         if tag=="a" and a.get("href"): self.links.append(a["href"])
         if tag=="script" and a.get("src"): self.scripts.append(a["src"])
         if tag=="link" and a.get("rel")=="stylesheet" and a.get("href"): self.styles.append(a["href"])
-        if tag=="article": self.article=True
+        if tag=="article": self.article_count+=1
 
 def local_target(source, url):
-    p=urlsplit(url)
-    if p.scheme or p.netloc or not p.path: return None
-    return (source.parent/p.path).resolve()
+    parts=urlsplit(url)
+    if parts.scheme or parts.netloc: return None
+    if not parts.path: return source.resolve()
+    return (source.parent/parts.path).resolve()
 
 def validate():
     errors=[]
-    for name in ("README.md","AGENTS.md","index.html","courses.json","scripts/browser_check.py","tests/test_site.py"):
+    required=("README.md","AGENTS.md","index.html","courses.json","scripts/browser_check.py","tests/test_site.py","assets/js/article-demos.js")
+    for name in required:
         if not (ROOT/name).is_file(): errors.append(f"Missing required file: {name}")
     for name in CHAPTERS:
         if not (ROOT/name).is_file(): errors.append(f"Missing chapter: {name}")
@@ -47,23 +50,36 @@ def validate():
         raw=(ROOT/"index.html").read_text(encoding="utf-8")
         if raw.count('class="chapter-card"')!=28: errors.append("index.html must contain 28 static chapter cards")
         if "fetch('courses.json')" in raw or 'fetch("courses.json")' in raw: errors.append("index.html must not fetch courses.json")
-    for chapter in CHAPTERS[:5]:
+        if 'class="stat"><strong>13</strong>' not in raw: errors.append("index.html progress count should show 13 rebuilt chapters")
+    for chapter in REBUILT:
         path=ROOT/chapter
         if not path.is_file(): continue
         raw=path.read_text(encoding="utf-8"); doc=Document(); doc.feed(raw)
+        if len(raw)<5000: errors.append(f"{chapter}: article is unexpectedly short ({len(raw)} characters)")
         if doc.h1!=1: errors.append(f"{chapter}: expected one H1, got {doc.h1}")
-        if not doc.article: errors.append(f"{chapter}: missing semantic article")
+        if doc.article_count!=1: errors.append(f"{chapter}: expected one semantic article, got {doc.article_count}")
         if 'id="references"' not in raw: errors.append(f"{chapter}: missing references section")
+        if 'class="article-header"' not in raw or 'class="article-toc"' not in raw: errors.append(f"{chapter}: missing shared article structure")
         for phrase in BANNED:
             if phrase in raw: errors.append(f"{chapter}: banned meta phrase {phrase!r}")
         for src,alt in doc.images:
             if not alt.strip(): errors.append(f"{chapter}: empty image alt: {src}")
+            target=local_target(path,src)
+            if target and not target.is_file(): errors.append(f"{chapter}: missing image asset {src}")
         for asset in doc.scripts+doc.styles:
             if asset.startswith(("http://","https://","//")): errors.append(f"{chapter}: remote runtime dependency: {asset}")
+            target=local_target(path,asset)
+            if target and not target.is_file(): errors.append(f"{chapter}: missing runtime asset {asset}")
         for url in doc.links:
             target=local_target(path,url)
             if target is None: continue
-            if not target.is_file(): errors.append(f"{chapter}: broken local link {url}")
+            if not target.is_file():
+                errors.append(f"{chapter}: broken local link {url}")
+                continue
+            fragment=urlsplit(url).fragment
+            if fragment and target.suffix.lower()==".html":
+                target_doc=Document(); target_doc.feed(target.read_text(encoding="utf-8"))
+                if fragment not in target_doc.ids: errors.append(f"{chapter}: missing fragment #{fragment} in {target.relative_to(ROOT)}")
         ledger=ROOT/"evidence"/f"chapter-{chapter[:2]}.json"
         if not ledger.is_file(): errors.append(f"{chapter}: missing evidence ledger"); continue
         try:
@@ -83,11 +99,11 @@ def main():
     errors=validate()
     if errors:
         print("SITE VALIDATION FAILED")
-        for e in errors: print(f"- {e}")
+        for error in errors: print(f"- {error}")
         return 1
     print("SITE VALIDATION PASSED")
-    print("- 28 chapter files and 28 course entries")
-    print("- first five articles: structure, local links, references and evidence ledgers")
+    print("- 28 chapter files and course metadata")
+    print("- chapters 01–13: standalone structure, local assets, links and evidence ledgers")
     print("- SVG accessibility metadata and offline runtime dependencies")
     return 0
 

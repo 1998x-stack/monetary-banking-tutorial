@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="fig-title fig-desc"><title id="fig-title">资本市场一级发行与二级交易</title><desc id="fig-desc">一级市场发行人出售新证券取得资金；二级市场投资者之间交易已发行证券。</desc><defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#147f80"/></marker><marker id="arr-warm" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#d06d4d"/></marker></defs><rect width="960" height="480" rx="24" fill="#fffdf9"/>
+<rect x="45" y="115" width="245" height="100" rx="16" fill="#e8f4f1" stroke="#147f80" stroke-width="2"/><text x="63" y="149" fill="#203035" font-size="20" font-weight="700">发行人</text><text x="63" y="181" fill="#42565a" font-size="16">企业 / 政府</text>
+<rect x="360" y="115" width="245" height="100" rx="16" fill="#e8f4f1" stroke="#147f80" stroke-width="2"/><text x="378" y="149" fill="#203035" font-size="20" font-weight="700">一级市场</text><text x="378" y="181" fill="#42565a" font-size="16">发行新股 / 新债</text>
+<rect x="670" y="115" width="245" height="100" rx="16" fill="#fbf4df" stroke="#916c22" stroke-width="2"/><text x="688" y="149" fill="#203035" font-size="20" font-weight="700">投资者</text><text x="688" y="181" fill="#42565a" font-size="16">家庭 / 基金 / 机构</text>
+<path d="M295 165 H350 M610 165 H660" stroke="#147f80" stroke-width="4" marker-end="url(#arr)"/>
+<text x="480" y="260" text-anchor="middle" font-size="19" fill="#147f80" font-weight="700">发行资金流向发行人</text>
+<path d="M785 225 V330 H175 V225" stroke="#d06d4d" stroke-width="4" fill="none" marker-end="url(#arr-warm)"/>
+<rect x="275" y="305" width="410" height="85" rx="18" fill="#f1f6f3" stroke="#147f80" stroke-width="2"/>
+<text x="480" y="340" text-anchor="middle" font-size="21" font-weight="700" fill="#203035">二级市场：投资者之间转让</text>
+<text x="480" y="368" text-anchor="middle" font-size="15" fill="#52686b">提供流动性与价格发现，不直接给发行人新增融资</text></svg>

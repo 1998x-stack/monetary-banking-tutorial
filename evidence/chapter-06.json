@@ -1,0 +1,51 @@
+{
+  "article": "06.html",
+  "title": "利息从何而来？利率如何形成？",
+  "claims": [
+    {
+      "id": "fisher-equation",
+      "claim": "名义利率与实际利率和预期通胀之间存在费雪关系；低利率时可用名义利率减预期通胀近似实际利率。",
+      "kind": "theory",
+      "source_url": "https://www.stlouisfed.org/publications/regional-economist/april-2014/the-ups-and-downs-of-inflation-and-the-role-of-fed-credibility",
+      "locator": "The Fisher Equation",
+      "status": "verified",
+      "notes": "文章同时区分事前预期通胀与事后已实现通胀。"
+    },
+    {
+      "id": "real-rate-policy",
+      "claim": "评估货币政策立场时，实际利率比单看名义利率更能反映借贷与储蓄的购买力激励。",
+      "kind": "mechanism",
+      "source_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2024/2024/about-a-rate-of-general-interest-how-monetary-policy-transmits",
+      "locator": "Box A: Real interest rates",
+      "status": "verified",
+      "notes": "不把实际利率简化为所有借款人的单一融资成本。"
+    },
+    {
+      "id": "lpr-mechanism",
+      "claim": "中国 2019 年深化 LPR 改革，报价行基于优质客户贷款利率自主报价，LPR 成为浮动利率贷款的重要定价参考。",
+      "kind": "institutional_fact",
+      "source_url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/5427706/2024080916563291755.pdf",
+      "locator": "2024 Q2 Monetary Policy Report, interest rate marketisation and LPR section",
+      "status": "verified",
+      "notes": "不使用过时的简单 MLF→LPR 单线传导叙述。"
+    },
+    {
+      "id": "interest-rate-theories",
+      "claim": "储蓄—投资、流动性偏好与可贷资金框架从不同角度解释利率形成，均依赖各自模型假设。",
+      "kind": "textbook_theory",
+      "source_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2024/2024/about-a-rate-of-general-interest-how-monetary-policy-transmits",
+      "locator": "Real interest rates and monetary policy transmission",
+      "status": "derived",
+      "notes": "对经典教材框架的教学性归纳，不宣称某一理论独占解释力。"
+    },
+    {
+      "id": "rate-premia",
+      "claim": "债券和贷款报价可能包含期限、信用、流动性及其他产品特定风险补偿。",
+      "kind": "financial_mechanism",
+      "source_url": "https://www.federalreserve.gov/data/yield-curve-models.htm",
+      "locator": "Yield curve models and expectations / term premium components",
+      "status": "derived",
+      "notes": "文中明确这是分析分解而非所有产品通用的会计恒等式。"
+    }
+  ]
+}
