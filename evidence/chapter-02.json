@@ -1,0 +1,51 @@
+{
+  "article": "02.html",
+  "title": "货币从哪里来？",
+  "claims": [
+    {
+      "id": "multiple-origins",
+      "claim": "货币的历史起源存在多种解释，商品交换、公共记账、债务和贸易网络等因素在不同社会中以不同方式组合。",
+      "kind": "historical_interpretation",
+      "source_url": "https://www.annualreviews.org/content/journals/10.1146/annurev-economics-091923-040328",
+      "locator": "Brzezinski, Palma & Velde (2024), abstract and review",
+      "status": "verified",
+      "notes": "避免把物物交换写成已证实的普遍历史阶段。"
+    },
+    {
+      "id": "trade-theory",
+      "claim": "贸易理论讨论货币如何在远距离交换网络中出现，而不要求先存在普遍的物物交换经济。",
+      "kind": "academic_theory",
+      "source_url": "https://link.springer.com/article/10.1007/s10816-025-09694-9",
+      "locator": "Fauvelle (2025), abstract and Trade Theory of Money",
+      "status": "verified",
+      "notes": "将其呈现为学术解释之一，而非唯一结论。"
+    },
+    {
+      "id": "rai-social-exchange",
+      "claim": "雅浦岛 rai 石币主要与重要社会交换和所有权历史相关，并非日常零售交易中的普通零钱。",
+      "kind": "historical_fact",
+      "source_url": "https://www.si.edu/object/stone-money-disk-rai%3Anmnhanthropology_8428753",
+      "locator": "Smithsonian National Museum of Natural History object description",
+      "status": "verified",
+      "notes": "未将 rai 与区块链等同。"
+    },
+    {
+      "id": "gresham-conditions",
+      "claim": "格雷欣法则的适用依赖面值规则、交易成本等制度条件，不是所有双币并存情形的普遍规律。",
+      "kind": "academic_interpretation",
+      "source_url": "https://www.minneapolisfed.org/research/staff-reports/greshams-law-or-greshams-fallacy",
+      "locator": "Rolnick & Weber (1986) abstract",
+      "status": "verified",
+      "notes": "文章使用“条件性命题”的表述。"
+    },
+    {
+      "id": "rmb-legal-status",
+      "claim": "人民币在中国具有法定货币地位。",
+      "kind": "legal_fact",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/bgt/art/2023/art_b133589d1e1c4d3ea6ac7929c23839f3.html",
+      "locator": "《人民币管理条例》第三条",
+      "status": "verified",
+      "notes": "用于解释制度基础，不将法定地位等同于货币信任的全部来源。"
+    }
+  ]
+}

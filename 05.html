@@ -1,290 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-    <title>第5章 信用与信用体系</title>
-    <link rel="stylesheet" href="theme.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="理解信用关系的本质、商业信用与银行信用的差异、贷款如何创造存款，以及中国金融征信、P2P 风险处置和预期信用损失的分析框架。">
+<title>第 05 章｜信用如何连接现在与未来？从银行信贷、征信到信用风险 · 货币银行学</title>
+<link rel="stylesheet" href="assets/css/article.css">
 </head>
 <body>
-<div class="double-border">
-<div class="container">
-    <div class="sidebar">
-        <h3>🏦 课程目录</h3>
-        <ul class="chapter-list">
-            <li><a href="01.html">第1章 货币银行学概述</a></li>
-            <li><a href="02.html">第2章 货币的起源与本质</a></li>
-            <li><a href="03.html">第3章 货币的职能与计量</a></li>
-            <li><a href="04.html">第4章 货币制度演变</a></li>
-            <li><a href="05.html" class="active">第5章 信用与信用体系</a></li>
-            <li><a href="06.html">第6章 利息与利率理论</a></li>
-            <li><a href="07.html">第7章 利率结构与收益率曲线</a></li>
-            <li><a href="08.html">第8章 商业银行：业务与管理</a></li>
-            <li><a href="09.html">第9章 商业银行：风险与监管</a></li>
-            <li><a href="10.html">第10章 中央银行制度</a></li>
-            <li><a href="11.html">第11章 货币市场</a></li>
-            <li><a href="12.html">第12章 资本市场</a></li>
-            <li><a href="13.html">第13章 外汇市场与国际金融</a></li>
-            <li><a href="14.html">第14章 非银行金融机构</a></li>
-            <li><a href="15.html">第15章 货币供给理论</a></li>
-            <li><a href="16.html">第16章 货币需求理论</a></li>
-            <li><a href="17.html">第17章 货币政策工具与操作</a></li>
-            <li><a href="18.html">第18章 货币政策传导与效应</a></li>
-            <li><a href="19.html">第19章 IS-LM模型</a></li>
-            <li><a href="20.html">第20章 通货膨胀理论</a></li>
-            <li><a href="21.html">第21章 通货紧缩与流动性陷阱</a></li>
-            <li><a href="22.html">第22章 金融危机与系统性风险</a></li>
-            <li><a href="23.html">第23章 货币政策报告解读</a></li>
-            <li><a href="24.html">第24章 金融数据分析实战</a></li>
-            <li><a href="25.html">第25章 宏观经济预测入门</a></li>
-            <li><a href="26.html">第26章 数字人民币与CBDC</a></li>
-            <li><a href="27.html">第27章 金融科技与货币未来</a></li>
-            <li><a href="28.html">第28章 综合实战项目</a></li>
-        </ul>
-    </div>
-    <div class="main-content">
+<a class="skip-link" href="#content">跳转至正文</a>
+<div class="article-shell">
+  <div class="article-topline"><a href="index.html">← 返回课程目录</a><span>货币银行学 · 基础篇 / 05</span></div>
+  <div class="article-layout">
+    <nav class="article-toc" aria-label="文章目录"><h2>本页目录</h2><ol><li><a href="#relationship">信用是一种跨期契约</a></li><li><a href="#forms">信用的主要形式</a></li><li><a href="#bank-credit">银行贷款如何创造存款</a></li><li><a href="#risk">信息不对称与信用风险</a></li><li><a href="#china">中国征信制度与社会信用信息</a></li><li><a href="#p2p">P2P 网贷整治：区分退出与清偿</a></li><li><a href="#expected-loss">预期损失如何估计</a></li><li><a href="#summary">核心结论</a></li><li><a href="#references">参考资料</a></li></ol></nav>
+    <details class="mobile-toc"><summary>本页目录</summary><ol><li><a href="#relationship">信用是一种跨期契约</a></li><li><a href="#forms">信用的主要形式</a></li><li><a href="#bank-credit">银行贷款如何创造存款</a></li><li><a href="#risk">信息不对称与信用风险</a></li><li><a href="#china">中国征信制度与社会信用信息</a></li><li><a href="#p2p">P2P 网贷整治：区分退出与清偿</a></li><li><a href="#expected-loss">预期损失如何估计</a></li><li><a href="#summary">核心结论</a></li><li><a href="#references">参考资料</a></li></ol></details>
+    <main id="content" class="article-main">
+      <article>
+        <header class="article-header">
+          <p class="eyebrow">货币银行学 · 第 05 章</p>
+          <h1>信用如何连接现在与未来？从银行信贷、征信到信用风险</h1>
+          <p class="dek">理解信用关系的本质、商业信用与银行信用的差异、贷款如何创造存款，以及中国金融征信、P2P 风险处置和预期信用损失的分析框架。</p>
+          <div class="article-meta"><span>基础概念</span><span>独立阅读</span><span>含图解与练习</span></div>
+        </header>
+        
+<p class="lead">今天借出 10 万元，并不意味着今天就能确定未来一定收回 10 万元。借款人承诺在未来偿还本金和利息，出借人则把当前可支配的购买力交给对方使用。信用因此把现在和未来连接起来：它能够提高资源配置效率，也会带来违约、流动性和信息不对称风险。</p>
 
-        <h2>开篇：借条、信任和经济的"血液"</h2>
+<section id="relationship">
+<h2>信用是一种跨期契约</h2>
+<p>在金融学语境中，信用通常指一方基于合同或制度安排，把资金、商品或服务先交付给另一方，并约定在未来偿还、支付或履行义务。它包含三个基本要素：</p>
+<ul>
+<li><strong>时间差：</strong>资金或商品先交付，偿还义务在未来履行。</li>
+<li><strong>偿付承诺：</strong>借款人或债务人承诺按约定还本、付息或清偿。</li>
+<li><strong>风险与制度：</strong>未来收入、经营环境和借款人行为存在不确定性，需要合同、抵押、担保、信息和法律执行机制支持。</li>
+</ul>
+<p>“信用”不只是人与人之间的好感或道德评价。金融信用是一种可分析的经济关系：谁是债权人，谁是债务人，金额和期限是多少，现金流从哪里来，发生违约时如何追偿？这些问题决定了信用关系的风险和价格。</p>
+</section>
 
-        <p>大家好，我是你们的讲师。先分享一个2026年上半年的热点话题：中国银行业个人消费贷余额突破了<strong>20万亿元</strong>。什么概念？相当于每个中国人平均背负了大约1.4万元的消费贷款。</p>
+<section id="forms">
+<h2>信用的主要形式</h2>
+<div class="table-scroll"><table>
+<thead><tr><th>形式</th><th>关系结构</th><th>典型例子</th></tr></thead>
+<tbody>
+<tr><td>商业信用</td><td>企业在商品交易中延期收款或付款</td><td>赊销、应付账款、商业票据</td></tr>
+<tr><td>银行信用</td><td>银行向企业或家庭提供贷款，并形成债权债务关系</td><td>企业贷款、住房按揭、信用卡授信</td></tr>
+<tr><td>政府信用</td><td>政府通过债券等工具融资，按约定偿付本息</td><td>国债、地方政府债券</td></tr>
+<tr><td>消费信用</td><td>金融机构或商家支持个人提前消费并延期偿付</td><td>消费贷款、分期付款</td></tr>
+<tr><td>证券化与市场信用</td><td>资金通过债券、资产支持证券等市场工具配置</td><td>公司债、资产支持证券</td></tr>
+</tbody></table></div>
+<p>这些形式不是互斥的标签。一家企业可能先通过商业赊销获得短期资金便利，再向银行申请流动资金贷款，并通过发行债券筹集长期资金。分析时应关注融资合同、资金用途、偿付来源和最终风险承担者。</p>
+</section>
 
-        <p>与此同时，中国央行征信中心的数据显示，系统里收录的自然人信息超过了11亿人。也就是说，几乎每个成年中国人都在央行征信系统里有一份"信用档案"。</p>
+<section id="bank-credit">
+<h2>银行贷款如何创造存款</h2>
+<p>商业银行发放贷款时，通常会同时记录一项贷款资产和一项存款负债。假设银行批准 100 万元贷款并记入借款企业账户：银行资产端增加对企业的 100 万元债权，负债端增加企业可使用的 100 万元存款。企业向供应商付款后，存款转移到收款方账户；若双方在不同银行，银行间还要完成准备金结算。</p>
+<figure>
+<img src="assets/diagrams/credit-cycle.svg" alt="借款人申请贷款、商业银行同时增加贷款资产与存款负债、存款支付转移给收款方的流程">
+<figcaption>图 1：银行贷款能够创造存款，但借款人同时承担债务，银行同时承担信用风险和流动性管理责任。</figcaption>
+</figure>
+<p>贷款归还时，银行资产端的贷款余额下降；借款人用于还款的存款也随之减少。贷款发放和偿还会影响银行存款货币，但贷款创造存款不等于创造净财富，也不代表银行可以无限放贷。</p>
+<p>现代银行贷款受资本、流动性、融资来源、风险偏好、监管要求、借款人信用和合格贷款需求共同约束。把“银行先吸收存款，再按固定准备金比例贷出”当作完整现实机制，会忽略贷款与存款同步记账、银行间结算和多重约束。英格兰银行对现代货币创造机制的说明指出，商业银行贷款是现代经济中存款货币创造的重要来源，而央行通过货币政策影响这一过程的条件<a href="#ref-1">[1]</a>。</p>
+</section>
 
-        <p>贷款、信用卡、花呗、借呗、白条……我们生活的方方面面都跟<strong>信用</strong>密不可分。但信用到底是什么？为什么张三能借到100万而李四只能借到1万？信用又是怎么"创造"出货币的？</p>
+<section id="risk">
+<h2>信息不对称与信用风险</h2>
+<p>借款人通常比贷款人更了解自己的收入稳定性、项目风险和还款意愿。这种信息不对称可能产生两类问题：</p>
+<ul>
+<li><strong>逆向选择（adverse selection）：</strong>在贷款发放前，风险较高的借款人可能更积极寻求融资；若银行无法区分风险，可能提高利率或缩减贷款，反而改变申请者构成。</li>
+<li><strong>道德风险（moral hazard）：</strong>贷款发放后，借款人可能改变资金用途或承担更高风险，而贷款人未必能及时观察到。</li>
+</ul>
+<p>常见的 5C 信用分析框架从借款人的品格与还款记录（Character）、偿债能力（Capacity）、资本实力（Capital）、抵押或担保（Collateral）和经营环境（Conditions）等方面整理信息。它是一种分析清单，不是能自动给出正确贷款决策的标准化公式；企业、个人和主权借款人的风险分析重点也不完全相同。</p>
+<p>信用风险管理通常包括贷前调查、授信审批、额度与期限设计、担保和抵押管理、贷后监测、风险分类、拨备和违约处置。只看抵押物价值并不足够：抵押物处置可能耗时、折价，借款人的现金流仍是正常还款的主要来源。</p>
+</section>
 
-        <p>这一章咱们就来解剖<strong>信用</strong>——这个金融体系中最核心、也最容易被误解的概念。</p>
+<section id="china">
+<h2>中国征信制度与社会信用信息：需要区分不同系统</h2>
+<p>中国人民银行征信中心负责建设、运行和维护金融信用信息基础数据库（征信系统）等基础设施。其官方介绍说明，系统收集金融信用信息，帮助金融机构缓解交易中的信息不对称、评估信贷风险，并支持个人和企业形成金融信用记录<a href="#ref-2">[2]</a>。</p>
+<p>个人信用报告并不是一个简单的“好人/坏人”分数。报告可能包含贷款、信用卡、担保、还款记录和依法采集的公共记录。个人有权查询本人信用报告；现行规则规定个人每年可免费获取本人信用报告两次，并可对错误或遗漏信息提出异议<a href="#ref-3">[3]</a>。</p>
+<p>还要区分<strong>金融征信系统</strong>与<strong>更广义的社会信用信息体系</strong>。前者主要服务于金融信用信息共享和信贷风险管理；后者涉及政府部门依法归集、共享和应用公共信用信息。2025 年有关健全社会信用体系的政策文件强调依法界定公共信用信息范围，并防止信用管理措施泛化滥用<a href="#ref-4">[4]</a>。两类系统的目标、信息来源、使用规则和法律依据不能混为一谈。</p>
+</section>
 
-        <h2>信用的本质——跨期资源配置与信任机制</h2>
+<section id="p2p">
+<h2>P2P 网贷整治：区分平台退出与存量清偿</h2>
+<p>P2P 网络借贷平台曾以互联网信息中介的形式连接出借人与借款人，但部分平台在资金存管、信息披露、风险控制和业务合规方面存在严重问题。平台把借贷关系包装成“高收益、低风险”产品，可能掩盖借款人信用风险、期限错配和资金挪用等问题。</p>
+<p>官方公开信息显示，截至 2020 年末，纳入专项整治的 4,676 家网贷机构已全部停止开展业务；但同一份工作进展也指出，存量业务并未同时全部清零，其中 3,210 家机构的存量业务已经清零，其他机构仍需持续处置<a href="#ref-5">[5]</a>。后续监管会议仍报告了停业机构的未兑付余额和存量风险处置任务<a href="#ref-6">[6]</a>。</p>
+<div class="callout warning"><p><strong>必须区分三个状态：</strong>停止新增业务、平台机构退出、历史债权债务清偿。一个平台停止运营，并不自动意味着出借人的本金已经收回；同样，也不能把所有平台和所有出借人的损失概括成一个未经核验的“爆雷比例”。</p></div>
+<p><strong>假设案例：</strong>某平台把大量期限较长、现金流不稳定的借款包装成随时可赎回的短期产品，并以高收益吸引新出借人。只要新资金流入，平台表面上就能按期兑付；当新增资金减少，底层借款又无法及时回收时，流动性缺口就会暴露。这个教学示例说明期限错配和资金池风险，不代表某一家真实平台的具体案情。</p>
+</section>
 
-        <p>从最朴素的角度理解，信用就是<strong>"借"与"还"的关系</strong>。你给我一笔钱（或等值的商品/服务），承诺在未来某个时间点还我，并可能支付一些额外的报酬（利息）。这就是信用。</p>
-
-        <p>但它背后有几个值得深思的问题：</p>
-
-        <ul>
-            <li><strong>跨期承诺</strong>：信用本质上是把"现在的钱"和"未来的钱"做了交换。你借出去100万，赌的是借款人未来能还你100万+。金融的核心就是"跨期资源配置"。</li>
-            <li><strong>信任机制</strong>：信用必须建立在信任的基础上。没有信任，就没有信用。这就是为什么信用评级、征信系统、抵押担保如此重要——它们都是"信任的基础设施"。</li>
-            <li><strong>信息不对称</strong>：在借贷关系中，借款人比贷款人更清楚自己的还款能力。这种信息不对称会导致"逆向选择"（越不靠谱的人越积极借钱）和"道德风险"（借到钱后不努力还款）。</li>
-        </ul>
-
-        <div class="tip">
-            <strong>经济学小知识：</strong> 2001年诺贝尔经济学奖授予了乔治·阿克尔洛夫、迈克尔·斯彭斯和约瑟夫·斯蒂格利茨，表彰他们对<strong>信息不对称理论</strong>的贡献。阿克尔洛夫的经典论文《柠檬市场》中用了一个"二手车市场"的比喻：由于买家无法分辨好坏车，只能按平均质量出价，结果好车退出市场，留下劣质车。信用市场也存在类似的"柠檬问题"——这也是为什么银行要严格审核贷款申请、收取利息以覆盖风险。
-        </div>
-
-        <h2>信用的主要形式</h2>
-
-        <p>信用的形式多种多样。按照信用主体的不同，可以把信用分为以下几种主要类型：</p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>信用形式</th>
-                    <th>授信方</th>
-                    <th>受信方</th>
-                    <th>典型工具</th>
-                    <th>主要特点</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>商业信用</strong></td>
-                    <td>企业（卖方）</td>
-                    <td>企业（买方）</td>
-                    <td>商业汇票、应收账款、赊销</td>
-                    <td>直接与商品交易相关，期限短，局限于有商业往来的企业之间</td>
-                </tr>
-                <tr>
-                    <td><strong>银行信用</strong></td>
-                    <td>银行等金融机构</td>
-                    <td>企业或个人</td>
-                    <td>贷款、票据贴现、信用证</td>
-                    <td>规模大、期限灵活、可以"创造"货币，是信用的核心形式</td>
-                </tr>
-                <tr>
-                    <td><strong>国家信用</strong></td>
-                    <td>政府</td>
-                    <td>公众或外国</td>
-                    <td>国债、地方政府债</td>
-                    <td>以国家税收为担保，风险最低（通常被视为"无风险资产"）</td>
-                </tr>
-                <tr>
-                    <td><strong>消费信用</strong></td>
-                    <td>银行或商家</td>
-                    <td>个人消费者</td>
-                    <td>信用卡、消费贷、分期付款、房贷</td>
-                    <td>针对个人消费，期限和金额多样，利率较高</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>在这四种信用形式中，<strong>银行信用</strong>是最特殊、最重要的。为什么？因为银行信用可以<strong>创造货币</strong>。</p>
-
-        <p>咱们回到第3章的货币乘数概念：你存100万到银行，银行留下10万作为准备金，把90万贷给企业A。企业A用这90万支付供应商，供应商把钱存到银行……这个过程不断重复，最终100万的基础货币可以"创造"出几百万的存款货币。这就是银行信用的"乘数效应"。</p>
-
-        <p>商业信用虽然不能直接创造货币，但它可以提高资金使用效率。企业之间通过赊销、商业汇票等方式进行短期融资，减少了现金需求。在中国，2024年商业汇票累计签发量超过30万亿元，是企业短期融资的重要渠道。</p>
-
-        <h2>中国社会信用体系</h2>
-
-        <p>说起中国的信用体系，你可能首先想到的是"社会信用评分"——那个被很多外媒炒作的"黑科技"。但事实上，中国信用体系的核心是<strong>金融征信</strong>，而不是社会控制。</p>
-
-        <h3>央行征信中心</h3>
-
-        <p>中国人民银行征信中心（自2006年成立）是中国最大的征信机构，运营着<strong>金融信用信息基础数据库</strong>。截至2025年末，这个数据库收录了超过11亿自然人和1亿企业的信用信息，每年提供超过50亿次信用报告查询服务。</p>
-
-        <p>你的每一笔房贷、信用卡还款、消费贷款——只要跟银行发生过借贷关系——都会记录在这个系统里。银行在审批贷款时，第一件事就是上征信系统查你的信用报告。</p>
-
-        <h3>影子银行</h3>
-
-        <p>"影子银行"是一个比较敏感但也必须了解的概念。它指的是<strong>那些具有银行信用中介功能、但不受传统银行监管的金融活动</strong>。</p>
-
-        <p>在中国，影子银行的主要形式包括：银行理财、信托贷款、委托贷款、民间借贷等。2008年"四万亿"刺激后，影子银行快速扩张——银行通过理财产品将表内资产移到表外，规避了存贷比和资本充足率等监管要求。</p>
-
-        <p>2017年开始，中国开启了"金融强监管"时代。央行和银保监会（现国家金融监督管理总局）发布了资管新规（2018年），大力整治影子银行。到2024年，中国影子银行规模从高峰期的约100万亿元压缩至约50万亿元，风险大幅降低。</p>
-
-        <h3>民间借贷</h3>
-
-        <p>民间借贷在中国有着悠久历史。在正规金融覆盖不到的地方——特别是农村地区和小微企业——民间借贷发挥了重要的补充作用。但民间借贷的问题也很突出：利率过高（常有"月息3分"即年化36%甚至更高）、缺乏规范、容易引发纠纷。</p>
-
-        <p>2020年，最高人民法院将民间借贷利率的保护上限调整为LPR的4倍（目前约14%左右），超过部分不受法律保护。这个调整既承认了民间借贷的合法地位，又划定了利率红线。</p>
-
-<pre><code>// 信用评级的基本框架 (简化版)
-// 以企业信用评级为例
-
-class 信用评级机构 {
-    constructor(名称) {
-        this.名称 = 名称;
-        this.评级等级 = ['AAA', 'AA', 'A', 'BBB', 'BB', 'B', 'CCC', 'CC', 'C', 'D'];
-    }
-
-    评估企业(企业信息) {
-        let 得分 = 0;
-
-        // 1. 经营能力 (30%)
-        得分 += 0.30 * this.评估经营能力(企业信息);
-
-        // 2. 财务状况 (35%)
-        得分 += 0.35 * this.评估财务状况(企业信息);
-
-        // 3. 行业前景 (15%)
-        得分 += 0.15 * this.评估行业前景(企业信息);
-
-        // 4. 管理层质量 (10%)
-        得分 += 0.10 * this.评估管理层(企业信息);
-
-        // 5. 外部支持 (10%)
-        得分 += 0.10 * this.评估外部支持(企业信息);
-
-        return this.得分转等级(得分);
-    }
-
-    评估财务状况(财务数据) {
-        let 得分 = 0;
-        // 资产负债率
-        if (财务数据.资产负债率 < 0.4) 得分 += 25;
-        else if (财务数据.资产负债率 < 0.6) 得分 += 20;
-        else if (财务数据.资产负债率 < 0.8) 得分 += 10;
-        else 得分 += 0;
-
-        // 流动比率
-        if (财务数据.流动比率 > 2.0) 得分 += 25;
-        else if (财务数据.流动比率 > 1.5) 得分 += 20;
-        else if (财务数据.流动比率 > 1.0) 得分 += 10;
-        else 得分 += 0;
-
-        // 利息保障倍数
-        let ICR = 财务数据.EBIT / 财务数据.利息支出;
-        if (ICR > 5) 得分 += 25;
-        else if (ICR > 3) 得分 += 20;
-        else if (ICR > 1) 得分 += 10;
-        else 得分 += 0;
-
-        // 现金流状况
-        if (财务数据.经营现金流 > 0) 得分 += 25;
-        else 得分 += 0;
-
-        return 得分;
-    }
-
-    得分转等级(得分) {
-        if (得分 >= 90) return 'AAA';  // 极强偿债能力
-        if (得分 >= 80) return 'AA';   // 很强偿债能力
-        if (得分 >= 70) return 'A';    // 较强偿债能力
-        if (得分 >= 60) return 'BBB';  // 中等偿债能力
-        if (得分 >= 50) return 'BB';   // 有一定投机性
-        if (得分 >= 40) return 'B';    // 投机性较强
-        if (得分 >= 30) return 'CCC';  // 可能违约
-        if (得分 >= 20) return 'CC';   // 违约可能性很高
-        if (得分 >= 10) return 'C';    // 即将违约
-        return 'D';                     // 已经违约
-    }
-}
-// 注意：实际评级模型远比这复杂，包括行业比较、压力测试、管理层访谈等</code></pre>
-
-        <h3>踩坑故事：P2P爆雷潮（2018-2020）</h3>
-
-        <p>咱们来回顾一段中国金融市场上的"黑暗历史"——P2P爆雷潮。</p>
-
-        <p>2013年到2017年，P2P网贷在中国经历了野蛮生长。最高峰时，全国有超过6000家P2P平台在运营，总借贷余额超过1.5万亿元。这些平台打着"金融创新"的旗号，承诺年化收益率8%-15%，吸引了大量普通投资者。</p>
-
-        <p>但问题的根源在于：<strong>这些平台的信用风险控制能力几乎为零</strong>。</p>
-
-        <p>小张是一位退休工人，2017年听邻居推荐，把50万养老钱投到了一个叫"鑫琦财富"的P2P平台上，年化收益率12%。小张觉得"大平台，应该没问题"。头半年，平台按时付息，小张还推荐了几个朋友加入。</p>
-
-        <p>2018年夏天，情况急转直下。先是平台突然提现困难，然后官网显示"系统升级"，再后来——跑路了。老板卷款逃到了海外，平台上的5000多位投资者血本无归。小张的50万养老钱，一分都没拿回来。</p>
-
-        <p>从2018年到2020年，全国P2P平台从6000多家清零，95%以上的平台以"爆雷"告终。数以百万计的投资者损失惨重，总损失估计超过8000亿元。</p>
-
-        <div class="warning">
-            <strong>P2P爆雷的深层原因：</strong>
-            <ul>
-                <li><strong>信息不对称被放大</strong>：投资者根本不了解借款人的信用状况，只能凭平台的宣传做决策</li>
-                <li><strong>道德风险失控</strong>：大量平台搞"自融"——把投资者的钱拿去给自己关联的公司用，甚至直接卷款跑路</li>
-                <li><strong>监管缺失</strong>：P2P长期处于"没人管"的灰色地带，直到2016年才出台监管办法，但为时已晚</li>
-                <li><strong>"劣币驱逐良币"</strong>：正规经营的小平台给不起高收益，反而被那些承诺高回报的诈骗平台抢走了客户</li>
-            </ul>
-            P2P的教训告诉我们：<strong>任何脱离有效监管的信用活动，最终都会走向灾难</strong>。信用市场需要"看得见的手"来维护秩序。
-        </div>
-
-        <h2>信用风险的识别与管理</h2>
-
-        <p>信用风险是金融体系中最古老也最核心的风险类型。它的本质很简单：<strong>借钱的人不还钱</strong>。但管理信用风险却是一门极其复杂的学问。</p>
-
-        <p>银行管理信用风险的主要手段包括：</p>
-
-        <ul>
-            <li><strong>贷前调查（KYC）</strong>：了解你的客户（Know Your Customer），评估借款人的还款意愿和还款能力</li>
-            <li><strong>抵押担保</strong>：要求借款人提供抵押物（房子、车子、设备等）或第三方担保</li>
-            <li><strong>风险定价</strong>：根据借款人的信用风险水平，收取不同的利率（风险越高，利率越高）</li>
-            <li><strong>贷款分散</strong>："不要把鸡蛋放在一个篮子里"，分散贷款到不同行业、地区、客户</li>
-            <li><strong>贷后管理</strong>：定期跟踪借款人的经营状况，一旦发现风险信号及时采取措施</li>
-        </ul>
-
-        <div class="highlight">
-            <strong>实战框架：</strong> 在银行实务中，信用风险分析通常采用"<strong>5C原则</strong>"：
-            <ul>
-                <li><strong>Character（品格）</strong>——借款人是否诚信，是否有不良记录</li>
-                <li><strong>Capacity（能力）</strong>——借款人的还款能力，现金流是否充足</li>
-                <li><strong>Capital（资本）</strong>——借款人的自有资金比例，抗风险能力</li>
-                <li><strong>Collateral（抵押）</strong>——借款人能提供什么抵押物</li>
-                <li><strong>Conditions（条件）</strong>——宏观经济、行业状况等外部环境</li>
-            </ul>
-            这个框架不仅是银行在用——你在申请房贷时，银行就是用这5个维度来评估你的。了解它，你就知道银行在审批贷款时"看什么"。
-        </div>
-
-        <h2>从信用到利息</h2>
-
-        <p>这一章咱们学习了信用的本质——跨期资源配置与信任机制，了解了四种主要的信用形式——商业信用、银行信用、国家信用、消费信用，也通过P2P爆雷的故事看到了信用风险失控的严重后果。核心结论是：<strong>信用是金融体系的血液，但信用本身需要制度、技术和监管的"骨骼"来支撑，否则就会变成一滩烂泥。</strong></p>
-
-        <p>说到信用，有一个问题你可能已经想了很久：<strong>为什么借钱要付利息？</strong>利息到底从哪来？为什么不同贷款的利率差别那么大？</p>
-
-        <p>这些问题看起来简单，但经济学家争论了几百年也没有完全统一的答案。下一章，咱们就来深入探讨<strong>利息与利率理论</strong>——从费雪方程到凯恩斯的流动性偏好，从古典利率理论到中国的LPR改革，帮你建立起分析利率的系统框架。</p>
-
-        <div class="footer-nav">
-            <a href="04.html">← 上一章</a>
-            <a href="index.html">📖 返回目录</a>
-            <a href="06.html">下一章 →</a>
-        </div>
-    </div>
+<section id="expected-loss">
+<h2>预期损失如何估计：PD、LGD 与 EAD</h2>
+<p>银行不能只问“借款人会不会违约”，还要估计违约后能损失多少，以及违约时有多少风险暴露。常用的预期信用损失框架包含三个参数：</p>
+<ul>
+<li><strong>PD（Probability of Default）：</strong>在指定期限内发生违约的概率。</li>
+<li><strong>LGD（Loss Given Default）：</strong>发生违约后，扣除回收金额和担保实现价值等因素后，损失占违约风险暴露的比例。</li>
+<li><strong>EAD（Exposure at Default）：</strong>违约发生时预计的风险暴露金额。</li>
+</ul>
+<div class="math-scroll" tabindex="0" aria-label="预期损失等于违约概率乘以违约损失率再乘以违约风险暴露">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mi>EL</mi><mo>=</mo><mi>PD</mi><mo>×</mo><mi>LGD</mi><mo>×</mo><mi>EAD</mi></mrow></math>
+<p class="formula-caption">预期损失 = 违约概率 × 违约损失率 × 违约风险暴露</p>
 </div>
+<p>例如，一笔贷款的 1 年期 PD 估计为 2%，LGD 估计为 40%，EAD 为 100 万元，则简化预期损失为 8,000 元。这里的 PD 和 LGD 是模型估计值，受历史样本、宏观情景、抵押物和合同条款影响，并不是对未来损失的确定承诺。巴塞尔框架也以 PD、LGD 和风险暴露为信用风险计量的重要组成部分<a href="#ref-7">[7]</a>。</p>
+<div class="demo" data-demo="expected-loss">
+<h3>交互练习：调整信用风险参数</h3>
+<p>修改违约概率、违约损失率或违约风险暴露，观察简化预期损失如何变化。</p>
+<div class="demo-grid">
+<label class="demo-field">PD · 违约概率（%）<input name="pd" type="number" min="0" max="100" step="0.1" value="2"></label>
+<label class="demo-field">LGD · 违约损失率（%）<input name="lgd" type="number" min="0" max="100" step="0.1" value="40"></label>
+<label class="demo-field">EAD · 违约风险暴露（元）<input name="ead" type="number" min="0" step="1000" value="1000000"></label>
 </div>
+<p class="demo-output" data-demo-output aria-live="polite">预期损失 = 2.00% × 40.00% × ¥1,000,000 = ¥8,000。</p>
+</div>
+</section>
+
+<section id="summary" class="article-summary">
+<h2>核心结论</h2>
+<p>信用把当前资源与未来偿付承诺连接起来。商业银行贷款可以创造存款，但同时产生债务、风险和资本约束；征信通过改善信息质量帮助金融机构评估借款人，却不能替代现金流分析、合同执行和审慎监管。信用风险管理必须区分违约概率、违约损失率和风险暴露，也必须区分机构退出与历史债务清偿。</p>
+</section>
+
+<section id="references">
+<h2>参考资料</h2>
+<ol class="source-list">
+<li id="ref-1">Michael McLeay, Amar Radia & Ryland Thomas, Bank of England, <a href="https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy" target="_blank" rel="noopener noreferrer">Money creation in the modern economy</a>, 2014.</li>
+<li id="ref-2">中国人民银行征信中心，<a href="https://www.pbccrc.org.cn/en/gywm/zxgk/index.html" target="_blank" rel="noopener noreferrer">Overview of the Credit Reference Center</a>.</li>
+<li id="ref-3">中国人民银行，<a href="https://www.pbc.gov.cn/en/3688241/3688687/3688693/2025092319420287536/2021111916465019962.pdf" target="_blank" rel="noopener noreferrer">Measures for the Administration of Credit Reporting Services</a>，第二十五、二十六条。</li>
+<li id="ref-4">中共中央办公厅、国务院办公厅，<a href="https://app.www.gov.cn/govdata/gov/202503/31/526005/articleNew.html" target="_blank" rel="noopener noreferrer">关于健全社会信用体系的意见</a>，2025 年。</li>
+<li id="ref-5">宁波市地方金融管理部门转载《中国银行保险报》，<a href="https://jrb.ningbo.gov.cn/art/2021/4/27/art_1229023599_58895586.html" target="_blank" rel="noopener noreferrer">3210 家网贷机构存量业务已清零</a>，记录截至 2020 年末的专项整治数据。</li>
+<li id="ref-6">南昌市地方金融管理部门转载《金融时报》，<a href="https://jrb.nc.gov.cn/ncjrb/jryw/202204/e6e608798d3b426bbd5d204694eb0b7f.shtml" target="_blank" rel="noopener noreferrer">2022 年 P2P 网络借贷风险专项整治工作会议情况</a>。</li>
+<li id="ref-7">Basel Committee on Banking Supervision, <a href="https://www.bis.org/committees/bcbs/basel-framework/standard/cre/32/inforce/2023-01-01/published/2020-03-27" target="_blank" rel="noopener noreferrer">Basel Framework: IRB approach — risk components</a>.</li>
+</ol>
+</section>
+
+        <nav class="chapter-nav" aria-label="章节导航">
+          <a href="04.html">← 上一主题</a>
+          <a href="06.html">继续阅读下一主题 →</a>
+        </nav>
+      </article>
+    </main>
+  </div>
+</div>
+<footer class="site-footer">货币银行学 · 从货币、信用与银行机制理解金融体系</footer>
+<script src="assets/js/article-demos.js" defer></script>
 </body>
 </html>

@@ -1,370 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-    <title>课程目录</title>
-    <link rel="stylesheet" href="theme.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background: linear-gradient(145deg, #f9fcf5 0%, #e8f3e8 100%);
-            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', system-ui, -apple-system, sans-serif;
-            padding: 2rem 1.5rem 1rem;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .container {
-            display: block;
-            max-width: 1400px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.70);
-            backdrop-filter: blur(2px);
-            border-radius: 48px 48px 32px 32px;
-            padding: 2rem 2rem 1.5rem;
-            box-shadow: 0 20px 40px rgba(90, 140, 100, 0.15), 0 8px 20px rgba(0, 30, 20, 0.08);
-            border: 1px solid rgba(255, 245, 200, 0.5);
-        }
-
-        .header {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-            border-bottom: 4px solid #f7d44a;
-            padding-bottom: 0.75rem;
-        }
-
-        .header h1 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #2b7a4b, #3f9e6b);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 2px 8px rgba(60, 140, 80, 0.12);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .header h1 .emoji {
-            font-size: 2.2rem;
-            filter: drop-shadow(0 2px 4px rgba(255, 200, 50, 0.3));
-        }
-
-        .header .sub {
-            font-size: 1rem;
-            background: #fef7e0;
-            padding: 0.3rem 1.2rem;
-            border-radius: 40px;
-            color: #3f6b4a;
-            font-weight: 600;
-            border: 1px solid #f3d98a;
-            box-shadow: 0 2px 6px rgba(200, 160, 50, 0.1);
-            white-space: nowrap;
-        }
-
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.2rem;
-            margin: 1.8rem 0 1.2rem;
-        }
-
-        .card {
-            background: #ffffff;
-            border-radius: 28px;
-            padding: 1rem 1.2rem 1rem 1.2rem;
-            box-shadow: 0 6px 14px rgba(70, 120, 80, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02);
-            transition: all 0.2s ease;
-            border: 1px solid rgba(210, 230, 200, 0.5);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            backdrop-filter: blur(2px);
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 24px rgba(70, 140, 90, 0.15), 0 4px 12px rgba(40, 100, 60, 0.05);
-            border-color: #b8d9b0;
-            background: #fefefc;
-        }
-
-        .card-header {
-            display: flex;
-            align-items: baseline;
-            gap: 0.4rem;
-            margin-bottom: 0.4rem;
-            flex-wrap: wrap;
-        }
-
-        .chapter-num {
-            font-size: 1.1rem;
-            font-weight: 700;
-            background: #f5d142;
-            color: #2a5a3a;
-            padding: 0 0.6rem;
-            border-radius: 40px;
-            line-height: 1.6;
-            display: inline-block;
-            box-shadow: inset 0 -2px 0 #dbb42c;
-            letter-spacing: 0.3px;
-            min-width: 2.2rem;
-            text-align: center;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 650;
-            color: #1f4d33;
-            letter-spacing: -0.3px;
-            line-height: 1.3;
-            flex: 1;
-        }
-
-        .topic-list {
-            list-style: none;
-            margin-top: 0.3rem;
-            padding-left: 0.2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.2rem 0.6rem;
-        }
-
-        .topic-list li {
-            font-size: 0.8rem;
-            color: #2d543a;
-            background: #f1f9ee;
-            padding: 0.1rem 0.7rem 0.2rem 1.2rem;
-            border-radius: 30px;
-            line-height: 1.6;
-            position: relative;
-            border: 1px solid #dcebd4;
-            box-shadow: inset 0 1px 2px white;
-        }
-
-        .topic-list li::before {
-            content: "⚡";
-            position: absolute;
-            left: 4px;
-            top: 0px;
-            font-size: 0.7rem;
-            color: #e5b13b;
-        }
-
-        .card-footer {
-            margin-top: 0.6rem;
-            display: flex;
-            justify-content: flex-end;
-            border-top: 1px dashed #d4e8d0;
-            padding-top: 0.5rem;
-        }
-
-        .card-footer a {
-            background: #b7d8b0;
-            color: #1f452b;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            padding: 0.2rem 1.2rem;
-            border-radius: 40px;
-            transition: 0.15s;
-            border: 1px solid #8fb88a;
-            box-shadow: 0 2px 4px rgba(60, 120, 60, 0.1);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .card-footer a::after {
-            content: "→";
-            font-size: 1rem;
-            transition: transform 0.1s;
-        }
-
-        .card-footer a:hover {
-            background: #f7d44a;
-            border-color: #dbb42c;
-            color: #1f3d28;
-            box-shadow: 0 4px 8px rgba(200, 160, 40, 0.2);
-            transform: scale(1.02);
-        }
-
-        .card-footer a:active {
-            transform: scale(0.96);
-        }
-
-        .footer {
-            margin-top: 2.5rem;
-            text-align: center;
-            font-size: 1rem;
-            color: #3b6b47;
-            background: #f2fcee;
-            padding: 0.8rem 2rem;
-            border-radius: 60px;
-            display: inline-block;
-            border: 1px solid #c6dfbe;
-            box-shadow: 0 2px 8px rgba(80, 130, 70, 0.08);
-            font-weight: 500;
-            letter-spacing: 0.3px;
-            backdrop-filter: blur(2px);
-        }
-
-        .footer span {
-            background: #f9eec1;
-            padding: 0.1rem 0.8rem;
-            border-radius: 30px;
-            margin: 0 4px;
-        }
-
-        @media (max-width: 640px) {
-            body { padding: 1rem 0.8rem; }
-            .container { padding: 1.2rem 1rem; border-radius: 32px; }
-            .header h1 { font-size: 1.8rem; }
-            .header .sub { font-size: 0.75rem; padding: 0.2rem 0.8rem; }
-            .course-grid { grid-template-columns: 1fr; gap: 1rem; }
-            .card-title { font-size: 1.05rem; }
-            .topic-list li { font-size: 0.7rem; }
-        }
-
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .course-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        .container::before {
-            content: "";
-            display: block;
-            height: 6px;
-            width: 120px;
-            background: linear-gradient(90deg, #f7d44a, #7fc47c, #4aa0b0, #f7b07a);
-            border-radius: 10px;
-            margin-bottom: 0.2rem;
-        }
-
-        .card:nth-child(6n+1) .chapter-num { background: #f7b07a; color: #3d2e1a; }
-        .card:nth-child(6n+2) .chapter-num { background: #a7d4a0; color: #1f452b; }
-        .card:nth-child(6n+3) .chapter-num { background: #f5d44a; color: #2f4d2a; }
-        .card:nth-child(6n+4) .chapter-num { background: #b3d9e8; color: #1a3f4a; }
-        .card:nth-child(6n+5) .chapter-num { background: #f7c6c6; color: #5a2e2e; }
-        .card:nth-child(6n) .chapter-num { background: #c4b3e0; color: #2f2a4a; }
-
-        .state-msg {
-            text-align: center;
-            padding: 3rem;
-            color: #5f7f66;
-            font-size: 1.1rem;
-        }
-        .state-msg.error {
-            color: #b91c1c;
-            background: #fef2f2;
-            border-radius: 20px;
-            margin: 1rem 0;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="从货币、信用、银行、金融市场到货币政策与宏观分析的 28 个主题课程。">
+<title>货币银行学 · 从货币到金融体系</title>
+<link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1><span class="emoji"></span><span class="title-text"></span></h1>
-        <div class="sub"></div>
-    </div>
-
-    <div id="cardContainer" class="course-grid"></div>
-
-    <div style="text-align:center;">
-        <div class="footer"></div>
-    </div>
+<div class="home-wrap">
+<nav class="home-nav" aria-label="站点导航"><a href="index.html">🏦 货币银行学</a><a href="https://github.com/1998x-stack/monetary-banking-tutorial#readme">项目说明</a></nav>
+<header class="hero">
+<p class="hero-kicker">Money · Banking · Monetary System</p>
+<h1>理解货币如何<br>组织经济。</h1>
+<p>从一笔支付、一份存款和一张资产负债表出发，逐步理解货币、信用、银行、金融市场与宏观政策之间的联系。课程由 28 个主题组成，每个章节都围绕一个明确问题展开。</p>
+<div class="hero-stats"><div class="stat"><strong>28</strong><span>主题章节</span></div><div class="stat"><strong>05</strong><span>基础篇已深度重构</span></div><div class="stat"><strong>0</strong><span>外部 CDN 依赖</span></div></div>
+</header>
+<section class="route-panel" aria-label="推荐学习路径">
+<div class="route"><span>PATH 01</span><h2>从货币开始</h2><p>先读 01–05，建立货币、信用、货币统计和国际制度的基础框架。</p></div>
+<div class="route"><span>PATH 02</span><h2>理解金融系统</h2><p>接着学习利率、银行、金融市场和货币政策，理解资金如何定价与流动。</p></div>
+<div class="route"><span>PATH 03</span><h2>走向分析与实践</h2><p>最后用宏观模型、金融数据和数字金融专题解释现实经济问题。</p></div>
+</section>
+<section aria-labelledby="catalog-title">
+<div class="catalog-head"><div><p class="hero-kicker">Course map</p><h2 id="catalog-title">课程目录</h2></div><div class="search-box"><label class="visually-hidden" for="chapter-search">搜索章节</label><input id="chapter-search" type="search" placeholder="搜索章节、主题或关键词" autocomplete="off"></div></div>
+<p id="search-count" class="search-count" aria-live="polite">共 28 个章节</p>
+<section class="chapter-group" aria-labelledby="group-1"><div class="group-head"><h2 id="group-1">货币基础</h2><span>先建立货币、信用和国际制度的共同语言。</span></div><div class="chapter-grid"><a class="chapter-card" href="01.html" data-search="01 货币银行学研究框架 货币与信用 · 银行资产负债表 · 中央银行政策 货币基础">
+<div class="card-top"><span class="chapter-number">01</span><strong>货币银行学研究框架</strong></div>
+<small>货币与信用 · 银行资产负债表 · 中央银行政策</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="02.html" data-search="02 货币的起源与本质 商品货币 · 记账单位 · 信用货币 货币基础">
+<div class="card-top"><span class="chapter-number">02</span><strong>货币的起源与本质</strong></div>
+<small>商品货币 · 记账单位 · 信用货币</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="03.html" data-search="03 货币职能与 M0/M1/M2 经典职能 · 中国 2025 年 M1 新口径 · 统计解释 货币基础">
+<div class="card-top"><span class="chapter-number">03</span><strong>货币职能与 M0/M1/M2</strong></div>
+<small>经典职能 · 中国 2025 年 M1 新口径 · 统计解释</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="04.html" data-search="04 国际货币制度演变 金本位 · 布雷顿森林 · 汇率制度选择 货币基础">
+<div class="card-top"><span class="chapter-number">04</span><strong>国际货币制度演变</strong></div>
+<small>金本位 · 布雷顿森林 · 汇率制度选择</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="05.html" data-search="05 信用、征信与信用风险 银行信贷 · 金融征信 · 违约风险 货币基础">
+<div class="card-top"><span class="chapter-number">05</span><strong>信用、征信与信用风险</strong></div>
+<small>银行信贷 · 金融征信 · 违约风险</small><span class="card-link">打开章节 →</span>
+</a></div></section>
+<section class="chapter-group" aria-labelledby="group-2"><div class="group-head"><h2 id="group-2">利率与金融机构</h2><span>理解金融中介如何定价、融资、交易并管理风险。</span></div><div class="chapter-grid"><a class="chapter-card" href="06.html" data-search="06 利息与利率理论 费雪方程 · 利率决定理论 · 中国利率机制 利率与金融机构">
+<div class="card-top"><span class="chapter-number">06</span><strong>利息与利率理论</strong></div>
+<small>费雪方程 · 利率决定理论 · 中国利率机制</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="07.html" data-search="07 利率结构与收益率曲线 期限结构 · 风险溢价 · 收益率曲线 利率与金融机构">
+<div class="card-top"><span class="chapter-number">07</span><strong>利率结构与收益率曲线</strong></div>
+<small>期限结构 · 风险溢价 · 收益率曲线</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="08.html" data-search="08 商业银行：业务与管理 资产业务 · 负债业务 · 资产负债管理 利率与金融机构">
+<div class="card-top"><span class="chapter-number">08</span><strong>商业银行：业务与管理</strong></div>
+<small>资产业务 · 负债业务 · 资产负债管理</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="09.html" data-search="09 商业银行：风险与监管 信用风险 · 流动性风险 · 资本监管 利率与金融机构">
+<div class="card-top"><span class="chapter-number">09</span><strong>商业银行：风险与监管</strong></div>
+<small>信用风险 · 流动性风险 · 资本监管</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="10.html" data-search="10 中央银行制度 央行职能 · 资产负债表 · 政策独立性 利率与金融机构">
+<div class="card-top"><span class="chapter-number">10</span><strong>中央银行制度</strong></div>
+<small>央行职能 · 资产负债表 · 政策独立性</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="11.html" data-search="11 货币市场 回购与拆借 · 基准利率 · 利率走廊 利率与金融机构">
+<div class="card-top"><span class="chapter-number">11</span><strong>货币市场</strong></div>
+<small>回购与拆借 · 基准利率 · 利率走廊</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="12.html" data-search="12 资本市场 股票与债券 · 发行交易 · 市场定价 利率与金融机构">
+<div class="card-top"><span class="chapter-number">12</span><strong>资本市场</strong></div>
+<small>股票与债券 · 发行交易 · 市场定价</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="13.html" data-search="13 外汇市场与国际金融 汇率报价 · 汇率制度 · 国际收支 利率与金融机构">
+<div class="card-top"><span class="chapter-number">13</span><strong>外汇市场与国际金融</strong></div>
+<small>汇率报价 · 汇率制度 · 国际收支</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="14.html" data-search="14 非银行金融机构 保险证券 · 基金信托 · 影子银行 利率与金融机构">
+<div class="card-top"><span class="chapter-number">14</span><strong>非银行金融机构</strong></div>
+<small>保险证券 · 基金信托 · 影子银行</small><span class="card-link">打开章节 →</span>
+</a></div></section>
+<section class="chapter-group" aria-labelledby="group-3"><div class="group-head"><h2 id="group-3">货币供需与政策</h2><span>从货币需求、银行信用到中央银行操作和政策传导。</span></div><div class="chapter-grid"><a class="chapter-card" href="15.html" data-search="15 货币供给理论 基础货币 · 存款创造 · 内生与外生货币 货币供需与政策">
+<div class="card-top"><span class="chapter-number">15</span><strong>货币供给理论</strong></div>
+<small>基础货币 · 存款创造 · 内生与外生货币</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="16.html" data-search="16 货币需求理论 交易需求 · 流动性偏好 · 货币主义 货币供需与政策">
+<div class="card-top"><span class="chapter-number">16</span><strong>货币需求理论</strong></div>
+<small>交易需求 · 流动性偏好 · 货币主义</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="17.html" data-search="17 货币政策工具与操作 准备金 · 公开市场操作 · 结构性工具 货币供需与政策">
+<div class="card-top"><span class="chapter-number">17</span><strong>货币政策工具与操作</strong></div>
+<small>准备金 · 公开市场操作 · 结构性工具</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="18.html" data-search="18 货币政策传导与效应 利率渠道 · 信贷渠道 · 政策时滞 货币供需与政策">
+<div class="card-top"><span class="chapter-number">18</span><strong>货币政策传导与效应</strong></div>
+<small>利率渠道 · 信贷渠道 · 政策时滞</small><span class="card-link">打开章节 →</span>
+</a></div></section>
+<section class="chapter-group" aria-labelledby="group-4"><div class="group-head"><h2 id="group-4">宏观模型与金融稳定</h2><span>用宏观框架解释通胀、衰退、危机与央行沟通。</span></div><div class="chapter-grid"><a class="chapter-card" href="19.html" data-search="19 IS-LM 模型 商品市场 · 货币市场 · 政策组合 宏观模型与金融稳定">
+<div class="card-top"><span class="chapter-number">19</span><strong>IS-LM 模型</strong></div>
+<small>商品市场 · 货币市场 · 政策组合</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="20.html" data-search="20 通货膨胀理论 CPI 与 PCE · 需求冲击 · 通胀预期 宏观模型与金融稳定">
+<div class="card-top"><span class="chapter-number">20</span><strong>通货膨胀理论</strong></div>
+<small>CPI 与 PCE · 需求冲击 · 通胀预期</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="21.html" data-search="21 通货紧缩与流动性陷阱 债务通缩 · 零利率下限 · 资产负债表衰退 宏观模型与金融稳定">
+<div class="card-top"><span class="chapter-number">21</span><strong>通货紧缩与流动性陷阱</strong></div>
+<small>债务通缩 · 零利率下限 · 资产负债表衰退</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="22.html" data-search="22 金融危机与系统性风险 杠杆周期 · 风险传染 · 宏观审慎 宏观模型与金融稳定">
+<div class="card-top"><span class="chapter-number">22</span><strong>金融危机与系统性风险</strong></div>
+<small>杠杆周期 · 风险传染 · 宏观审慎</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="23.html" data-search="23 货币政策报告解读 央行沟通 · 政策措辞 · 预测不确定性 宏观模型与金融稳定">
+<div class="card-top"><span class="chapter-number">23</span><strong>货币政策报告解读</strong></div>
+<small>央行沟通 · 政策措辞 · 预测不确定性</small><span class="card-link">打开章节 →</span>
+</a></div></section>
+<section class="chapter-group" aria-labelledby="group-5"><div class="group-head"><h2 id="group-5">数据与新金融</h2><span>把理论用于金融数据、宏观预测和数字金融议题。</span></div><div class="chapter-grid"><a class="chapter-card" href="24.html" data-search="24 金融数据分析实战 社融与信贷 · 数据获取 · 统计陷阱 数据与新金融">
+<div class="card-top"><span class="chapter-number">24</span><strong>金融数据分析实战</strong></div>
+<small>社融与信贷 · 数据获取 · 统计陷阱</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="25.html" data-search="25 宏观经济预测入门 先行指标 · 情景分析 · 预测误差 数据与新金融">
+<div class="card-top"><span class="chapter-number">25</span><strong>宏观经济预测入门</strong></div>
+<small>先行指标 · 情景分析 · 预测误差</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="26.html" data-search="26 数字人民币与 CBDC 央行数字货币 · 零售与批发 · 支付隐私 数据与新金融">
+<div class="card-top"><span class="chapter-number">26</span><strong>数字人民币与 CBDC</strong></div>
+<small>央行数字货币 · 零售与批发 · 支付隐私</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="27.html" data-search="27 金融科技与货币未来 区块链 · 稳定币 · DeFi 风险 数据与新金融">
+<div class="card-top"><span class="chapter-number">27</span><strong>金融科技与货币未来</strong></div>
+<small>区块链 · 稳定币 · DeFi 风险</small><span class="card-link">打开章节 →</span>
+</a>
+<a class="chapter-card" href="28.html" data-search="28 综合实战项目 宏观环境 · 政策立场 · 风险情景报告 数据与新金融">
+<div class="card-top"><span class="chapter-number">28</span><strong>综合实战项目</strong></div>
+<small>宏观环境 · 政策立场 · 风险情景报告</small><span class="card-link">打开章节 →</span>
+</a></div></section>
+<div id="empty-state" class="empty-state" role="status">没有找到匹配章节。试试“利率”“信用”或“货币政策”。</div>
+</section>
+<footer class="home-footer"><span>货币银行学 · 从货币到金融体系</span><span>每篇文章均可独立阅读 · 适合自学与复习</span><a href="https://github.com/1998x-stack/monetary-banking-tutorial">GitHub 仓库</a></footer>
 </div>
-
-<script>
-    (function() {
-        var container = document.getElementById('cardContainer');
-        var emojiEl = document.querySelector('.header .emoji');
-        var titleEl = document.querySelector('.header .title-text');
-        var subEl = document.querySelector('.header .sub');
-        var footerEl = document.querySelector('.footer');
-
-        function showError(msg) {
-            container.innerHTML = '<div class="state-msg error">' + msg + '</div>';
-        }
-
-        fetch('courses.json')
-            .then(function(res) {
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-                return res.json();
-            })
-            .then(function(data) {
-                document.title = data.title + ' · 课程目录';
-                emojiEl.textContent = data.emoji;
-                titleEl.textContent = data.title;
-                subEl.textContent = data.subtitle;
-                footerEl.innerHTML = '<span>' + data.chapterCount + '章</span> 实战体系 · 从入门到精通';
-
-                if (!data.chapters || data.chapters.length === 0) {
-                    showError('暂无课程数据');
-                    return;
-                }
-
-                container.innerHTML = '';
-                data.chapters.forEach(function(course) {
-                    var card = document.createElement('div');
-                    card.className = 'card';
-
-                    var headerDiv = document.createElement('div');
-                    headerDiv.className = 'card-header';
-
-                    var numSpan = document.createElement('span');
-                    numSpan.className = 'chapter-num';
-                    numSpan.textContent = course.num;
-
-                    var titleSpan = document.createElement('span');
-                    titleSpan.className = 'card-title';
-                    titleSpan.textContent = course.title;
-
-                    headerDiv.appendChild(numSpan);
-                    headerDiv.appendChild(titleSpan);
-                    card.appendChild(headerDiv);
-
-                    if (course.topics && course.topics.length > 0) {
-                        var topicUl = document.createElement('ul');
-                        topicUl.className = 'topic-list';
-                        course.topics.forEach(function(topic) {
-                            var li = document.createElement('li');
-                            li.textContent = topic;
-                            topicUl.appendChild(li);
-                        });
-                        card.appendChild(topicUl);
-                    }
-
-                    var footerDiv = document.createElement('div');
-                    footerDiv.className = 'card-footer';
-                    var link = document.createElement('a');
-                    link.href = course.file;
-                    link.textContent = '开始学习 ';
-                    footerDiv.appendChild(link);
-                    card.appendChild(footerDiv);
-
-                    container.appendChild(card);
-                });
-            })
-            .catch(function(err) {
-                showError('课程数据加载失败: ' + err.message + '。请刷新页面重试。');
-            });
-    })();
-</script>
-
-<noscript>
-    <div style="background:#fcf0d9; padding:1rem; border-radius:20px; text-align:center; color:#92400e;">
-        请启用 JavaScript 以浏览课程目录。
-    </div>
-</noscript>
+<script src="assets/js/home.js" defer></script>
 </body>
 </html>

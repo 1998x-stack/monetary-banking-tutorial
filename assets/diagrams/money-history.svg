@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" role="img" aria-labelledby="t d">
+<title id="t">货币制度的多条历史路径</title><desc id="d">商品交换、公共记账与税收、信用债务和远距离贸易等路径，在不同社会中以不同组合发展为货币制度；不存在一条适用于所有文明的单一线性路线。</desc>
+<rect x="24" y="28" width="250" height="76" rx="14" fill="#e8f4f1" stroke="#8dbab0"/><text x="149" y="58" text-anchor="middle" font-size="19" font-weight="700" fill="#203b3d">商品与交换</text><text x="149" y="83" text-anchor="middle" font-size="13" fill="#52676a">贵金属 · 盐 · 贝壳 · 贸易品</text>
+<rect x="325" y="28" width="250" height="76" rx="14" fill="#fff0e9" stroke="#d9a08c"/><text x="450" y="58" text-anchor="middle" font-size="19" font-weight="700" fill="#4b3028">公共记账与税收</text><text x="450" y="83" text-anchor="middle" font-size="13" fill="#6b534b">计价单位 · 贡赋 · 公共支付</text>
+<rect x="626" y="28" width="250" height="76" rx="14" fill="#f2eef9" stroke="#b8a9d6"/><text x="751" y="58" text-anchor="middle" font-size="19" font-weight="700" fill="#3e3454">信用与债务</text><text x="751" y="83" text-anchor="middle" font-size="13" fill="#625a72">借贷 · 账簿 · 票据 · 清偿</text>
+<path d="M149 104 V155 H450 V206 M450 104 V206 M751 104 V155 H450" fill="none" stroke="#829995" stroke-width="2.5"/>
+<rect x="225" y="206" width="450" height="92" rx="16" fill="#f7f4e8" stroke="#c9b87b" stroke-width="1.5"/><text x="450" y="242" text-anchor="middle" font-size="22" font-weight="700" fill="#514524">制度化的货币安排</text><text x="450" y="271" text-anchor="middle" font-size="14" fill="#6b603f">计价 · 支付 · 清偿 · 信用 · 法律与社会接受</text>
+<text x="450" y="333" text-anchor="middle" font-size="13" fill="#667578">不同地区、时期的组合不同；历史演进不是整齐划一的“物物交换 → 金属 → 纸币”阶梯</text>
+</svg>
