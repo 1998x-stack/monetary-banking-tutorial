@@ -33,8 +33,8 @@
       "id": "policy-rate-operations",
       "claim": "中国人民银行公开市场 7 天期逆回购操作利率承担主要政策利率功能，并配合公开市场操作调节流动性。",
       "kind": "policy_framework",
-      "source_url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/5427706/2024080916563291755.pdf",
-      "locator": "2024 Q2 Monetary Policy Report, open market operation section",
+      "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125227/125957/5347949/afbfa5df25ee45889d916a2819b60a43/2024110815410752868.pdf",
+      "locator": "2024 Q3 Monetary Policy Report, Column 3: 明确公开市场 7 天期回购操作利率为主要政策利率",
       "status": "verified",
       "notes": "不将某一操作利率等同于所有货币市场利率。"
     },
