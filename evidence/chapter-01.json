@@ -1,0 +1,51 @@
+{
+  "article": "01.html",
+  "title": "货币银行学究竟研究什么？",
+  "claims": [
+    {
+      "id": "money-forms",
+      "claim": "现代经济中的现金、商业银行存款和中央银行准备金分别对应不同部门的负债。",
+      "kind": "institutional_fact",
+      "source_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-in-the-modern-economy-an-introduction",
+      "locator": "Overview; three main types of money",
+      "status": "verified",
+      "notes": "概念用于区分货币持有者与负债发行者。"
+    },
+    {
+      "id": "bank-loans-deposits",
+      "claim": "商业银行发放贷款时通常同时创造相应存款；这不同于机械地按固定准备金倍数放贷。",
+      "kind": "mechanism",
+      "source_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
+      "locator": "Overview and section 'How is money created?'",
+      "status": "verified",
+      "notes": "文章同时说明资本、流动性、风险与货币政策约束。"
+    },
+    {
+      "id": "rmb-legal-tender",
+      "claim": "人民币是中华人民共和国法定货币，人民币用于境内公共和私人债务支付的法律地位由法规规定。",
+      "kind": "legal_fact",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/bgt/art/2023/art_b133589d1e1c4d3ea6ac7929c23839f3.html",
+      "locator": "《人民币管理条例》第三条",
+      "status": "verified",
+      "notes": "没有将法定货币地位等同于货币供应量统计边界。"
+    },
+    {
+      "id": "pbc-tools",
+      "claim": "中国人民银行法列明准备金、基准利率、再贴现、向商业银行贷款和公开市场操作等政策工具。",
+      "kind": "legal_fact",
+      "source_url": "https://www.ssf.gov.cn/portal/zcfg/zcfg/webinfo/2008/06/1632636003848426.htm",
+      "locator": "第二十二条",
+      "status": "verified",
+      "notes": "用于概述政策工具，不评价某次政策行动。"
+    },
+    {
+      "id": "transmission-channels",
+      "claim": "货币政策可通过利率、信贷、汇率和预期等渠道影响金融条件与实体经济。",
+      "kind": "theory",
+      "source_url": "https://www.bankofengland.co.uk/monetary-policy",
+      "locator": "Monetary policy explanation",
+      "status": "derived",
+      "notes": "以一般宏观金融框架归纳，具体传导方向和强度依赖环境。"
+    }
+  ]
+}

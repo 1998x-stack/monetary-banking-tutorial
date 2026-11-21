@@ -1,0 +1,42 @@
+{
+  "article": "03.html",
+  "title": "M0、M1、M2 到底怎么数？",
+  "claims": [
+    {
+      "id": "money-stock-definition",
+      "claim": "货币供应量是某一时点符合统计定义的货币性金融工具余额，统计层次根据流动性和金融创新动态调整。",
+      "kind": "statistical_definition",
+      "source_url": "https://www.stats.gov.cn/zs/tjws/zytjzbqs/hbgyl/202409/t20240910_1956348.html",
+      "locator": "什么是货币供应量；定义与层次",
+      "status": "verified",
+      "notes": "明确存量与流量的区别。"
+    },
+    {
+      "id": "m1-revision",
+      "claim": "中国自 2025 年 1 月起采用修订后的 M1 口径，新增个人活期存款和非银行支付机构客户备付金。",
+      "kind": "statistical_definition",
+      "source_url": "https://english.scio.gov.cn/m/pressroom/node_8021725_3.html",
+      "locator": "PBOC explanation of revised M1 scope",
+      "status": "verified",
+      "notes": "文中提醒新旧序列需按可比口径分析。"
+    },
+    {
+      "id": "m1-components",
+      "claim": "修订后的 M1 包括 M0、单位活期存款、个人活期存款和非银行支付机构客户备付金。",
+      "kind": "statistical_definition",
+      "source_url": "https://www.stats.gov.cn/english/PressRelease/202602/t20260228_1962661.html",
+      "locator": "Footnote 53",
+      "status": "verified",
+      "notes": "使用官方统计公报的脚注定义。"
+    },
+    {
+      "id": "2025-year-end-money",
+      "claim": "2025 年末中国 M2 为 340.3 万亿元、M1 为 115.5 万亿元、M0 为 14.1 万亿元。",
+      "kind": "statistic",
+      "source_url": "https://www.stats.gov.cn/english/PressRelease/202602/t20260228_1962661.html",
+      "locator": "2025 National Economic and Social Development Statistical Communiqué, money supply paragraph",
+      "status": "verified",
+      "notes": "时点数据；增速分别为 8.5%、3.8%、10.2%。"
+    }
+  ]
+}

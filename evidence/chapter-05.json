@@ -1,0 +1,60 @@
+{
+  "article": "05.html",
+  "title": "信用如何连接现在与未来？",
+  "claims": [
+    {
+      "id": "bank-credit-creation",
+      "claim": "商业银行贷款是现代存款货币创造的重要来源，贷款发放与存款增加通常同步记账。",
+      "kind": "mechanism",
+      "source_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
+      "locator": "Overview and loan creation explanation",
+      "status": "verified",
+      "notes": "同时说明贷款并非无约束扩张。"
+    },
+    {
+      "id": "credit-reference-center",
+      "claim": "中国人民银行征信中心负责金融信用信息基础数据库等系统的建设、运行和维护。",
+      "kind": "institutional_fact",
+      "source_url": "https://www.pbccrc.org.cn/en/gywm/zxgk/index.html",
+      "locator": "Overview; key responsibilities",
+      "status": "verified",
+      "notes": "将金融征信与社会信用信息体系区分。"
+    },
+    {
+      "id": "credit-report-rights",
+      "claim": "个人每年有权免费获取本人信用报告两次，并可对错误或遗漏信息提出异议。",
+      "kind": "legal_fact",
+      "source_url": "https://www.pbc.gov.cn/en/3688241/3688687/3688693/2025092319420287536/2021111916465019962.pdf",
+      "locator": "Measures for the Administration of Credit Reporting Services, Articles 25–26",
+      "status": "verified",
+      "notes": "不将征信报告描述为单一社会信用分数。"
+    },
+    {
+      "id": "p2p-exit",
+      "claim": "截至 2020 年末，纳入专项整治的 4,676 家网贷机构停止开展业务；其中 3,210 家机构的存量业务已经清零，其他存量风险仍需处置。",
+      "kind": "regulatory_statistic",
+      "source_url": "https://jrb.ningbo.gov.cn/art/2021/4/27/art_1229023599_58895586.html",
+      "locator": "截至 2020 年末的网贷风险专项整治进展",
+      "status": "verified",
+      "notes": "严格区分停止业务和存量债务清偿。"
+    },
+    {
+      "id": "expected-loss",
+      "claim": "预期损失可按 PD × LGD × EAD 的简化框架估计。",
+      "kind": "risk_model",
+      "source_url": "https://www.bis.org/committees/bcbs/basel-framework/standard/cre/32/inforce/2023-01-01/published/2020-03-27",
+      "locator": "CRE32 risk components; PD, LGD and EAD",
+      "status": "verified",
+      "notes": "参数是估计值，模型应用需遵循监管和会计框架。"
+    },
+    {
+      "id": "illustrative-case",
+      "claim": "平台期限错配和新资金流入减少导致流动性缺口的情境为教学假设案例。",
+      "kind": "illustrative",
+      "source_url": "",
+      "locator": "Chapter 05 section P2P",
+      "status": "illustrative",
+      "notes": "不是对真实平台的指控或事件复原。"
+    }
+  ]
+}

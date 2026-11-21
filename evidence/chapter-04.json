@@ -1,0 +1,51 @@
+{
+  "article": "04.html",
+  "title": "从金本位到浮动汇率",
+  "claims": [
+    {
+      "id": "gold-standard-era",
+      "claim": "现代国际货币体系在 1870—1880 年代由双本位向金本位转变，古典金本位在一战爆发时受到冲击。",
+      "kind": "historical_fact",
+      "source_url": "https://www.imf.org/en/publications/policy-papers/issues/2016/12/31/reserve-accumulation-and-international-monetary-stability-supplementary-information-pp4457",
+      "locator": "Historical evolution of the international monetary system",
+      "status": "verified",
+      "notes": "强调不同国家采用金本位的具体时间并不完全一致。"
+    },
+    {
+      "id": "bretton-woods",
+      "claim": "1944 年 44 国代表设计布雷顿森林体系；体系中美元按每盎司 35 美元与黄金挂钩，其他货币盯住美元。",
+      "kind": "historical_fact",
+      "source_url": "https://www.federalreservehistory.org/essays/bretton-woods-created",
+      "locator": "Creation of the Bretton Woods System",
+      "status": "verified",
+      "notes": "说明体系在 1958 年进入较完整运行阶段。"
+    },
+    {
+      "id": "nixon-shock",
+      "claim": "1971 年 8 月美国暂停美元官方兑换黄金。",
+      "kind": "historical_fact",
+      "source_url": "https://www.federalreservehistory.org/essays/gold-convertibility-ends",
+      "locator": "Nixon Ends Convertibility of U.S. Dollars to Gold",
+      "status": "verified",
+      "notes": "避免把 1971、1973、1976 和 1978 合并成同一事件。"
+    },
+    {
+      "id": "jamaica-second-amendment",
+      "claim": "1976 年牙买加会议达成国际货币改革共识，IMF 协定第二次修订于 1978 年生效。",
+      "kind": "historical_fact",
+      "source_url": "https://www.imf.org/external/pubs/ft/silent/index.htm",
+      "locator": "The IMF and the Silent Revolution; Second Amendment",
+      "status": "verified",
+      "notes": "区分政治协议和法律生效时间。"
+    },
+    {
+      "id": "uk-erm",
+      "claim": "英国于 1992 年 9 月 16 日暂停英镑在 ERM 中的成员资格。",
+      "kind": "historical_fact",
+      "source_url": "https://www.bankofengland.co.uk/about/history",
+      "locator": "16 September 1992, UK crashes out of the ERM",
+      "status": "verified",
+      "notes": "正文不使用未经核实的索罗斯个人盈利数字。"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+name: Site quality gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install browser tooling
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+          python -m playwright install --with-deps chromium
+      - name: Validate repository structure and evidence
+        run: python scripts/validate_site.py
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Run Chromium responsive and interaction checks
+        run: python scripts/browser_check.py --output artifacts/browser-qa
+      - name: Upload browser QA artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: monetary-banking-browser-qa
+          path: artifacts/browser-qa/
+          if-no-files-found: ignore
