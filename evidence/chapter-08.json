@@ -1,0 +1,51 @@
+{
+  "article": "08.html",
+  "title": "商业银行怎样赚钱，又怎样管理一张资产负债表？",
+  "claims": [
+    {
+      "id": "balance-sheet-identity",
+      "claim": "银行资产由负债和所有者权益融资，资产负债表需要在每个时点满足会计恒等式。",
+      "kind": "accounting_identity",
+      "source_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
+      "locator": "Money creation and bank balance sheet mechanics",
+      "status": "derived",
+      "notes": "以简化资产负债表讲解银行业务结构。"
+    },
+    {
+      "id": "loans-create-deposits",
+      "claim": "商业银行发放贷款时通常同时确认贷款资产与存款负债；贷款扩张仍受资本、流动性、风险和需求约束。",
+      "kind": "mechanism",
+      "source_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
+      "locator": "How is money created?; banks and credit creation",
+      "status": "verified",
+      "notes": "避免固定准备金乘数机械放贷的错误描述。"
+    },
+    {
+      "id": "irrbb",
+      "claim": "银行账簿利率变化会影响银行资产、负债和表外项目的经济价值及净利息收入。",
+      "kind": "risk_definition",
+      "source_url": "https://www.bis.org/committees/bcbs/basel-framework/standard/srp/31/inforce/2026-01-01/published/2024-07-16",
+      "locator": "SRP31.1–31.2",
+      "status": "verified",
+      "notes": "涵盖重定价缺口、基差和期权风险。"
+    },
+    {
+      "id": "nim",
+      "claim": "净利息收益率常以净利息收入除以平均生息资产衡量。",
+      "kind": "financial_ratio",
+      "source_url": "https://www.federalreserve.gov/publications/2026-june-supervision-and-regulation-report-report-banking-system-conditions.htm",
+      "locator": "Banking System Conditions, note 6 and Figure 11: net interest income divided by average earning assets",
+      "status": "verified",
+      "notes": "美联储对 NIM 的定义；正文注明各机构披露口径可能不同。"
+    },
+    {
+      "id": "repo-liquidity",
+      "claim": "银行可能通过准备金、资产出售和以证券为抵押的融资管理短期流动性缺口。",
+      "kind": "mechanism",
+      "source_url": "https://www.bis.org/committees/bcbs/basel-consolidated-guidelines/module/lqy/10",
+      "locator": "Funding liquidity risk and liquidity risk management principles",
+      "status": "verified",
+      "notes": "教学案例明确标为假设案例。"
+    }
+  ]
+}

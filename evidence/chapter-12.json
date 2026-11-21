@@ -1,0 +1,51 @@
+{
+  "article": "12.html",
+  "title": "资本市场怎样把长期资金配置给企业与政府？",
+  "claims": [
+    {
+      "id": "stocks-equity",
+      "claim": "股票代表公司所有权的一部分，投资者可能获得资本利得和股息，也承担价格下跌与本金损失风险。",
+      "kind": "security_definition",
+      "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/stocks",
+      "locator": "Stocks FAQs: What are stocks?; benefits and risks",
+      "status": "verified",
+      "notes": "股票不是固定收益债权。"
+    },
+    {
+      "id": "primary-secondary",
+      "claim": "一级市场出售新发行证券并使发行人取得募集资金，二级市场交易已发行证券。",
+      "kind": "market_definition",
+      "source_url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/primary-market",
+      "locator": "Primary Market definition",
+      "status": "verified",
+      "notes": "二级市场链接另列于文章参考资料。"
+    },
+    {
+      "id": "registration-reform",
+      "claim": "中国于 2023 年 2 月 17 日发布全面实行股票发行注册制制度规则，以信息披露为核心并明确交易所审核与证监会注册分工。",
+      "kind": "regulatory_fact",
+      "source_url": "https://www.csrc.gov.cn/csrc/c100028/c7123213/content.shtml",
+      "locator": "全面实行股票发行注册制制度规则发布实施",
+      "status": "verified",
+      "notes": "注册制不等于无审核或投资价值背书。"
+    },
+    {
+      "id": "nafmii-debt-registration",
+      "claim": "银行间市场非金融企业债务融资工具须按规则注册，接受注册不代表交易商协会对投资价值和投资风险作实质判断。",
+      "kind": "regulatory_fact",
+      "source_url": "https://www.nafmii.org.cn/zlgl/zlgz/zcfxl_1059/zcl/202310/P020231019522511018341.pdf",
+      "locator": "《非金融企业债务融资工具注册发行规则（2023版）》第二至四条",
+      "status": "verified",
+      "notes": "投资者仍需自主判断、自担风险。"
+    },
+    {
+      "id": "bond-price-yield",
+      "claim": "固定现金流债券价格是未来票息和本金按市场收益率折现的现值，收益率上升通常使价格下降。",
+      "kind": "pricing_mechanism",
+      "source_url": "https://www.sec.gov/files/ib_interestraterisk.pdf",
+      "locator": "Interest rate risk and bond price relationship",
+      "status": "verified",
+      "notes": "教学计算器假设年付息、无嵌入期权。"
+    }
+  ]
+}

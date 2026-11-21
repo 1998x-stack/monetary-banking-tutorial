@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="fig-title fig-desc"><title id="fig-title">三种收益率曲线形态</title><desc id="fig-desc">向上倾斜、平坦和倒挂曲线的示意，横轴为期限，纵轴为收益率。</desc><defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#147f80"/></marker><marker id="arr-warm" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#d06d4d"/></marker></defs><rect width="960" height="480" rx="24" fill="#fffdf9"/>
+<path d="M110 390 V90 M110 390 H870" fill="none" stroke="#52686b" stroke-width="3"/>
+<text x="70" y="95" font-size="16" fill="#52686b">收益率</text><text x="865" y="430" font-size="16" text-anchor="end" fill="#52686b">期限</text>
+<path d="M130 345 C300 320 450 260 600 205 S790 150 850 125" fill="none" stroke="#147f80" stroke-width="6"/>
+<path d="M130 270 C300 265 450 260 600 257 S790 255 850 253" fill="none" stroke="#916c22" stroke-width="6"/>
+<path d="M130 160 C300 185 450 230 600 275 S790 315 850 335" fill="none" stroke="#d06d4d" stroke-width="6"/>
+<text x="720" y="112" font-size="18" fill="#147f80" font-weight="700">向上倾斜</text>
+<text x="720" y="240" font-size="18" fill="#916c22" font-weight="700">平坦</text>
+<text x="720" y="360" font-size="18" fill="#d06d4d" font-weight="700">倒挂</text>
+<text x="130" y="415" font-size="14" fill="#52686b">短期</text><text x="850" y="415" text-anchor="end" font-size="14" fill="#52686b">长期</text></svg>

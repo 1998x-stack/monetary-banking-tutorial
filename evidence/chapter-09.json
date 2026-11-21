@@ -1,0 +1,51 @@
+{
+  "article": "09.html",
+  "title": "银行为什么需要资本、流动性与审慎监管？",
+  "claims": [
+    {
+      "id": "basel-capital",
+      "claim": "巴塞尔风险资本最低要求为 CET1 4.5%、一级资本 6%、总资本 8%，另有 2.5% CET1 资本留存缓冲。",
+      "kind": "regulatory_standard",
+      "source_url": "https://www.bis.org/committees/bcbs/basel-framework/standard/rbc?allChapters=true",
+      "locator": "RBC20.1 and RBC30.1–30.2",
+      "status": "verified",
+      "notes": "国际框架基准，不替代各国实施规则和额外缓冲。"
+    },
+    {
+      "id": "lcr",
+      "claim": "LCR 要求银行持有足够 HQLA 覆盖监管定义的 30 天压力情景净现金流出，最低要求 100%。",
+      "kind": "regulatory_standard",
+      "source_url": "https://www.bis.org/committees/bcbs/basel-framework/standard/lcr?allChapters=true",
+      "locator": "LCR20 calculation and minimum requirement",
+      "status": "verified",
+      "notes": "不同币种流动性需求和转移限制仍需单独管理。"
+    },
+    {
+      "id": "nsfr",
+      "claim": "NSFR 是可用稳定资金与所需稳定资金之比，持续要求至少 100%。",
+      "kind": "regulatory_standard",
+      "source_url": "https://www.bis.org/committees/bcbs/basel-framework/standard/nsf?allChapters=true",
+      "locator": "NSF20.1–20.2",
+      "status": "verified",
+      "notes": "关注一年期结构性融资稳定性。"
+    },
+    {
+      "id": "operational-risk",
+      "claim": "操作风险源于内部流程、人员、系统失效或外部事件，定义包括法律风险但排除战略与声誉风险。",
+      "kind": "risk_definition",
+      "source_url": "https://www.bis.org/committees/bcbs/basel-framework/standard/ope/10/inforce/2023-01-01/published/2020-03-27",
+      "locator": "OPE10.1",
+      "status": "verified",
+      "notes": "按巴塞尔框架定义表述。"
+    },
+    {
+      "id": "irrbb-risk",
+      "claim": "银行账簿利率风险会影响银行资本和收益，且包括重定价缺口、基差和期权风险。",
+      "kind": "risk_definition",
+      "source_url": "https://www.bis.org/committees/bcbs/basel-framework/standard/srp/31/inforce/2026-01-01/published/2024-07-16",
+      "locator": "SRP31.1–31.2",
+      "status": "verified",
+      "notes": "与市场风险交易账簿区分。"
+    }
+  ]
+}

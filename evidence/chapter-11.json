@@ -1,0 +1,51 @@
+{
+  "article": "11.html",
+  "title": "货币市场如何为金融体系提供短期流动性？",
+  "claims": [
+    {
+      "id": "interbank-market",
+      "claim": "中国银行间本币市场由货币市场、债券市场及相关衍生品市场组成，是金融机构流动性管理和央行政策传导的重要平台。",
+      "kind": "institutional_fact",
+      "source_url": "https://www.chinamoney.com.cn/chinese/acserv/",
+      "locator": "业务与服务：银行间本币市场",
+      "status": "verified",
+      "notes": "描述的是中国银行间市场基础设施。"
+    },
+    {
+      "id": "repo-definition",
+      "claim": "买断式回购是债券持有人先将债券卖给对手方，并约定未来以约定价格买回相等数量同种债券的交易。",
+      "kind": "legal_definition",
+      "source_url": "https://www.pbc.gov.cn/zhengwugongkai/attachDir/2025/11/2025111818214032800.pdf",
+      "locator": "《债券买断式回购业务管理规定》第二条",
+      "status": "verified",
+      "notes": "与质押式回购的所有权安排区别。"
+    },
+    {
+      "id": "repo-collateral",
+      "claim": "回购交易可用于以证券为基础进行短期融资，抵押品折扣和市场流动性会影响融资能力。",
+      "kind": "market_mechanism",
+      "source_url": "https://www.chinamoney.com.cn/chinese/xtyxtz/20220808/2432897.html",
+      "locator": "全国银行间同业拆借中心质押式回购接口说明",
+      "status": "derived",
+      "notes": "折扣率的算例属于教学解释。"
+    },
+    {
+      "id": "policy-rate-operations",
+      "claim": "中国人民银行公开市场 7 天期逆回购操作利率承担主要政策利率功能，并配合公开市场操作调节流动性。",
+      "kind": "policy_framework",
+      "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125227/125957/5347949/afbfa5df25ee45889d916a2819b60a43/2024110815410752868.pdf",
+      "locator": "2024 Q3 Monetary Policy Report, Column 3: 明确公开市场 7 天期回购操作利率为主要政策利率",
+      "status": "verified",
+      "notes": "不将某一操作利率等同于所有货币市场利率。"
+    },
+    {
+      "id": "repo-interest-example",
+      "claim": "ACT/365 回购利息示例按本金、年化利率和占款天数计算。",
+      "kind": "illustrative_calculation",
+      "source_url": "",
+      "locator": "Chapter 11 calculator",
+      "status": "illustrative",
+      "notes": "实际合同以交易约定计息基准为准。"
+    }
+  ]
+}

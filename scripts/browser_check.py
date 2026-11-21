@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Chromium responsive and interaction checks for the homepage and first five articles."""
+"""Chromium responsive and interaction checks for the homepage and chapters 01–13."""
 from __future__ import annotations
 import argparse, json
 from functools import partial
@@ -9,11 +9,43 @@ from threading import Thread
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-PAGES=["index.html","01.html","02.html","03.html","04.html","05.html"]
+PAGES=["index.html"]+[f"{n:02d}.html" for n in range(1,14)]
 VIEWPORTS=[(1440,900),(768,1024),(390,844),(360,800)]
 
 class QuietHandler(SimpleHTTPRequestHandler):
     def log_message(self, fmt, *args): pass
+
+def check_interaction(page, name):
+    actions={
+      "01.html":('[data-demo="transmission"] button[data-channel="credit"]','click','信贷渠道'),
+      "02.html":('[data-demo="money-functions"] button[data-function="store"]','click','价值贮藏'),
+      "03.html":('[data-demo="aggregate-classifier"] select','select','M1'),
+      "04.html":('[data-demo="regimes"] button[data-regime="floating"]','click','浮动汇率'),
+      "05.html":('[data-demo="expected-loss"] input[name="pd"]','fill','¥20,000'),
+      "06.html":('[data-demo="fisher"] input[name="nominal"]','fill','精确实际利率'),
+      "07.html":('[data-demo="yield-curve"] button[data-shape="inverted"]','click','倒挂'),
+      "08.html":('[data-demo="nim"] input[name="interest-income"]','fill','2.50%'),
+      "09.html":('[data-demo="capital-ratio"] input[name="cet1"]','fill','5.00%'),
+      "10.html":('[data-demo="central-bank"] button[data-operation="drain"]','click','回笼流动性'),
+      "11.html":('[data-demo="repo-cost"] input[name="rate"]','fill','利息约'),
+      "12.html":('[data-demo="bond-price"] input[name="yield"]','fill','折价'),
+      "13.html":('[data-demo="fx-parity"] input[name="spot"]','fill','73,000')
+    }
+    selector, action, expected=actions[name]
+    control=page.locator(selector)
+    if action=="click": control.click()
+    elif action=="select": control.select_option("household_demand")
+    elif name=="05.html": control.fill("5")
+    elif name=="06.html": control.fill("5")
+    elif name=="08.html": control.fill("200")
+    elif name=="09.html": control.fill("50")
+    elif name=="11.html": control.fill("3")
+    elif name=="12.html": control.fill("5")
+    elif name=="13.html": control.fill("7.3")
+    result=page.locator('[data-demo-output]').last.inner_text()
+    if expected not in result:
+        raise AssertionError(f"{name}: expected interaction output containing {expected!r}, got {result!r}")
+    return result
 
 def main():
     parser=argparse.ArgumentParser()
@@ -28,62 +60,44 @@ def main():
         with sync_playwright() as p:
             browser=p.chromium.launch()
             for name in PAGES:
-                pr={"viewports":{},"console_errors":[],"page_errors":[]}
+                page_report={"viewports":{},"console_errors":[],"page_errors":[]}
                 page=browser.new_page()
-                page.on("pageerror",lambda err,r=pr:r["page_errors"].append(str(err)))
-                page.on("console",lambda msg,r=pr:r["console_errors"].append(msg.text) if msg.type=="error" else None)
+                page.on("pageerror",lambda err,r=page_report:r["page_errors"].append(str(err)))
+                page.on("console",lambda msg,r=page_report:r["console_errors"].append(msg.text) if msg.type=="error" else None)
                 for width,height in VIEWPORTS:
                     page.set_viewport_size({"width":width,"height":height})
                     response=page.goto(f"{base}/{name}",wait_until="networkidle")
                     if not response or response.status!=200:
                         report["errors"].append(f"{name}: HTTP response not 200"); continue
                     metrics=page.evaluate("""() => ({width:innerWidth,docWidth:document.documentElement.scrollWidth,h1:document.querySelectorAll('h1').length,images:[...document.images].map(i=>({src:i.getAttribute('src'),loaded:i.complete&&i.naturalWidth>0}))})""")
-                    pr["viewports"][f"{width}x{height}"]=metrics
+                    page_report["viewports"][f"{width}x{height}"]=metrics
                     if metrics["docWidth"]>metrics["width"]: report["errors"].append(f"{name}: horizontal overflow at {width}px")
                     if metrics["h1"]!=1: report["errors"].append(f"{name}: expected one H1 at {width}px")
-                    for im in metrics["images"]:
-                        if not im["loaded"]: report["errors"].append(f"{name}: image failed: {im['src']}")
-                    if width in (1440,390,360): page.screenshot(path=str(output/f"{name[:-5]}-{width}.png"),full_page=True)
-                if name=="01.html":
-                    page.locator('[data-demo="transmission"] button[data-channel="credit"]').click()
-                    result=page.locator('[data-demo="transmission"] [data-demo-output]').inner_text()
-                    if "信贷渠道" not in result: report["errors"].append("01.html: transmission interaction failed")
-                elif name=="02.html":
-                    page.locator('[data-demo="money-functions"] button[data-function="store"]').click()
-                    result=page.locator('[data-demo="money-functions"] [data-demo-output]').inner_text()
-                    if "价值贮藏" not in result: report["errors"].append("02.html: money function interaction failed")
-                elif name=="03.html":
-                    page.locator('[data-demo="aggregate-classifier"] select').select_option("household_demand")
-                    result=page.locator('[data-demo="aggregate-classifier"] [data-demo-output]').inner_text()
-                    if "M1" not in result: report["errors"].append("03.html: aggregate classifier interaction failed")
-                elif name=="04.html":
-                    page.locator('[data-demo="regimes"] button[data-regime="floating"]').click()
-                    result=page.locator('[data-demo="regimes"] [data-demo-output]').inner_text()
-                    if "浮动汇率" not in result: report["errors"].append("04.html: regime interaction failed")
-                elif name=="05.html":
-                    page.locator('[data-demo="expected-loss"] input[name="pd"]').fill("5")
-                    result=page.locator('[data-demo="expected-loss"] [data-demo-output]').inner_text()
-                    if "¥20,000" not in result: report["errors"].append("05.html: expected-loss calculator failed")
-                if name!="index.html": report["interactions"][name]=result
+                    for image in metrics["images"]:
+                        if not image["loaded"]: report["errors"].append(f"{name}: image failed: {image['src']}")
+                    if width in (1440,390,360): page.screenshot(path=str(output/f"{name.replace('.html','')}-{width}.png"),full_page=True)
+                if name!="index.html":
+                    try: report["interactions"][name]=check_interaction(page,name)
+                    except Exception as exc: report["errors"].append(str(exc))
                 page.emulate_media(media="print")
-                pm=page.evaluate("() => ({width:innerWidth,docWidth:document.documentElement.scrollWidth})")
-                if pm["docWidth"]>pm["width"]: report["errors"].append(f"{name}: print layout overflow")
-                page.close()
-                report["pages"][name]=pr
+                print_metrics=page.evaluate("() => ({width:innerWidth,docWidth:document.documentElement.scrollWidth})")
+                if print_metrics["docWidth"]>print_metrics["width"]: report["errors"].append(f"{name}: print layout overflow")
+                page.close(); report["pages"][name]=page_report
             browser.close()
     finally:
         server.shutdown(); server.server_close()
-    for name,pr in report["pages"].items():
-        if pr["page_errors"] or pr["console_errors"]: report["errors"].append(f"{name}: console/page errors")
+    for name,result in report["pages"].items():
+        if result["page_errors"] or result["console_errors"]: report["errors"].append(f"{name}: console/page errors")
     (output/"report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     if report["errors"]:
         print("BROWSER QA FAILED")
-        for e in report["errors"]: print(f"- {e}")
+        for error in report["errors"]: print(f"- {error}")
+        print(f"Report: {output/'report.json'}")
         return 1
     print("BROWSER QA PASSED")
-    print("- homepage + chapters 01–05")
+    print("- homepage + chapters 01–13")
     print("- 1440, 768, 390 and 360px viewports; print emulation")
-    print("- one meaningful interaction per article")
+    print("- 13 meaningful article interactions")
     print(f"- artifacts: {output}")
     return 0
 
