@@ -1,0 +1,60 @@
+{
+  "article": "14.html",
+  "title": "非银行金融机构与非银行金融中介",
+  "claims": [
+    {
+      "id": "nbfi-share-2024",
+      "claim": "FSB 对 29 个辖区的监测显示，2024 年 NBFI 资产增长 9.4%，占样本金融资产 51%，规模约 256.8 万亿美元；样本辖区覆盖全球 GDP 90% 以上。",
+      "kind": "market_statistic",
+      "source_url": "https://www.fsb.org/2025/12/fsb-reports-continued-growth-in-nonbank-financial-intermediation-in-2024-to-256-8-trillion/",
+      "locator": "16 December 2025 press release, monitoring scope and 2024 findings",
+      "status": "verified",
+      "notes": "这是 FSB 监测样本的广义 NBFI 口径，不等于狭义影子银行风险口径。"
+    },
+    {
+      "id": "nbfi-narrow-measure",
+      "claim": "FSB 狭义 NBFI 监测口径聚焦被主管部门识别为可能产生银行式金融稳定风险的信用中介活动；2024 年该口径规模为 76.3 万亿美元。",
+      "kind": "financial_stability_measure",
+      "source_url": "https://www.fsb.org/2025/12/fsb-reports-continued-growth-in-nonbank-financial-intermediation-in-2024-to-256-8-trillion/",
+      "locator": "16 December 2025 press release, narrow measure definition and size",
+      "status": "verified",
+      "notes": "不能把全部保险、养老金和基金资产都称为影子银行。"
+    },
+    {
+      "id": "nbfi-leverage-risk",
+      "claim": "NBFI 杠杆可通过关键金融市场和与系统重要性杠杆提供者之间的联系放大压力；流动性、集中度和互联性是主要脆弱点。",
+      "kind": "financial_stability_mechanism",
+      "source_url": "https://www.fsb.org/2025/07/leverage-in-nonbank-financial-intermediation-final-report/",
+      "locator": "9 July 2025 final report, scope and recommendations",
+      "status": "verified",
+      "notes": "文中将保证金和抵押品反馈作为机制示例，不声称每家 NBFI 都使用杠杆。"
+    },
+    {
+      "id": "asset-management-definition",
+      "claim": "中国资管新规将资管业务界定为金融机构接受投资者委托管理受托财产，并明确不得承诺保本保收益。",
+      "kind": "regulatory_fact",
+      "source_url": "https://jrj.beijing.gov.cn/2024zcwj/gjzcfg2024/202409/t20240905_3790940.html",
+      "locator": "2018 Guiding Opinions, sections II–III",
+      "status": "verified",
+      "notes": "引用现行有效的 2018 指导意见；私募基金另有专门法律法规。"
+    },
+    {
+      "id": "trust-company-rules",
+      "claim": "中国《信托公司管理办法》于 2025 年 9 月公布，自 2026 年 1 月 1 日起施行，并强调信托本源、受托人定位和受益人合法权益。",
+      "kind": "regulatory_fact",
+      "source_url": "https://www.nfra.gov.cn/cn/view/pages/rulesDetail.html?docId=1225642",
+      "locator": "2025 NFRA Order No. 8, Articles 1–3 and effective date",
+      "status": "verified",
+      "notes": "适用中国信托公司监管，不代表所有司法辖区的信托规则。"
+    },
+    {
+      "id": "financial-holding-companies",
+      "claim": "中国金融控股公司准入制度识别跨行业控制商业银行、信托、资产管理、证券、公募基金、期货和保险等机构的集团。",
+      "kind": "regulatory_fact",
+      "source_url": "https://www.mofcom.gov.cn/zcfb/zgdwjjmywg/art/2020/art_1643e78ac4e54fe8b18ed0c834e6e333.html",
+      "locator": "Decision on Access Management of Financial Holding Companies, scope and definitions",
+      "status": "verified",
+      "notes": "文章概括集团层面风险识别目的，不展开具体资产门槛。"
+    }
+  ]
+}

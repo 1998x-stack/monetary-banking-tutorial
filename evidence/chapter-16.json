@@ -1,0 +1,51 @@
+{
+  "article": "16.html",
+  "title": "货币需求理论",
+  "claims": [
+    {
+      "id": "keynes-motives",
+      "claim": "凯恩斯将货币需求动机归纳为交易、预防和投机动机，并讨论其与收入、利率和流动性偏好的联系。",
+      "kind": "historical_theory",
+      "source_url": "https://hetwebsite.net/het/texts/keynes/gt/chap15.htm",
+      "locator": "The General Theory, Chapter 15, transaction, precautionary and speculative motives",
+      "status": "verified",
+      "notes": "引用原著章节文本；分类是理论框架，不表示每笔余额只对应一种动机。"
+    },
+    {
+      "id": "friedman-money-demand",
+      "claim": "弗里德曼 1956 年货币数量论重述将货币需求作为资产组合选择问题，考察财富、相对收益和其他资产条件。",
+      "kind": "historical_theory",
+      "source_url": "https://miltonfriedman.hoover.org/objects/58154/",
+      "locator": "Collected Works of Milton Friedman, 1956 item record",
+      "status": "derived",
+      "notes": "文章以概念性概括呈现，不复制原文的完整函数设定。"
+    },
+    {
+      "id": "velocity-definition",
+      "claim": "圣路易斯联储 M2 货币流通速度序列按季度名义 GDP 与季度平均 M2 的比率计算。",
+      "kind": "statistical_definition",
+      "source_url": "https://fred.stlouisfed.org/data/M2V",
+      "locator": "M2V series notes and calculation definition",
+      "status": "verified",
+      "notes": "速度是宏观统计比率，不是逐笔追踪纸币周转次数。"
+    },
+    {
+      "id": "quantity-equation",
+      "claim": "MV=PY 在定义一致时是名义支出与货币存量周转速度之间的核算关系；将其解释为价格因果理论需要额外行为假设。",
+      "kind": "economic_identity",
+      "source_url": "https://fred.stlouisfed.org/data/M2V",
+      "locator": "Money velocity definition as nominal GDP divided by M2",
+      "status": "derived",
+      "notes": "文章区分恒等式与固定速度、产出约束等理论假设。"
+    },
+    {
+      "id": "linear-demand-demo",
+      "claim": "交互练习使用 Md/P=aY−bi 作为局部线性教学函数。",
+      "kind": "illustrative_calculation",
+      "source_url": "",
+      "locator": "Chapter 16 interactive exercise",
+      "status": "illustrative",
+      "notes": "系数为假设值，不代表任何国家或央行估计。"
+    }
+  ]
+}

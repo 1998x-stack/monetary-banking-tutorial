@@ -1,0 +1,42 @@
+{
+  "article": "19.html",
+  "title": "IS–LM 模型",
+  "claims": [
+    {
+      "id": "hicks-1937",
+      "claim": "Hicks 1937 年发表 Mr. Keynes and the Classics; A Suggested Interpretation，提出后来发展为 IS–LM 的图形化解释框架。",
+      "kind": "historical_theory",
+      "source_url": "https://benjaminmoll.com/wp-content/uploads/2024/07/Hicks_IS_LM.pdf",
+      "locator": "Hicks (1937), Econometrica 5(2), pp.147–159",
+      "status": "verified",
+      "notes": "文章将标准 IS–LM 作为后续教材化模型处理，不把它当作 Keynes 原著中的原始图形。"
+    },
+    {
+      "id": "is-curve",
+      "claim": "在线性消费与利率敏感投资假设下，商品市场均衡可整理为 IS 关系 Y=(C0−cT+I0+G−br)/(1−c)。",
+      "kind": "model_derivation",
+      "source_url": "",
+      "locator": "Chapter 19 derivation from Y=C+I+G",
+      "status": "illustrative",
+      "notes": "封闭经济、固定价格、线性行为函数的教学推导。"
+    },
+    {
+      "id": "lm-curve",
+      "claim": "在线性实际货币需求 L(Y,r)=kY−hr 且实际货币供给固定时，LM 关系可写为 r=(kY−M/P)/h。",
+      "kind": "model_derivation",
+      "source_url": "",
+      "locator": "Chapter 19 money-market equilibrium derivation",
+      "status": "illustrative",
+      "notes": "模型假设，不是对所有央行操作框架的描述。"
+    },
+    {
+      "id": "islm-limitations",
+      "claim": "IS–LM 是有特定会计与行为假设的教学框架，不能自动视为完整的动态、开放经济或存量—流量一致模型。",
+      "kind": "model_critique",
+      "source_url": "https://www.tandfonline.com/doi/full/10.1080/01603477.2026.2734483",
+      "locator": "2026 review, accounting consistency and standard model limitations",
+      "status": "verified",
+      "notes": "文章将此研究作为模型边界的提醒，不把该论文的争论视为学界唯一结论。"
+    }
+  ]
+}
