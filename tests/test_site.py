@@ -41,7 +41,7 @@ class SiteValidationTests(unittest.TestCase):
         self.assertIn("CNY/USD",raw)
     def test_yield_curve_warning_is_not_deterministic(self):
         raw=(ROOT/"07.html").read_text(encoding="utf-8")
-        self.assertIn("不是衰退日期预报",raw)
+        self.assertIn("仅凭一次倒挂就预测衰退发生日期",raw)
         self.assertIn("期限溢价",raw)
 
 if __name__=="__main__": unittest.main()
