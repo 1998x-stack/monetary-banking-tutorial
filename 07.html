@@ -9,16 +9,7 @@
 <p class="lead">两只债券都由同一政府发行，一只还有 1 年到期，另一只还有 10 年到期，为什么市场收益率可能不同？因为投资者不仅关心今天的短期利率，还关心未来利率路径、通胀、期限风险、债券供给和流动性。把不同期限的可比收益率放在一张图上，就得到收益率曲线。</p>
 <section id="curve"><h2>一条曲线，究竟画了什么</h2>
 <p>收益率曲线（yield curve）通常把横轴设为债券剩余期限，把纵轴设为收益率。比较时必须尽量控制发行人信用、计价货币、税收待遇、流动性和债券类型；否则曲线上的差异可能来自风险差异，而非期限本身。美国财政部国债曲线、某一国家的国债曲线和企业债信用曲线不是同一对象。</p>
-<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="fig-title fig-desc"><title id="g1-fig-title">三种收益率曲线形态</title><desc id="g1-fig-desc">向上倾斜、平坦和倒挂曲线的示意，横轴为期限，纵轴为收益率。</desc><defs><marker id="g1-arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#147f80"/></marker><marker id="g1-arr-warm" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#d06d4d"/></marker></defs><rect width="960" height="480" rx="24" fill="#fffdf9"/>
-<path d="M110 390 V90 M110 390 H870" fill="none" stroke="#52686b" stroke-width="3"/>
-<text x="70" y="95" font-size="16" fill="#52686b">收益率</text><text x="865" y="430" font-size="16" text-anchor="end" fill="#52686b">期限</text>
-<path d="M130 345 C300 320 450 260 600 205 S790 150 850 125" fill="none" stroke="#147f80" stroke-width="6"/>
-<path d="M130 270 C300 265 450 260 600 257 S790 255 850 253" fill="none" stroke="#916c22" stroke-width="6"/>
-<path d="M130 160 C300 185 450 230 600 275 S790 315 850 335" fill="none" stroke="#d06d4d" stroke-width="6"/>
-<text x="720" y="112" font-size="18" fill="#147f80" font-weight="700">向上倾斜</text>
-<text x="720" y="240" font-size="18" fill="#916c22" font-weight="700">平坦</text>
-<text x="720" y="360" font-size="18" fill="#d06d4d" font-weight="700">倒挂</text>
-<text x="130" y="415" font-size="14" fill="#52686b">短期</text><text x="850" y="415" text-anchor="end" font-size="14" fill="#52686b">长期</text></svg><figcaption>图 1：曲线形状只是对某一时点、某一类债券收益率的截面描述。它不是经济增长或央行利率的直接承诺。</figcaption></figure>
+<figure><img src="assets/diagrams/yield-curve-shapes.svg" alt="正常向上、平坦和倒挂三种收益率曲线的示意图"><figcaption>图 1：曲线形状只是对某一时点、某一类债券收益率的截面描述。它不是经济增长或央行利率的直接承诺。</figcaption></figure>
 </section>
 <section id="yield"><h2>票面利率、到期收益率与即期利率</h2>
 <p><strong>票面利率</strong>决定债券按面值计算的合同票息；<strong>到期收益率（YTM）</strong>是使未来合同现金流的折现现值等于当前价格的内部收益率。<strong>计算 YTM 本身</strong>并不要求预先假设票息如何再投资；只有把报价 YTM 解释为最终实现的复合持有回报时，才需要考虑票息再投资、违约和持有期等条件；<strong>即期利率（spot rate）</strong>对应某一到期日的一笔零息现金流折现率。把票面利率、当期收益率和 YTM 混为一谈，会导致债券定价错误。</p>
