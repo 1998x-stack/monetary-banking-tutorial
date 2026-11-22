@@ -7,6 +7,7 @@
 ## 开始学习
 
 - 在线入口（GitHub Pages）：<https://1998x-stack.github.io/monetary-banking-tutorial/>
+- [全站知识关联地图](knowledge-map.html)：五条学习路线、九条跨主题因果链，文章中共有 84 个直达相关小节的链接；离线可用
 - 本地阅读：下载或克隆仓库，直接打开 `index.html`。首页章节卡片是静态 HTML，不依赖 `fetch()`，因此 `file://` 环境也能使用。
 - 章节入口：`01.html` 至 `28.html`。
 
@@ -34,17 +35,21 @@ xdg-open index.html
 ```text
 .
 ├── index.html                 # 静态课程门户（28 章，可搜索）
+├── knowledge-map.html         # 五条路线及跨主题因果地图
 ├── courses.json               # 章节元数据
 ├── 01.html … 28.html          # 28 篇独立文章
 ├── theme.css                  # 保留历史兼容样式；新页面不依赖它
 ├── assets/
 │   ├── css/
 │   │   ├── home.css           # 首页设计系统
+│   ├── knowledge.css      # 知识关联地图样式
 │   │   └── article.css        # 第 01–28 章共用文章样式
 │   ├── js/
 │   │   ├── home.js            # 首页本地搜索
 │   │   └── article-demos.js   # 文章中的渐进增强交互
 │   └── diagrams/              # 独立、可访问的 SVG 图解
+├── knowledge/                 # 28 章 × 3 个关联的可审核关系数据
+├── reports/                   # 按日期记录研究来源与事实修复
 ├── evidence/                  # 第 01–28 章的事实—来源证据台账
 ├── examples/                  # 第 28 章的虚构数据与可复现计算
 ├── scripts/
@@ -64,6 +69,14 @@ xdg-open index.html
 - 重要事实优先引用央行、统计部门、国际组织、监管机构和原始研究；每篇文章在 `evidence/` 中保留可追溯的证据台账。
 - 不复制 Christopher Olah 或 The Annotated Transformer 的文字、图形、代码或品牌，只借鉴渐进式解释、清晰图解和可复现示例的教学方法。
 
+## 第二轮精修：知识关联与事实复核
+
+- 每章保持独立解释，并额外提供 **3 个跨主题、带原因说明的具体小节入口**。关系源文件为 [`knowledge/concept-links.json`](knowledge/concept-links.json)，可通过 [知识地图](knowledge-map.html) 以主题路线浏览。
+- 首页和文章的跳转不依赖网络或 JavaScript。响应式关联卡片在 390px/360px 手机宽度下改为单列，长表格和公式支持键盘焦点与横向滚动。
+- 第 13 章新增 **CIP 两条套期保值路径图**，修订 BIS 的 2025 年 FX 初步值与后续修订值，并增加 **BPM7 2025 年发布、各国分阶段采用**的说明。
+- [本轮证据与工程审计记录](reports/deep-audit-2026-11-22.md) 明确列出已核对的官方来源、修复范围和仍需滚动检查的事项。
+- 自动化检查增加 84 个跨章节链接的目标锚点验证、知识地图页面验收、MathML 呈现几何检查、首个 Tab 键可用性，以及新增图解的关键数字断言。
+
 ## 本地质量检查
 
 Python 3.10+：
@@ -81,7 +94,7 @@ python -m playwright install chromium
 python scripts/browser_check.py --output artifacts/browser-qa
 ```
 
-浏览器检查覆盖首页和第 01–28 章的 1440、768、390、360 像素视口、图片加载、页面溢出、控制台错误、打印模式及每篇文章的交互控件。未运行的检查不得标记为通过；CI 运行结果以 GitHub Actions 为准。
+浏览器检查覆盖首页、知识地图和第 01–28 章的 1440、768、390、360 像素视口、图片加载、页面溢出、控制台错误、打印模式及每篇文章的交互控件。未运行的检查不得标记为通过；CI 运行结果以 GitHub Actions 为准。
 
 ## 可复现综合项目
 

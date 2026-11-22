@@ -92,6 +92,59 @@ def validate():
         except Exception as exc: errors.append(f"{ledger.name}: invalid JSON: {exc}")
     for extra in ("examples/analyse_macro.py","examples/sample_macro_data.csv","examples/README.md","tests/test_macro_example.py"):
         if not (ROOT/extra).is_file(): errors.append(f"Missing capstone reproducibility file: {extra}")
+    # Deep-audit knowledge graph: all 28 chapters, exactly three causal links each.
+    graph_path = ROOT/"knowledge"/"concept-links.json"
+    map_path = ROOT/"knowledge-map.html"
+    if not graph_path.is_file(): errors.append("Missing knowledge/concept-links.json")
+    else:
+        try:
+            graph=json.loads(graph_path.read_text(encoding="utf-8"))
+            records=graph["chapters"]
+            if len(records)!=28 or {item["chapter"] for item in records}!={f"{n:02d}" for n in range(1,29)}:
+                errors.append("Knowledge graph must cover exactly chapters 01–28")
+            seen=set()
+            for item in records:
+                chapter=item["chapter"]
+                if chapter in seen: errors.append(f"Duplicate knowledge graph record {chapter}")
+                seen.add(chapter)
+                relations=item.get("related",[])
+                if len(relations)!=3: errors.append(f"{chapter}: expected three curated cross-links")
+                raw=(ROOT/f"{chapter}.html").read_text(encoding="utf-8")
+                if raw.count('class="concept-link"')!=3:
+                    errors.append(f"{chapter}: expected three rendered concept cards")
+                if 'id="concept-bridge"' not in raw:
+                    errors.append(f"{chapter}: missing concept bridge")
+                for rel in relations:
+                    target=ROOT/f"{rel['to']}.html"
+                    if not target.is_file():
+                        errors.append(f"{chapter}: missing linked article {rel['to']}")
+                        continue
+                    if rel["to"]==chapter: errors.append(f"{chapter}: must not self-link")
+                    if len(rel.get("label","").strip())<5 or len(rel.get("why","").strip())<10:
+                        errors.append(f"{chapter}: relation needs meaningful title and explanation")
+                    dest=Document();dest.feed(target.read_text(encoding="utf-8"))
+                    if rel["anchor"] not in dest.ids:
+                        errors.append(f"{chapter}: bad graph fragment {rel['to']}.html#{rel['anchor']}")
+                    if f'href="{rel["to"]}.html#{rel["anchor"]}"' not in raw:
+                        errors.append(f"{chapter}: graph relation not rendered {rel['to']}#{rel['anchor']}")
+        except Exception as exc: errors.append(f"Knowledge graph validation failed: {exc}")
+    if not map_path.is_file(): errors.append("Missing knowledge-map.html")
+    else:
+        map_raw=map_path.read_text(encoding="utf-8")
+        map_doc=Document();map_doc.feed(map_raw)
+        if map_doc.h1!=1 or map_raw.count('class="knowledge-card"')!=28:
+            errors.append("Knowledge map must have one H1 and 28 chapter cards")
+        for href in map_doc.links:
+            target=local_target(map_path,href)
+            if target is None: continue
+            if not target.is_file(): errors.append(f"Knowledge map broken link: {href}");continue
+            fragment=urlsplit(href).fragment
+            if fragment and target.suffix==".html":
+                target_doc=Document();target_doc.feed(target.read_text(encoding="utf-8"))
+                if fragment not in target_doc.ids:
+                    errors.append(f"Knowledge map broken fragment: {href}")
+    if (ROOT/"index.html").is_file() and 'href="knowledge-map.html"' not in (ROOT/"index.html").read_text(encoding="utf-8"):
+        errors.append("Homepage must link the knowledge map")
     for svg in (ROOT/"assets"/"diagrams").glob("*.svg"):
         raw=svg.read_text(encoding="utf-8")
         if "<title" not in raw or "<desc" not in raw or "viewBox=" not in raw: errors.append(f"{svg.relative_to(ROOT)}: SVG needs title, desc and viewBox")
@@ -106,6 +159,7 @@ def main():
     print("SITE VALIDATION PASSED")
     print("- 28 chapter files and course metadata")
     print("- chapters 01–28: standalone structure, local assets, links and evidence ledgers")
+    print("- 84 cross-chapter concept links, 28 course-map cards and target anchors")
     print("- SVG accessibility metadata and offline runtime dependencies")
     return 0
 

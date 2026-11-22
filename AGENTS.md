@@ -38,6 +38,14 @@ Use progressive disclosure: each figure should answer one question. Captions mus
 - In `examples/`, all provided CSV numbers (including future 2026-12 values) are fictional teaching fixtures. Never label them actual or current market information.
 - Keep Python examples deterministic, dependency-light, validation-first and covered by unit tests.
 
+## Deep-audit knowledge graph and evidence maintenance
+- `knowledge/concept-links.json` contains exactly 28 source chapters with 3 manually curated links each. Every link has a real chapter section fragment, a reader-facing explanation title and a causal reason. Keep all 84 links in sync with article HTML; generated navigation must remain fully usable without JavaScript.
+- Each article links to `knowledge-map.html`; the map has five learning routes and selected causal bridges. Never replace explanatory prose with “see chapter X” as a prerequisite.
+- Tables and formulas that overflow on mobile must have a keyboard-accessible scroll region with a useful label. Check 360px as well as 390px devices, and check first-tab skip navigation and native MathML geometry.
+- For BIS foreign-exchange turnover, distinguish preliminary September 2025 reports (9.6T USD/day, +28%) from later BIS December 2025 analysis (9.5T USD/day, +27%); cite the version and retain both values when teaching the impact of revisions.
+- The IMF published BPM7 in March 2025 while countries may still compile using BPM6 as standards are phased in. Specify which standard a country uses and do not assume same-day global implementation.
+- Use `reports/deep-audit-2026-11-22.md` for this audit's traceability. Keep future audit reports separate and never replace dated official evidence with unsupported remembered values.
+
 ## Repository workflow
 1. Preserve existing chapter URLs unless an explicit migration plan includes redirects. Chapters 01–28 use the shared article design system.
 2. Update `courses.json` whenever chapter title, topic, group or file path changes; keep the homepage's 28 static chapter cards in sync.

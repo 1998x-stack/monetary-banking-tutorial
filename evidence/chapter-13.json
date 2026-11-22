@@ -4,12 +4,12 @@
   "claims": [
     {
       "id": "bop-accounts",
-      "claim": "BPM6 将国际收支划分为经常账户、资本账户和金融账户，并采用复式记账原则记录居民与非居民交易。",
+      "claim": "BPM6 国际收支分经常、资本和金融账户；IMF 2025 年发布 BPM7 但2026年各国家统计口径仍存在BPM6/BPM7过渡。",
       "kind": "statistical_standard",
       "source_url": "https://data.imf.org/-/media/iData/External-Storage/Documents/73FBCD5B6CDE4D289C60B9B0CAA40622/en/2-bpm6.pdf",
       "locator": "BPM6 Chapter 2, paragraphs 2.12–2.18",
       "status": "verified",
-      "notes": "资本账户与金融账户明确分开，不将二者合并。"
+      "notes": "BPM6 部分是该旧版标准的明确说明；新版本和实施进度另有独立权威来源。"
     },
     {
       "id": "impossible-trinity",
@@ -22,12 +22,12 @@
     },
     {
       "id": "bis-fx-turnover",
-      "claim": "BIS 2025 年调查显示，2025 年 4 月全球 OTC 外汇市场日均成交额约 9.6 万亿美元，比 2022 年调查高 28%。",
+      "claim": "BIS 2025-09 初步统计为2025年4月全球 OTC 外汇日均约9.6万亿美元、较2022年增长28%；2025-12后续分析改为约9.5万亿美元、增长27%。",
       "kind": "market_statistic",
       "source_url": "https://www.bis.org/media-releases/20250930-global-fx-trading-hits-96-trillion-day-april-2025-and-otc-interest-rate-derivatives-surge-79",
       "locator": "30 September 2025 media release; FX turnover",
       "status": "verified",
-      "notes": "成交额不等于贸易额或净资本流动。"
+      "notes": "同一调查不同发布时间的数据版本必须并列标示，不得将初步值作为唯一最终值。"
     },
     {
       "id": "rmb-fixing",
@@ -46,6 +46,33 @@
       "locator": "Impossible trinity discussion and interest rate parity footnote",
       "status": "derived",
       "notes": "远期汇率公式按本币/外币报价方向推导。"
+    },
+    {
+      "id": "bpm7-released",
+      "claim": "IMF 在2025年3月20日发布BPM7和2025 SNA相关标准，BPM7更新国际收支统计建议。",
+      "kind": "statistical_standard",
+      "source_url": "https://www.imf.org/en/News/Articles/2025/03/20/pr25072-imf-and-statistical-community-release-new-global-standards-for-macroeconomic-stats",
+      "locator": "IMF news release, date and updated external-sector standard",
+      "status": "verified",
+      "notes": "发布日期与各国采用日期不能混淆。"
+    },
+    {
+      "id": "bpm7-transition",
+      "claim": "IMF与统计界计划推动BPM7/2025 SNA逐步实施，目标时间集中于2029–2030年，2026年尚不宜把全部国家视为已切换。",
+      "kind": "implementation_plan",
+      "source_url": "https://www.imf.org/en/publications/tnm/issues/2026/07/02/sna-bpm-implementation-planning-playbook-575192",
+      "locator": "2026 Implementation Planning Playbook, implementation schedule and transition",
+      "status": "verified",
+      "notes": "实施日期可因国家不同而变，研究各国数据须核对其统计机关。"
+    },
+    {
+      "id": "bis-fx-revised",
+      "claim": "BIS 2025年12月后续调查分析采用2025年4月OTC FX日均约9.5万亿美元，较2022年增长27%，不同于9月初值。",
+      "kind": "market_statistic",
+      "source_url": "https://www.bis.org/publications/qr-202512/foreword-shifting-currents-fx-and-interest-rate-derivatives-highlights-2025-triennial-survey",
+      "locator": "December 2025 Quarterly Review foreword, FX turnover paragraph",
+      "status": "verified",
+      "notes": "应优先展示后续更完整版本，并保留初值可追溯。"
     }
   ]
 }
