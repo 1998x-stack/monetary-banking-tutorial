@@ -2,11 +2,11 @@
 
 一个以中文为主的静态课程站点，覆盖货币、信用、银行、金融市场、货币政策与宏观金融分析，共 28 个主题章节。无需构建工具或第三方 CDN，页面可在本地浏览器打开，也可部署到 GitHub Pages。
 
-> **内容状态：** 第 01–21 章已完成第一轮深度重构：独立叙事、图解、公式/案例、来源证据清单和交互练习。第 22–28 章保留既有页面与 URL，后续按相同规范逐批迁移。
+> **内容状态：** 第 01–28 章均已完成第一轮深度重构：独立叙事、证据与统计口径、原创图解、交互练习。第 28 章还包含可离线运行的 Python 计算、虚构样本 CSV 和回归测试。
 
 ## 开始学习
 
-- 在线入口（仓库启用 GitHub Pages 后）：<https://1998x-stack.github.io/monetary-banking-tutorial/>
+- 在线入口（GitHub Pages）：<https://1998x-stack.github.io/monetary-banking-tutorial/>
 - 本地阅读：下载或克隆仓库，直接打开 `index.html`。首页章节卡片是静态 HTML，不依赖 `fetch()`，因此 `file://` 环境也能使用。
 - 章节入口：`01.html` 至 `28.html`。
 
@@ -35,18 +35,18 @@ xdg-open index.html
 .
 ├── index.html                 # 静态课程门户（28 章，可搜索）
 ├── courses.json               # 章节元数据
-├── 01.html … 21.html          # 已重构的独立文章
-├── 22.html … 28.html          # 保留原有 URL 的后续章节
-├── theme.css                  # 旧章节使用的兼容样式
+├── 01.html … 28.html          # 28 篇独立文章
+├── theme.css                  # 保留历史兼容样式；新页面不依赖它
 ├── assets/
 │   ├── css/
 │   │   ├── home.css           # 首页设计系统
-│   │   └── article.css        # 第 01–21 章共用文章样式
+│   │   └── article.css        # 第 01–28 章共用文章样式
 │   ├── js/
 │   │   ├── home.js            # 首页本地搜索
 │   │   └── article-demos.js   # 文章中的渐进增强交互
 │   └── diagrams/              # 独立、可访问的 SVG 图解
-├── evidence/                  # 每篇文章的事实—来源证据台账
+├── evidence/                  # 第 01–28 章的事实—来源证据台账
+├── examples/                  # 第 28 章的虚构数据与可复现计算
 ├── scripts/
 │   ├── validate_site.py       # 静态结构、链接和证据校验
 │   └── browser_check.py       # Chromium 多视口验收
@@ -81,7 +81,20 @@ python -m playwright install chromium
 python scripts/browser_check.py --output artifacts/browser-qa
 ```
 
-浏览器检查覆盖首页和第 01–21 章的 1440、768、390、360 像素视口、图片加载、页面溢出、控制台错误、打印模式及每篇文章的交互控件。未运行的检查不得标记为通过；CI 运行结果以 GitHub Actions 为准。
+浏览器检查覆盖首页和第 01–28 章的 1440、768、390、360 像素视口、图片加载、页面溢出、控制台错误、打印模式及每篇文章的交互控件。未运行的检查不得标记为通过；CI 运行结果以 GitHub Actions 为准。
+
+## 可复现综合项目
+
+第 28 章以完全虚构数据演示宏观政策报告的可复核数据流程，附带源数据词典、Python 标准库分析脚本与自动化测试：
+
+```bash
+python examples/analyse_macro.py
+python -m unittest discover -s tests -v
+```
+
+- [完整第 28 章](28.html)：问题 → 数据审计 → 金融传导机制 → 政策情景 → 复盘
+- [数据、代码和输入校验](examples/README.md)：拒绝重复月份、非正存量和不合法的同比月份
+- 所有示例数据（含 2026-12）均为**虚构教学样本**，不是已经发布的真实经济数据，不得作为投资或政策预测依据
 
 ## GitHub Pages
 

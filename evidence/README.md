@@ -1,6 +1,6 @@
 # Evidence ledgers
 
-Each `chapter-NN.json` maps material factual or quantitative claims to a source and a locator. The current rebuilt set covers chapters 01–21.
+Each `chapter-NN.json` maps material factual or quantitative claims to a source and a locator. The current rebuilt set covers chapters 01–28.
 
 - `verified`: supported by the linked source at the stated locator.
 - `derived`: a synthesis of established mechanisms; the notes explain the inference.

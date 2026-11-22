@@ -1,0 +1,60 @@
+{
+  "article": "24.html",
+  "title": "如何用社融、M2 和利率数据识别金融条件？",
+  "claims": [
+    {
+      "id": "tsf-definitions",
+      "claim": "中国社融增量和存量分别对应一定期间与期末的实体经济融资规模。",
+      "kind": "source_grounded",
+      "source_url": "https://www.stats.gov.cn/sj/ndsj/2021/html/zbe18.htm",
+      "locator": "Statistical explanatory notes: Aggregate Financing to the Real Economy (Flow/Stock)",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "fred-revisions",
+      "claim": "FRED API 允许用户指定观察日期、数据版本，并说明原始观测值可能修订。",
+      "kind": "source_grounded",
+      "source_url": "https://fred.stlouisfed.org/docs/api/fred/realtime_period.html",
+      "locator": "Real-time periods, vintage/revisions",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "fred-observations",
+      "claim": "FRED observations API 提供序列时间范围和频率等参数。",
+      "kind": "source_grounded",
+      "source_url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+      "locator": "fred/series/observations parameter descriptions",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "weo-vintages",
+      "claim": "IMF WEO 提供发布版本与历史预测资料，比较预测与后续观测应保存版本。",
+      "kind": "source_grounded",
+      "source_url": "https://data.imf.org/Datasets/WEO",
+      "locator": "WEO dataset vintage documentation",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "credit-gap-limits",
+      "claim": "BIS 信贷／GDP 缺口涉及趋势估计，比较国别数据需核对统计口径。",
+      "kind": "source_grounded",
+      "source_url": "https://data.bis.org/topics/CREDIT_GAPS",
+      "locator": "Overview: long-run trend and national differences",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "stock-example",
+      "claim": "400 到 424 的存量同比为 6%，作为教学示例。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article 24 worked example",
+      "status": "illustrative",
+      "notes": "假设数值；不对应真实经济体或真实政策操作。"
+    }
+  ]
+}

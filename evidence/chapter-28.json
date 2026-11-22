@@ -1,0 +1,60 @@
+{
+  "article": "28.html",
+  "title": "如何完成一份可复盘的宏观货币政策研究？",
+  "claims": [
+    {
+      "id": "weo-data",
+      "claim": "IMF WEO 数据库提供各国宏观指标与历史发布版本，可用于跟踪预测修订。",
+      "kind": "source_grounded",
+      "source_url": "https://data.imf.org/Datasets/WEO",
+      "locator": "WEO dataset overview and vintages",
+      "status": "verified",
+      "notes": "取数时须保留时间戳、统计期与版本信息。"
+    },
+    {
+      "id": "oecd-indicators",
+      "claim": "OECD CLI 主要用于观察经济活动相对长期趋势的转折，而非预测精确 GDP 增速。",
+      "kind": "source_grounded",
+      "source_url": "https://www.oecd.org/en/data/datasets/oecd-composite-leading-indicators-clis.html",
+      "locator": "CLI dataset description",
+      "status": "verified",
+      "notes": "取数时须保留时间戳、统计期与版本信息。"
+    },
+    {
+      "id": "bis-risk-gap",
+      "claim": "BIS 信贷／GDP 缺口是依统计长期趋势估计的早期风险指标，需核对口径。",
+      "kind": "source_grounded",
+      "source_url": "https://data.bis.org/topics/CREDIT_GAPS",
+      "locator": "Credit-to-GDP gaps overview",
+      "status": "verified",
+      "notes": "取数时须保留时间戳、统计期与版本信息。"
+    },
+    {
+      "id": "fred-vintages",
+      "claim": "实时数据与发布版本可通过 FRED 参数获取，避免未来修订信息泄漏。",
+      "kind": "source_grounded",
+      "source_url": "https://fred.stlouisfed.org/docs/api/fred/realtime_period.html",
+      "locator": "FRED real-time periods definition",
+      "status": "verified",
+      "notes": "取数时须保留时间戳、统计期与版本信息。"
+    },
+    {
+      "id": "sep-uncertainty",
+      "claim": "美联储 SEP 强调成员预测及预测不确定性，并非确定性承诺。",
+      "kind": "source_grounded",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/guide-to-the-summary-of-economic-projections.htm",
+      "locator": "Guide to SEP",
+      "status": "verified",
+      "notes": "取数时须保留时间戳、统计期与版本信息。"
+    },
+    {
+      "id": "hypothetical-2026",
+      "claim": "CSV 中 2026 年 12 月的 424、318 和 102.5 等数字是完全虚构的教学样本。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Example CSV / Article 28",
+      "status": "illustrative",
+      "notes": "包含未来日期的明确虚构数据，不代表 2026 年真实发布结果。"
+    }
+  ]
+}

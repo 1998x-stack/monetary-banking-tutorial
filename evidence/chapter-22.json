@@ -1,0 +1,60 @@
+{
+  "article": "22.html",
+  "title": "为什么局部金融冲击会变成系统性危机？",
+  "claims": [
+    {
+      "id": "crisis-channel",
+      "claim": "2007–08 年全球金融危机涉及住房抵押贷款证券化、金融机构杠杆和批发融资市场的相互作用。",
+      "kind": "source_grounded",
+      "source_url": "https://www.federalreservehistory.org/essays/great-recession-of-200709",
+      "locator": "2007–09 crisis historical overview",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "nonbank-leverage",
+      "claim": "非银行金融中介杠杆通过金融市场和与银行融资方的联系带来系统性风险。",
+      "kind": "source_grounded",
+      "source_url": "https://www.fsb.org/2025/07/leverage-in-nonbank-financial-intermediation-final-report/",
+      "locator": "2025 final report, executive summary",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "credit-gap",
+      "claim": "信用与 GDP 比率相对长期趋势的偏离被 BIS 用作早期预警指标。",
+      "kind": "source_grounded",
+      "source_url": "https://data.bis.org/topics/CREDIT_GAPS",
+      "locator": "Credit-to-GDP gaps overview",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "early-warnings",
+      "claim": "BIS 将信贷缺口与债务偿付率列入监测银行危机的早期预警指标。",
+      "kind": "source_grounded",
+      "source_url": "https://www.bis.org/publications/early-warning-indicators",
+      "locator": "Early warning indicators overview",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "ccyb",
+      "claim": "CCyB 旨在增加资本缓冲应对系统性信用增长风险。",
+      "kind": "source_grounded",
+      "source_url": "https://www.bis.org/committees/bcbs/ccyb",
+      "locator": "CCyB purpose and guidance",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "leverage-demo",
+      "claim": "机构净资产损失比例在固定负债时可能高于资产跌幅。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article 22 calculator",
+      "status": "illustrative",
+      "notes": "假设数值；不对应真实经济体或真实政策操作。"
+    }
+  ]
+}

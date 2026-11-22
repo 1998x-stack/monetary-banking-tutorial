@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Chromium responsive and interaction checks for the homepage and chapters 01–21."""
+"""Chromium responsive and interaction checks for the homepage and chapters 01–28."""
 from __future__ import annotations
 import argparse, json
 from functools import partial
@@ -9,7 +9,7 @@ from threading import Thread
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-PAGES=["index.html"]+[f"{n:02d}.html" for n in range(1,22)]
+PAGES=["index.html"]+[f"{n:02d}.html" for n in range(1,29)]
 VIEWPORTS=[(1440,900),(768,1024),(390,844),(360,800)]
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -37,7 +37,14 @@ def check_interaction(page, name):
       "18.html":('[data-demo="transmission-lab"] button[data-channel="credit"]','click','信贷渠道'),
       "19.html":('[data-demo="islm"] input[name="government-spending"]','fill','均衡产出'),
       "20.html":('[data-demo="inflation-rate"] input[name="current-index"]','fill','4.00%'),
-      "21.html":('[data-demo="deflation"] input[name="expected-inflation"]','fill','实际利率约')
+      "21.html":('[data-demo="deflation"] input[name="expected-inflation"]','fill','实际利率约'),
+      "22.html":('[data-demo="crisis-leverage"] input[name="shock"]','fill','100.00%'),
+      "23.html":('[data-demo="report-reading"] button[data-kind="projection"]','click','成员预测'),
+      "24.html":('[data-demo="fin-data-growth"] input[name="tsf-new"]','fill','增速差 4.00'),
+      "25.html":('[data-demo="taylor-rule"] input[name="inflation"]','fill','6.50%'),
+      "26.html":('[data-demo="digital-money"] button[data-kind="ecny"]','click','2026 年新框架'),
+      "27.html":('[data-demo="stablecoin-cover"] input[name="haircut"]','fill','84.00%'),
+      "28.html":('[data-demo="macro-scenarios"] button[data-scenario="supply"]','click','供给冲击情景')
     }
     selector, action, expected=actions[name]
     control=page.locator(selector)
@@ -55,6 +62,10 @@ def check_interaction(page, name):
     elif name=="19.html": control.fill("40")
     elif name=="20.html": control.fill("104")
     elif name=="21.html": control.fill("-3")
+    elif name=="22.html": control.fill("20")
+    elif name=="24.html": control.fill("440")
+    elif name=="25.html": control.fill("4")
+    elif name=="27.html": control.fill("20")
     result=page.locator('[data-demo-output]').last.inner_text()
     if expected not in result:
         raise AssertionError(f"{name}: expected interaction output containing {expected!r}, got {result!r}")
@@ -108,9 +119,9 @@ def main():
         print(f"Report: {output/'report.json'}")
         return 1
     print("BROWSER QA PASSED")
-    print("- homepage + chapters 01–21")
+    print("- homepage + chapters 01–28")
     print("- 1440, 768, 390 and 360px viewports; print emulation")
-    print("- 21 meaningful article interactions")
+    print("- 28 meaningful article interactions")
     print(f"- artifacts: {output}")
     return 0
 

@@ -45,4 +45,77 @@ document.querySelectorAll('[data-demo="islm"]').forEach(box=>{const g=box.queryS
 document.querySelectorAll('[data-demo="inflation-rate"]').forEach(box=>{const p=box.querySelector('[name="previous-index"]'),c=box.querySelector('[name="current-index"]'),out=box.querySelector("[data-demo-output]");function calc(){const a=Number(p.value),b=Number(c.value);if(!Number.isFinite(a)||!Number.isFinite(b)||a<=0||b<=0){out.textContent="请输入大于零的价格指数。";return}const rate=(b/a-1)*100;out.textContent="累计通胀率为 "+rate.toFixed(2)+"%。指数从 "+a.toFixed(2)+" 变为 "+b.toFixed(2)+"，价格水平"+(rate>=0?"上升":"下降")+Math.abs(rate).toFixed(2)+"%。"}[p,c].forEach(x=>x.addEventListener("input",calc));calc()});
 document.querySelectorAll('[data-demo="deflation"]').forEach(box=>{const i=box.querySelector('[name="nominal-rate"]'),pi=box.querySelector('[name="expected-inflation"]'),d=box.querySelector('[name="nominal-debt"]'),out=box.querySelector("[data-demo-output]");function calc(){const I=Number(i.value),P=Number(pi.value),D=Number(d.value);if(![I,P,D].every(Number.isFinite)||I<=-100||P<=-100||D<0){out.textContent="请输入大于 -100% 的利率与通胀率，以及非负名义债务。";return}const real=I-P,burden=D/(1+P/100);out.textContent="实际利率约 "+real.toFixed(2)+"%；若价格水平变化 "+P.toFixed(2)+"%，实际债务负担约为 "+burden.toFixed(2)+" 万个当前价格基期单位。这里使用费雪近似和固定名义本金。"}[i,pi,d].forEach(x=>x.addEventListener("input",calc));calc()});
 
+
+document.querySelectorAll('[data-demo="crisis-leverage"]').forEach(box=>{
+ const a=box.querySelector('[name="assets"]'),d=box.querySelector('[name="debt"]'),s=box.querySelector('[name="shock"]'),out=box.querySelector("[data-demo-output]");
+ function update(){const A=Number(a.value),D=Number(d.value),shock=Number(s.value);
+ if(![A,D,shock].every(Number.isFinite)||A<=0||D<0||D>=A||shock<0||shock>100){out.textContent="请输入大于负债的正资产、非负债务和 0–100% 的资产跌幅。";return;}
+ const before=A-D,after=A*(1-shock/100)-D,loss=(before-after)/before*100;
+ out.textContent="初始净资产 "+before.toFixed(2)+"；冲击后净资产 "+after.toFixed(2)+"；净资产损失 "+loss.toFixed(2)+"%。"+(after<0?" 该假设场景下净资产转负。":" 该结果是教学压力测试，不是未来价格预测。");
+ }[a,d,s].forEach(x=>x.addEventListener("input",update));update();
+});
+document.querySelectorAll('[data-demo="report-reading"]').forEach(box=>{
+ const out=box.querySelector("[data-demo-output]");
+ const texts={
+ action:"本次操作：例如“决定将政策利率调整至 X%”是已公布的政策决定；需要核对发布日期、适用对象和生效时间。",
+ condition:"条件性表述：例如“根据经济形势变化适时采取措施”是政策反应的条件句，不保证某月必定行动。",
+ projection:"成员预测：SEP 点阵图体现参与者各自假设下的判断，并非 FOMC 对未来政策的投票结果或承诺。",
+ risk:"风险判断：例如“关注融资收紧风险”指出需监测的不确定性，不等于央行已经决定开展某项具体操作。"
+ };
+ box.querySelectorAll("button[data-kind]").forEach(btn=>btn.addEventListener("click",()=>{
+ box.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b===btn)));
+ out.textContent=texts[btn.dataset.kind];
+ }));
+});
+document.querySelectorAll('[data-demo="fin-data-growth"]').forEach(box=>{
+ const fields=["tsf-old","tsf-new","m2-old","m2-new"].map(n=>box.querySelector('[name="'+n+'"]')),out=box.querySelector("[data-demo-output]");
+ function update(){const [to,tn,mo,mn]=fields.map(x=>Number(x.value));
+ if(![to,tn,mo,mn].every(Number.isFinite)||to<=0||tn<=0||mo<=0||mn<=0){out.textContent="请为四个存量输入大于零的有效数字。";return;}
+ const a=(tn/to-1)*100,b=(mn/mo-1)*100,diff=Math.abs(a-b)<1e-9?0:a-b;
+ out.textContent="社融存量同比 "+a.toFixed(2)+"%；M2 同比 "+b.toFixed(2)+"%；增速差 "+diff.toFixed(2)+" 个百分点。差值本身不是资金供求缺口。";
+ }fields.forEach(f=>f.addEventListener("input",update));update();
+});
+document.querySelectorAll('[data-demo="taylor-rule"]').forEach(box=>{
+ const fields=["neutral-rate","inflation","target-inflation","output-gap"].map(n=>box.querySelector('[name="'+n+'"]')),out=box.querySelector("[data-demo-output]");
+ function update(){const [r,p,target,gap]=fields.map(x=>Number(x.value));
+ if(![r,p,target,gap].every(Number.isFinite)||Math.abs(r)>100||Math.abs(p)>100||Math.abs(target)>100||Math.abs(gap)>100){out.textContent="请输入合理范围内的有限数值（各参数绝对值不超过 100）。";return;}
+ const rate=r+p+0.5*(p-target)+0.5*gap;
+ out.textContent="简化泰勒规则名义利率 = "+rate.toFixed(2)+"%。这只是模型基准，不能当作央行决定。参数 r* 和产出缺口均需估计。";
+ }fields.forEach(f=>f.addEventListener("input",update));update();
+});
+document.querySelectorAll('[data-demo="digital-money"]').forEach(box=>{
+ const out=box.querySelector("[data-demo-output]");
+ const texts={
+ cash:"现钞：中央银行发行的货币，通常不计息；持有者需承担遗失、盗窃等实体保管风险。",
+ deposit:"银行存款：商业银行对客户的存款负债；可能计息，适用的存款保险与账户规则须按所在司法辖区判断。",
+ ecny:"银行实名 e-CNY 钱包：2026 年新框架对商业银行运营的相关钱包按存款负债管理，并规定计息、准备金和存款保险；不能推广到所有钱包类型。",
+ stable:"法币稳定币：私人发行人依合同和监管安排对持有人承担相关义务；不因锚定法币就自动享有央行负债地位或存款保险。"
+ };
+ box.querySelectorAll("button[data-kind]").forEach(btn=>btn.addEventListener("click",()=>{
+ box.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b===btn)));
+ out.textContent=texts[btn.dataset.kind];
+ }));
+});
+document.querySelectorAll('[data-demo="stablecoin-cover"]').forEach(box=>{
+ const fields=["liabilities","reserves","haircut"].map(n=>box.querySelector('[name="'+n+'"]')),out=box.querySelector("[data-demo-output]");
+ function update(){const [l,r,h]=fields.map(x=>Number(x.value));
+ if(![l,r,h].every(Number.isFinite)||l<=0||r<0||h<0||h>100){out.textContent="请输入正负债、非负储备和 0–100% 的折价率。";return;}
+ const stressed=r*(1-h/100),coverage=stressed/l*100;
+ out.textContent="压力后储备价值 "+stressed.toFixed(2)+"，覆盖率 "+coverage.toFixed(2)+"%。"+(coverage<100?" 低于 100% 说明本简化场景下储备价值不足以覆盖全部面值负债，但不等于真实发行人必然违约。":" 该比率仅反映简化市值覆盖，不代表赎回流动性、托管安排或实际监管合规。");
+ }fields.forEach(f=>f.addEventListener("input",update));update();
+});
+document.querySelectorAll('[data-demo="macro-scenarios"]').forEach(box=>{
+ const out=box.querySelector("[data-demo-output]");
+ const texts={
+ base:"基准情景：先核对实际产出、通胀趋势、银行贷款定价和风险溢价；不要仅凭政策利率推断资产价格。",
+ demand:"需求疲弱情景：观察订单、就业、贷款需求和企业投资是否同步转弱；利率下降不一定克服风险溢价上升或去杠杆。",
+ supply:"供给冲击情景：同时检查投入成本、总体及核心通胀、企业利润率和生产活动；价格压力与增长疲弱可能并存。",
+ credit:"金融压力情景：检查银行流动性、信用利差、抵押品折扣和企业续贷条件；融资渠道可能在市场压力下同步收紧。"
+ };
+ box.querySelectorAll("button[data-scenario]").forEach(btn=>btn.addEventListener("click",()=>{
+ box.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b===btn)));
+ out.textContent=texts[btn.dataset.scenario];
+ }));
+});
+
 })();

@@ -10,13 +10,13 @@ class SiteValidationTests(unittest.TestCase):
         self.assertEqual(validate(),[])
     def test_homepage_shows_rebuilt_progress_and_all_cards(self):
         raw=(ROOT/"index.html").read_text(encoding="utf-8")
-        self.assertIn('<strong>21</strong><span>章节已深度重构</span>',raw)
+        self.assertIn('<strong>28</strong><span>章节已深度重构</span>',raw)
         self.assertEqual(raw.count('class="chapter-card"'),28)
     def test_course_metadata_covers_all_chapters(self):
         data=json.loads((ROOT/"courses.json").read_text(encoding="utf-8"))
         self.assertEqual(len(data["chapters"]),28)
         self.assertEqual([item["num"] for item in data["chapters"]],[f"{i:02d}" for i in range(1,29)])
-    def test_first_twenty_one_are_independent_articles(self):
+    def test_all_twenty_eight_are_independent_articles(self):
         for name in REBUILT:
             raw=(ROOT/name).read_text(encoding="utf-8")
             self.assertIn("<article>",raw)
@@ -33,7 +33,7 @@ class SiteValidationTests(unittest.TestCase):
         self.assertIn("假设案例",raw)
         self.assertNotIn("真实故事",raw)
     def test_new_chapters_have_evidence_and_interaction(self):
-        for n in range(6,22):
+        for n in range(6,29):
             name=f"{n:02d}.html"
             ledger=ROOT/"evidence"/f"chapter-{n:02d}.json"
             self.assertTrue(ledger.is_file(),name)
@@ -72,6 +72,47 @@ class SiteValidationTests(unittest.TestCase):
         raw=(ROOT/"21.html").read_text(encoding="utf-8")
         self.assertIn("通胀放缓（disinflation）",raw)
         self.assertIn("不是一个“央行无论做什么都没用”的定理",raw)
+    def test_systemic_risk_distinguishes_micro_and_macro_prudential(self):
+        raw=(ROOT/"22.html").read_text(encoding="utf-8")
+        self.assertIn("微观审慎监管",raw)
+        self.assertIn("宏观审慎政策",raw)
+        self.assertIn("信贷／GDP",raw)
+    def test_policy_reports_do_not_treat_dots_as_voting(self):
+        raw=(ROOT/"23.html").read_text(encoding="utf-8")
+        self.assertIn("不是参与者投票",raw)
+        self.assertIn("替代解释",raw)
+    def test_tsf_and_m2_are_not_equated(self):
+        raw=(ROOT/"24.html").read_text(encoding="utf-8")
+        self.assertIn("不是一个未经估计就可被解释为",raw)
+        self.assertIn("存量",raw)
+    def test_taylor_rule_has_assumptions_and_errors(self):
+        raw=(ROOT/"25.html").read_text(encoding="utf-8")
+        self.assertIn("MAE",raw)
+        self.assertIn("r*=2%",raw)
+        self.assertIn("未来数据泄漏",raw)
+    def test_ecny_new_framework_is_scoped_and_dated(self):
+        raw=(ROOT/"26.html").read_text(encoding="utf-8")
+        self.assertIn("2026 年 1 月 1 日",raw)
+        self.assertIn("商业银行运营",raw)
+        self.assertIn("不能继续把所有数字人民币钱包",raw)
+    def test_stablecoin_rule_distinguishes_effective_date(self):
+        raw=(ROOT/"27.html").read_text(encoding="utf-8")
+        self.assertIn("2027 年 1 月 18 日",raw)
+        self.assertIn("不能把将于 2027 年生效的规则",raw)
+    def test_capstone_uses_fictional_data_and_local_script(self):
+        raw=(ROOT/"28.html").read_text(encoding="utf-8")
+        self.assertIn("完全假设数据",raw)
+        self.assertIn("2026 年 12 月",raw)
+        self.assertIn("examples/analyse_macro.py",raw)
+        self.assertTrue((ROOT/"examples"/"sample_macro_data.csv").is_file())
+    def test_new_articles_have_local_diagrams(self):
+        from scripts.validate_site import Document
+        for n in range(22,29):
+            text=(ROOT/f"{n:02d}.html").read_text(encoding="utf-8")
+            doc=Document()
+            doc.feed(text)
+            self.assertGreaterEqual(len(doc.images),1)
+            self.assertTrue(all(alt for src,alt in doc.images))
     def test_yield_curve_warning_is_not_deterministic(self):
         raw=(ROOT/"07.html").read_text(encoding="utf-8")
         self.assertIn("仅凭一次倒挂就预测衰退发生日期",raw)
