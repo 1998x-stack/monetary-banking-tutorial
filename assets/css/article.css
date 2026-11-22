@@ -104,3 +104,9 @@ math[display="block"]{font-size:1.25rem;margin:.25rem auto}
 .article-main .audit-case .audit-disclaimer{margin-top:1.35rem;padding:.7rem .95rem;background:#f1f6f3;border-left:3px solid #9bbfb2;color:#4d6265;font-size:.83rem;line-height:1.65;border-radius:0 8px 8px 0}
 @media(max-width:560px){.article-main .audit-case{margin:2.7rem 0 1.8rem;padding-top:1.05rem}.article-main .audit-case p{line-height:1.85}.article-main .audit-case .audit-disclaimer{padding:.65rem .75rem}}
 @media print{.article-main .audit-case{break-before:auto;border-color:#999}.article-main .audit-case .audit-disclaimer{background:transparent;border-color:#aaa}}
+
+/* Narrow viewport protection for hand-worked arithmetic and long reference labels.
+   Prevent an unbroken inline formula from expanding the article grid at 360px. */
+.audit-case{min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:normal}
+.audit-case p,.audit-case strong{max-width:100%;overflow-wrap:anywhere}
+@media(max-width:400px){.audit-case{overflow-wrap:anywhere}.audit-case p{hyphens:auto}}
