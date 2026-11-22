@@ -8,7 +8,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 CHAPTERS = [f"{n:02d}.html" for n in range(1, 29)]
-REBUILT = CHAPTERS[:21]
+REBUILT = CHAPTERS[:28]
 STATUSES = {"verified", "derived", "illustrative", "unverified"}
 BANNED = ("讲义介绍了", "课件介绍了", "上一章已经讲过", "如前文所述")
 
@@ -50,7 +50,7 @@ def validate():
         raw=(ROOT/"index.html").read_text(encoding="utf-8")
         if raw.count('class="chapter-card"')!=28: errors.append("index.html must contain 28 static chapter cards")
         if "fetch('courses.json')" in raw or 'fetch("courses.json")' in raw: errors.append("index.html must not fetch courses.json")
-        if 'class="stat"><strong>21</strong>' not in raw: errors.append("index.html progress count should show 21 rebuilt chapters")
+        if 'class="stat"><strong>28</strong>' not in raw: errors.append("index.html progress count should show 28 rebuilt chapters")
     for chapter in REBUILT:
         path=ROOT/chapter
         if not path.is_file(): continue
@@ -90,6 +90,8 @@ def validate():
                 if claim.get("status") not in STATUSES: errors.append(f"{ledger.name}: invalid status for {claim.get('id')}")
                 if claim.get("status")!="illustrative" and not claim.get("source_url"): errors.append(f"{ledger.name}: missing source for {claim.get('id')}")
         except Exception as exc: errors.append(f"{ledger.name}: invalid JSON: {exc}")
+    for extra in ("examples/analyse_macro.py","examples/sample_macro_data.csv","examples/README.md","tests/test_macro_example.py"):
+        if not (ROOT/extra).is_file(): errors.append(f"Missing capstone reproducibility file: {extra}")
     for svg in (ROOT/"assets"/"diagrams").glob("*.svg"):
         raw=svg.read_text(encoding="utf-8")
         if "<title" not in raw or "<desc" not in raw or "viewBox=" not in raw: errors.append(f"{svg.relative_to(ROOT)}: SVG needs title, desc and viewBox")
@@ -103,7 +105,7 @@ def main():
         return 1
     print("SITE VALIDATION PASSED")
     print("- 28 chapter files and course metadata")
-    print("- chapters 01–21: standalone structure, local assets, links and evidence ledgers")
+    print("- chapters 01–28: standalone structure, local assets, links and evidence ledgers")
     print("- SVG accessibility metadata and offline runtime dependencies")
     return 0
 

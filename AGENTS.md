@@ -1,7 +1,7 @@
 # Repository authoring rules
 
 ## Purpose
-Maintain a trustworthy, independently readable Chinese monetary-and-banking course. The first twenty-one chapters define the editorial and engineering standard for later migrations.
+Maintain a trustworthy, independently readable Chinese monetary-and-banking course. All 28 chapters use the same independently readable, evidence-grounded editorial and engineering standard.
 
 ## Non-negotiable article rules
 1. Every chapter must stand alone. A reader who opens one URL directly must be able to understand the question, background, terms, mechanism, equations, examples, caveats and conclusion without reading another chapter first.
@@ -29,8 +29,17 @@ Use progressive disclosure: each figure should answer one question. Captions mus
 - Distinguish financial credit reporting from broader public/social credit-information systems.
 - Label expected-loss equations and risk parameters as model estimates, not certain predictions.
 
+## Current-data and reproducibility safeguards
+- The 2026-01-01 e-CNY framework treats commercial-bank-operated relevant wallets as deposit liabilities for interest, deposit insurance and reserve-requirement purposes. Do not describe every wallet as cash-only M0 or universally as an unconditional central-bank liability; specify wallet and operator type.
+- The U.S. GENIUS Act was enacted in July 2025, and the OCC 2026 final rule has a January 2027 effective date. Distinguish enactment from the effective date before suggesting any rule is in force.
+- The e-CNY and stablecoin regime may evolve; check current primary official sources and state the as-of date.
+- Treat TSF/AFRE flows, TSF/AFRE stocks and M2 as different statistical objects. The TSF-M2 growth-rate difference is not an accounting identity for credit demand minus monetary supply.
+- Historical macro forecasts require release vintage, observation period, forecast horizon, output definition, benchmark and out-of-sample errors. Do not use subsequently revised observations as if they were available in real time.
+- In `examples/`, all provided CSV numbers (including future 2026-12 values) are fictional teaching fixtures. Never label them actual or current market information.
+- Keep Python examples deterministic, dependency-light, validation-first and covered by unit tests.
+
 ## Repository workflow
-1. Preserve existing chapter URLs unless an explicit migration plan includes redirects. Chapters 01–21 use the shared article design system.
+1. Preserve existing chapter URLs unless an explicit migration plan includes redirects. Chapters 01–28 use the shared article design system.
 2. Update `courses.json` whenever chapter title, topic, group or file path changes; keep the homepage's 28 static chapter cards in sync.
 3. Add/update the corresponding evidence ledger when facts or citations change.
 4. Run `python scripts/validate_site.py`, unit tests and Chromium browser checks.

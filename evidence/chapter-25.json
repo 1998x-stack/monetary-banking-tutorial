@@ -1,0 +1,51 @@
+{
+  "article": "25.html",
+  "title": "宏观经济预测如何避免只讲方向、不算误差？",
+  "claims": [
+    {
+      "id": "cli",
+      "claim": "OECD 领先指标旨在帮助预判经济活动相对长期趋势的转折。",
+      "kind": "source_grounded",
+      "source_url": "https://www.oecd.org/en/data/datasets/oecd-composite-leading-indicators-clis.html",
+      "locator": "CLI dataset overview",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "taylor",
+      "claim": "泰勒 1993 年论文讨论可供参考的规则化政策反应。",
+      "kind": "source_grounded",
+      "source_url": "https://web.stanford.edu/~johntayl/Onlinepaperscombinedbyyear/1993/Discretion_versus_Policy_Rules_in_Practice.pdf",
+      "locator": "Discretion versus Policy Rules in Practice",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "taylor-limits",
+      "claim": "美联储说明政策规则是比较与沟通工具，不能机械替代决策。",
+      "kind": "source_grounded",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/policy-rules-and-how-policymakers-use-them.htm",
+      "locator": "How policymakers use policy rules",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "weo-revisions",
+      "claim": "IMF WEO 数据库包含预测与历史发布版本，能用于事后检验预测修订。",
+      "kind": "source_grounded",
+      "source_url": "https://data.imf.org/Datasets/WEO",
+      "locator": "WEO vintages and forecasts",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "error-example",
+      "claim": "三个假设增长预测的 MAE 约为 0.67 个百分点。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article 25 worked MAE example",
+      "status": "illustrative",
+      "notes": "仅用于教学，不是实际观测数据。"
+    }
+  ]
+}

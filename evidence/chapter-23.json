@@ -1,0 +1,51 @@
+{
+  "article": "23.html",
+  "title": "如何把央行报告读成可检验的政策判断？",
+  "claims": [
+    {
+      "id": "fomc-minutes",
+      "claim": "FOMC 常规会议纪要一般在政策决定三周后公布。",
+      "kind": "source_grounded",
+      "source_url": "https://www.federalreserve.gov/faqs/minutes-federal-open-market-committee-fomc.htm",
+      "locator": "FOMC minutes FAQs",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "sep-projections",
+      "claim": "SEP 汇集 FOMC 参与者个人假设下的经济与适当政策利率预测，并非委员会决定。",
+      "kind": "source_grounded",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/guide-to-the-summary-of-economic-projections.htm",
+      "locator": "Guide to SEP, projections and dots",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "sep-2026",
+      "claim": "2026 年 9 月 SEP 按成员个人判断给出经济、通胀与政策利率预测及不确定性说明。",
+      "kind": "source_grounded",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm",
+      "locator": "September 16 2026 table and forecast uncertainty",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "pboc-policy-report",
+      "claim": "人民银行季度货币政策执行报告记录货币政策执行和金融条件分析。",
+      "kind": "source_grounded",
+      "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125227/125957/f5c4690f2cbd40918bf24c2d39ac58af/2025091218344076234/2025081517321679368.pdf",
+      "locator": "2025 Q1 Monetary Policy Report",
+      "status": "verified",
+      "notes": "范围、发布日期、统计定义与正文共同核对。"
+    },
+    {
+      "id": "text-classification",
+      "claim": "文本分类交互中的措辞是虚构教学句子。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article 23 exercise",
+      "status": "illustrative",
+      "notes": "假设数值；不对应真实经济体或真实政策操作。"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "article": "27.html",
+  "title": "稳定币、DeFi 与代币化金融：新技术改变了什么？",
+  "claims": [
+    {
+      "id": "bis-singleness",
+      "claim": "BIS 2025 年货币体系研究强调统一性、弹性与完整性，讨论稳定币和代币化体系的不同角色。",
+      "kind": "source_grounded",
+      "source_url": "https://www.bis.org/publications/aer-2025/next-generation-monetary-financial-system",
+      "locator": "AER 2025 chapter III: singleness elasticity integrity",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "tokenised-deposits",
+      "claim": "BIS 指出稳定币与代币化存款在维持货币统一性和结算安排上存在制度差异。",
+      "kind": "source_grounded",
+      "source_url": "https://www.bis.org/publications/bulletin-73-stablecoins-versus-tokenised-deposits-implications-singleness-money",
+      "locator": "BIS Bulletin 73 summary",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "stablecoins-digital-dollarisation",
+      "claim": "2026 BIS Paper 170 指出外币稳定币可能加速经济不稳定地区的数字货币替代。",
+      "kind": "source_grounded",
+      "source_url": "https://www.bis.org/publications/paper-170-impact-stablecoins-international-monetary-and-financial-system",
+      "locator": "BIS Paper 170 abstract, 2026-05-05",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "genius-dates",
+      "claim": "GENIUS Act 于 2025-07-18 签署，OCC 2026 年最终规则的生效日为 2027-01-18。",
+      "kind": "source_grounded",
+      "source_url": "https://occ.treas.gov/news-issuances/bulletins/2026/bulletin-2026-50.html",
+      "locator": "OCC Bulletin 2026-50 summary and background",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "defi-centralisation",
+      "claim": "DeFi 仍可能存在治理集中和代码、预言机等风险。",
+      "kind": "source_grounded",
+      "source_url": "https://www.bis.org/publ/qtrpdf/r_qt2112b.htm",
+      "locator": "BIS Quarterly Review DeFi risks",
+      "status": "derived",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "reserves-demo",
+      "claim": "折价后的储备覆盖率是可变参数教学计算，不对应真实发行人。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article 27 calculator",
+      "status": "illustrative",
+      "notes": "仅用于教学，不是实际观测数据。"
+    }
+  ]
+}

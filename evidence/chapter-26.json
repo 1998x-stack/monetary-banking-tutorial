@@ -1,0 +1,60 @@
+{
+  "article": "26.html",
+  "title": "数字人民币与 CBDC：究竟是谁的负债？",
+  "claims": [
+    {
+      "id": "new-ecny-rules",
+      "claim": "2026 年 1 月 1 日起，中国银行运营数字人民币钱包按照新框架纳入存款负债和准备金体系，相关余额计息并受存款保险保护。",
+      "kind": "source_grounded",
+      "source_url": "https://english.www.gov.cn/news/202512/29/content_WS69526d4ec6d00ca5f9a08511.html",
+      "locator": "2025-12-29 gov.cn announcement, paragraphs on bank deposit liabilities, interest and deposit insurance",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "realname-wallets",
+      "claim": "香港 2026 年 3 月答复明确实名钱包计息和准备金框架，并说明跨境钱包优化细节尚未最终确定。",
+      "kind": "source_grounded",
+      "source_url": "https://www.info.gov.hk/gia/general/202603/25/P2026032500231p.htm",
+      "locator": "2026-03-25 LCQ18 paragraphs 7–28",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "mbridge-mvp",
+      "claim": "mBridge 于 2024 年 6 月达到最小可行产品阶段，而不是被证明已全面商业化。",
+      "kind": "source_grounded",
+      "source_url": "https://www.bis.org/media-releases/20240605-project-mbridge-reaches-minimum-viable-product-stage-and-invites-further-international",
+      "locator": "2024-06-05 BIS release",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "mbridge-participants",
+      "claim": "mBridge 由泰国、阿联酋、中国内地和香港的货币当局及 BIS 参与早期合作。",
+      "kind": "source_grounded",
+      "source_url": "https://www.bis.org/project/mbridge",
+      "locator": "Project mBridge overview",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "ecb-project",
+      "claim": "ECB 表示数字欧元仍是条件性未来计划，2026 年并非已经正式发行。",
+      "kind": "source_grounded",
+      "source_url": "https://www.ecb.europa.eu/euro/digital_euro/faqs/html/ecb.faq_digital_euro.en.html",
+      "locator": "2026 digital euro FAQs, possible 2029 issuance conditional",
+      "status": "verified",
+      "notes": "时间、统计口径及法律适用范围在正文中标明。"
+    },
+    {
+      "id": "wallet-demo",
+      "claim": "四类货币与支付工具比较为概念性教学表格。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article 26 interactive comparison",
+      "status": "illustrative",
+      "notes": "仅用于教学，不是实际观测数据。"
+    }
+  ]
+}
