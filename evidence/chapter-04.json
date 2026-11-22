@@ -46,6 +46,15 @@
       "locator": "16 September 1992, UK crashes out of the ERM",
       "status": "verified",
       "notes": "正文不使用未经核实的索罗斯个人盈利数字。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "不可能三角在资本高度流动、套利摩擦较小的条件下说明固定汇率与独立利率政策的张力；现实有风险和管理摩擦。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case, assumptions and arithmetic",
+      "status": "illustrative",
+      "notes": "核查依据和教学假设均已在正文明确列明；示例不代表实际样本。"
     }
   ]
 }

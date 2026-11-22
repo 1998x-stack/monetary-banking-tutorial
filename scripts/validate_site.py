@@ -34,7 +34,7 @@ def local_target(source, url):
 
 def validate():
     errors=[]
-    required=("README.md","AGENTS.md","index.html","courses.json","scripts/browser_check.py","tests/test_site.py","assets/js/article-demos.js")
+    required=("README.md","AGENTS.md","index.html","courses.json","scripts/browser_check.py","scripts/audit_sources.py","tests/test_worked_audit.py","tests/test_site.py","assets/js/article-demos.js")
     for name in required:
         if not (ROOT/name).is_file(): errors.append(f"Missing required file: {name}")
     for name in CHAPTERS:
@@ -59,6 +59,12 @@ def validate():
         if doc.h1!=1: errors.append(f"{chapter}: expected one H1, got {doc.h1}")
         if doc.article_count!=1: errors.append(f"{chapter}: expected one semantic article, got {doc.article_count}")
         if 'id="references"' not in raw: errors.append(f"{chapter}: missing references section")
+        if raw.count('id="audit-case"')!=1:
+            errors.append(f"{chapter}: expected one independently explained worked check")
+        if raw.count('href="#audit-case"')<2:
+            errors.append(f"{chapter}: audit section missing mobile/desktop TOC navigation")
+        if 'class="audit-disclaimer"' not in raw:
+            errors.append(f"{chapter}: worked check must distinguish teaching assumptions from data")
         if 'class="article-header"' not in raw or 'class="article-toc"' not in raw: errors.append(f"{chapter}: missing shared article structure")
         for phrase in BANNED:
             if phrase in raw: errors.append(f"{chapter}: banned meta phrase {phrase!r}")
@@ -159,6 +165,7 @@ def main():
     print("SITE VALIDATION PASSED")
     print("- 28 chapter files and course metadata")
     print("- chapters 01–28: standalone structure, local assets, links and evidence ledgers")
+    print("- 28 independently verified teaching checks and audited evidence ledgers")
     print("- 84 cross-chapter concept links, 28 course-map cards and target anchors")
     print("- SVG accessibility metadata and offline runtime dependencies")
     return 0

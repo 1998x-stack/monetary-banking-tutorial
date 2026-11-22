@@ -55,6 +55,15 @@
       "locator": "ECB explainer, Broad increase in prices",
       "status": "verified",
       "notes": "用于区分总体价格水平变化与个别商品价格变化。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "示例CPI指数100→103与PCE指数100→102.5分别对应3%与2.5%通胀；BEA明确四种来源可解释指数差异。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://www.bea.gov/help/faq/555",
+      "locator": "BEA FAQ 555: formula, weight, scope and other effects",
+      "status": "derived",
+      "notes": "教学数值和模型假设均写明，不等于真实经济体参数估计。"
     }
   ]
 }

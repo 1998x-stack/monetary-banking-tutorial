@@ -55,6 +55,15 @@
       "locator": "Chapter 05 section P2P",
       "status": "illustrative",
       "notes": "不是对真实平台的指控或事件复原。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "以PD 2%、LGD 40%、EAD 100万元计算的教学预期损失为8000元；压力PD4%、LGD50%为20000元，属于示例而非实测。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case, assumptions and arithmetic",
+      "status": "illustrative",
+      "notes": "核查依据和教学假设均已在正文明确列明；示例不代表实际样本。"
     }
   ]
 }

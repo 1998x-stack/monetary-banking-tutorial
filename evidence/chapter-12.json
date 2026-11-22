@@ -46,6 +46,15 @@
       "locator": "Interest rate risk and bond price relationship",
       "status": "verified",
       "notes": "教学计算器假设年付息、无嵌入期权。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "一年后支付面值100与票息4的教学债券，按5%年折现率的价格约99.05元；二级交易款并非发行人新增筹资。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case worked scenario",
+      "status": "illustrative",
+      "notes": "来源核对制度或学术框架，示例数字不属于真实经济观测。"
     }
   ]
 }

@@ -46,6 +46,15 @@
       "locator": "SRP31.1–31.2",
       "status": "verified",
       "notes": "与市场风险交易账簿区分。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "CET1资本7、RWA由100变120时比率由7%降为约5.83%，即便分子未亏损也会下降；最低要求与分配缓冲概念不同。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://www.bis.org/committees/bcbs/basel-framework/standard/rbc?allChapters=true",
+      "locator": "RBC20 and RBC30 minimum capital and buffers",
+      "status": "derived",
+      "notes": "定性机制由资料支持；具体数值为假设示例；不作实时市场声明。"
     }
   ]
 }

@@ -46,6 +46,15 @@
       "locator": "Chapter 16 interactive exercise",
       "status": "illustrative",
       "notes": "系数为假设值，不代表任何国家或央行估计。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "名义GDP200保持不变、M由100至110时，由MV=PY定义的V从2降至约1.82；单凭M增10%无法推出P增10%。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://fred.stlouisfed.org/series/M2V",
+      "locator": "FRED M2V definition as nominal GDP divided by M2",
+      "status": "derived",
+      "notes": "教学数值和模型假设均写明，不等于真实经济体参数估计。"
     }
   ]
 }

@@ -46,6 +46,15 @@
       "locator": "Yield curve uses and model caveats",
       "status": "derived",
       "notes": "用多因素框架解释形态，不作机械预测。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "债券YTM是使合同现金流现值等于交易价格的内部收益率；实现的复合回报另受票息再投资、持有期及违约影响。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/fixed-income-bond-valuation-prices-and-yields",
+      "locator": "Yield measures: yield to maturity as an internal rate of return",
+      "status": "derived",
+      "notes": "定性机制由资料支持；具体数值为假设示例；不作实时市场声明。"
     }
   ]
 }

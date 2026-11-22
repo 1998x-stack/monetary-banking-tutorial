@@ -46,6 +46,15 @@
       "locator": "Chapter 18 interactive channel selector",
       "status": "illustrative",
       "notes": "不模拟任何实际国家的政策乘数。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "示例政策基准利率下降0.25百分点但信用风险溢价扩大0.50百分点，融资利率净上升0.25百分点。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case worked scenario",
+      "status": "illustrative",
+      "notes": "教学数值和模型假设均写明，不等于真实经济体参数估计。"
     }
   ]
 }

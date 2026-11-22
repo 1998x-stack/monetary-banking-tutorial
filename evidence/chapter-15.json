@@ -46,6 +46,15 @@
       "locator": "Chapter 15 derivation and calculator",
       "status": "illustrative",
       "notes": "静态教学模型；假设比率固定，不能视为现代银行贷款的机械因果规律。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "在固定c=10%、rr=10%的静态教学模型里，超额准备金比率e由5%变10%，乘数由4.4降至约3.67；并非现实银行贷款上限预测。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://www.federalreserve.gov/econres/feds/money-reserves-and-the-transmission-of-monetary-policy-does-the-money-multiplier-exist.htm",
+      "locator": "2010 FEDS research concluding standard money multiplier does not describe the observed transmission",
+      "status": "derived",
+      "notes": "来源核对制度或学术框架，示例数字不属于真实经济观测。"
     }
   ]
 }

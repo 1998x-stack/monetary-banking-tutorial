@@ -46,6 +46,15 @@
       "locator": "《人民币管理条例》第三条",
       "status": "verified",
       "notes": "用于解释制度基础，不将法定地位等同于货币信任的全部来源。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "商品媒介、记账信用和公共支付安排可作为解释货币接受的不同教学机制；不主张所有社会依次经历同一历史序列。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case, assumptions and arithmetic",
+      "status": "illustrative",
+      "notes": "核查依据和教学假设均已在正文明确列明；示例不代表实际样本。"
     }
   ]
 }

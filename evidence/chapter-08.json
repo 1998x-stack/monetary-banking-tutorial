@@ -46,6 +46,15 @@
       "locator": "Funding liquidity risk and liquidity risk management principles",
       "status": "verified",
       "notes": "教学案例明确标为假设案例。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "教学假设支付缺口2亿元、债券仅能按账面80%变现，需要处置账面约2.5亿元，简化处置损失为0.5亿元。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case worked scenario",
+      "status": "illustrative",
+      "notes": "定性机制由资料支持；具体数值为假设示例；不作实时市场声明。"
     }
   ]
 }

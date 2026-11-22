@@ -55,6 +55,15 @@
       "locator": "Article 22 calculator",
       "status": "illustrative",
       "notes": "假设数值；不对应真实经济体或真实政策操作。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "资产100、债务80、权益20的教学机构杠杆5倍；资产下降10%时权益下降50%，下降20%时权益归零；不代表违约率。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://www.fsb.org/2025/07/leverage-in-nonbank-financial-intermediation-final-report/",
+      "locator": "FSB final report on NBFI leverage, systemic risk amplification",
+      "status": "derived",
+      "notes": "严格区分官方来源与虚构教学数值。"
     }
   ]
 }

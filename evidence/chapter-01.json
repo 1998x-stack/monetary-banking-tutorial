@@ -46,6 +46,15 @@
       "locator": "Monetary policy explanation",
       "status": "derived",
       "notes": "以一般宏观金融框架归纳，具体传导方向和强度依赖环境。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "跨行支付只改变新增存款的持有人和银行分布，在新贷款未偿还且无其他抵消交易的教学情境下，银行体系新增存款仍为100万元。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case, assumptions and arithmetic",
+      "status": "illustrative",
+      "notes": "核查依据和教学假设均已在正文明确列明；示例不代表实际样本。"
     }
   ]
 }

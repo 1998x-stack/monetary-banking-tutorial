@@ -37,6 +37,15 @@
       "locator": "2026 review, accounting consistency and standard model limitations",
       "status": "verified",
       "notes": "文章将此研究作为模型边界的提醒，不把该论文的争论视为学界唯一结论。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "线性教学IS-LM参数C0=20,c=.8,T=20,I0=30,G25,b10,m80,k.5,h20联立解得Y220与r1.5，两式反代成立。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case worked scenario",
+      "status": "illustrative",
+      "notes": "教学数值和模型假设均写明，不等于真实经济体参数估计。"
     }
   ]
 }

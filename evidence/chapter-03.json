@@ -46,6 +46,15 @@
       "locator": "Depository Corporations Survey, note 2",
       "status": "verified",
       "notes": "用于解释 M2 较 M1 更广的统计边界。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "中国2025年M1修订口径新增个人活期存款与非银行支付机构客户备付金；新旧口径的机械衔接不代表同口径货币增长。",
+      "kind": "institutional_fact_and_illustrative_example",
+      "source_url": "https://www.stats.gov.cn/english/PressRelease/202602/t20260228_1962661.html",
+      "locator": "Notes [53], revised M1 coverage effective January 2025",
+      "status": "verified",
+      "notes": "核查依据和教学假设均已在正文明确列明；示例不代表实际样本。"
     }
   ]
 }
