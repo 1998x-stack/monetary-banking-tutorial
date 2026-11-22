@@ -106,12 +106,17 @@ class SiteValidationTests(unittest.TestCase):
         self.assertIn("examples/analyse_macro.py",raw)
         self.assertTrue((ROOT/"examples"/"sample_macro_data.csv").is_file())
     def test_new_articles_have_local_diagrams(self):
+        import re
         from scripts.validate_site import Document
         for n in range(22,29):
             text=(ROOT/f"{n:02d}.html").read_text(encoding="utf-8")
+            # A diagram may be a self-contained inline SVG or a local <img> asset;
+            # either way each article must ship its own offline, accessible figure.
+            inline=[m for m in re.findall(r'<svg\b.*?</svg>',text,flags=re.S)
+                    if 'viewBox=' in m and ('<title' in m or '<desc' in m)]
             doc=Document()
             doc.feed(text)
-            self.assertGreaterEqual(len(doc.images),1)
+            self.assertTrue(inline or doc.images,f"{n:02d}.html has no local diagram")
             self.assertTrue(all(alt for src,alt in doc.images))
     def test_knowledge_graph_has_84_verified_section_links(self):
         from scripts.validate_site import Document

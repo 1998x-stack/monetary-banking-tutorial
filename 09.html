@@ -9,7 +9,16 @@
 <p class="lead">银行的资产端往往比负债端更难快速变现：贷款需要借款人按期偿还，债券可能在市场压力下折价出售，而存款人却可能在同一天要求转账或提款。监管之所以要求银行持有资本和流动性缓冲，是因为单家银行的风险可能通过支付、融资和信心渠道传递到整个金融体系。</p>
 <section id="risk"><h2>银行风险为何会互相传染</h2>
 <p>银行以杠杆经营，少量资产损失就可能侵蚀权益资本；同时，银行依赖公众存款和批发融资，市场信心变化可能迅速转化为流动性压力。风险管理因此不只是分别管理几个比率，还要识别风险之间的反馈：资产质量恶化引发融资成本上升；融资压力迫使银行出售资产；资产抛售压低市场价格；账面损失进一步削弱资本和信心。</p>
-<figure><img src="assets/diagrams/bank-risk-regulation.svg" alt="信用风险、利率风险、流动性风险和操作风险可能通过资产价格、融资和信心渠道相互传染，资本与流动性缓冲吸收冲击"><figcaption>图 1：风险之间的联系比单一指标更重要。资本吸收损失，流动性缓冲履行支付义务，治理与监管降低风险累积。</figcaption></figure>
+<figure><svg data-src="assets/diagrams/bank-risk-regulation.svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="g1-fig-title g1-fig-desc"><title id="g1-fig-title">银行风险与审慎缓冲</title><desc id="g1-fig-desc">信用、市场、利率、流动性和操作风险相互作用，资本、流动性和监管治理提供缓冲。</desc><defs><marker id="g1-arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#147f80"/></marker><marker id="g1-arr-warm" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#d06d4d"/></marker></defs><rect width="960" height="480" rx="24" fill="#fffdf9"/>
+<rect x="45" y="90" width="250" height="75" rx="16" fill="#e8f4f1" stroke="#147f80" stroke-width="2"/><text x="63" y="124" fill="#203035" font-size="20" font-weight="700">信用风险</text><text x="63" y="156" fill="#42565a" font-size="16">借款人未能偿付</text>
+<rect x="355" y="90" width="250" height="75" rx="16" fill="#fbf4df" stroke="#916c22" stroke-width="2"/><text x="373" y="124" fill="#203035" font-size="20" font-weight="700">市场 / 利率风险</text><text x="373" y="156" fill="#42565a" font-size="16">价格、利率与估值变化</text>
+<rect x="665" y="90" width="250" height="75" rx="16" fill="#fff0e9" stroke="#d06d4d" stroke-width="2"/><text x="683" y="124" fill="#203035" font-size="20" font-weight="700">流动性风险</text><text x="683" y="156" fill="#42565a" font-size="16">到期支付与融资中断</text>
+<rect x="355" y="220" width="250" height="75" rx="16" fill="#f0edfa" stroke="#7461ba" stroke-width="2"/><text x="373" y="254" fill="#203035" font-size="20" font-weight="700">操作风险</text><text x="373" y="286" fill="#42565a" font-size="16">流程、人员、系统、外部事件</text>
+<path d="M295 127 H350 M605 127 H660 M480 165 V215 M780 165 V190 H610" stroke="#147f80" stroke-width="3" fill="none" marker-end="url(#g1-arr)"/>
+<rect x="150" y="340" width="660" height="88" rx="18" fill="#203035"/>
+<text x="480" y="376" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">审慎缓冲与治理</text>
+<text x="480" y="405" text-anchor="middle" font-size="16" fill="#d8e7e1">资本吸收损失 · 流动性履约 · 压力测试 · 披露与处置</text>
+<path d="M480 295 V335" stroke="#d06d4d" stroke-width="3" marker-end="url(#g1-arr-warm)"/></svg><figcaption>图 1：风险之间的联系比单一指标更重要。资本吸收损失，流动性缓冲履行支付义务，治理与监管降低风险累积。</figcaption></figure>
 </section>
 <section id="types"><h2>五类关键风险</h2>
 <ul>
