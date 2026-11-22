@@ -1,0 +1,651 @@
+{
+  "version": "2026-11-22",
+  "purpose": "Each chapter links to three non-sequential related concepts with anchored targets, meaningful reasons and a standalone explanation.",
+  "link_policy": "Hand-curated, static, browser/file-offline navigation; links supplement rather than replace self-contained explanations.",
+  "chapters": [
+    {
+      "chapter": "10",
+      "related": [
+        {
+          "to": "17",
+          "anchor": "conventional",
+          "label": "央行实际通过哪些工具操作",
+          "why": "区分政策目标、操作目标和公开市场工具。"
+        },
+        {
+          "to": "18",
+          "anchor": "chain",
+          "label": "央行操作如何影响消费投资",
+          "why": "从准备金与市场利率连接到真实经济需求。"
+        },
+        {
+          "to": "26",
+          "anchor": "money",
+          "label": "央行货币与钱包的负债关系",
+          "why": "对数字人民币区分制度、运营机构和账户类型。"
+        }
+      ]
+    },
+    {
+      "chapter": "11",
+      "related": [
+        {
+          "to": "10",
+          "anchor": "operations",
+          "label": "银行间准备金来自哪里",
+          "why": "理解央行流动性投放与回笼的会计影响。"
+        },
+        {
+          "to": "17",
+          "anchor": "implementation",
+          "label": "回购利率怎样成为操作传导",
+          "why": "把货币市场交易与政策框架联系。"
+        },
+        {
+          "to": "22",
+          "anchor": "channels",
+          "label": "融资市场为何会产生传染",
+          "why": "期限短和抵押品相似会引发共同抛售。"
+        }
+      ]
+    },
+    {
+      "chapter": "12",
+      "related": [
+        {
+          "to": "07",
+          "anchor": "yield",
+          "label": "债券定价依赖期限结构",
+          "why": "用折现率与期限溢价解释证券估值。"
+        },
+        {
+          "to": "13",
+          "anchor": "instruments",
+          "label": "跨境融资要处理什么汇率风险",
+          "why": "外汇远期、掉期与债券融资可以协同使用。"
+        },
+        {
+          "to": "27",
+          "anchor": "tokenisation",
+          "label": "代币化是否改变所有权",
+          "why": "识别证券结算最终性和代币的法律效力。"
+        }
+      ]
+    },
+    {
+      "chapter": "13",
+      "related": [
+        {
+          "to": "04",
+          "anchor": "choice",
+          "label": "固定或浮动汇率如何选择",
+          "why": "汇率市场微观交易受到制度约束。"
+        },
+        {
+          "to": "18",
+          "anchor": "exchange",
+          "label": "汇率变化怎样传导至通胀",
+          "why": "观察进口价格与外币债务的本币价值。"
+        },
+        {
+          "to": "24",
+          "anchor": "source",
+          "label": "跨国数据如何避免口径错配",
+          "why": "区分交易额、净资本流动及统计版本。"
+        }
+      ]
+    },
+    {
+      "chapter": "14",
+      "related": [
+        {
+          "to": "09",
+          "anchor": "liquidity",
+          "label": "银行与非银行的监管差异",
+          "why": "不把所有资产管理活动等同为影子银行。"
+        },
+        {
+          "to": "22",
+          "anchor": "channels",
+          "label": "非银行杠杆怎样放大冲击",
+          "why": "共同持仓与保证金渠道形成价格反馈。"
+        },
+        {
+          "to": "27",
+          "anchor": "defi",
+          "label": "链上金融也需要流动性管理",
+          "why": "智能合约清算并没有消除杠杆和错配。"
+        }
+      ]
+    },
+    {
+      "chapter": "15",
+      "related": [
+        {
+          "to": "03",
+          "anchor": "aggregates",
+          "label": "货币创造如何进入 M1 和 M2",
+          "why": "统计指标与底层资产负债记账并不一一对应。"
+        },
+        {
+          "to": "08",
+          "anchor": "intermediary",
+          "label": "谁在创造存款又受到何种约束",
+          "why": "结合银行资本、流动性与信用需求理解内生货币。"
+        },
+        {
+          "to": "16",
+          "anchor": "quantity",
+          "label": "货币需求决定持币意愿",
+          "why": "货币数量关系还需要收入与流通速度的行为假设。"
+        }
+      ]
+    },
+    {
+      "chapter": "16",
+      "related": [
+        {
+          "to": "15",
+          "anchor": "creation",
+          "label": "货币供给不是固定乘数自动生成",
+          "why": "持币需求与银行贷款决策相互作用。"
+        },
+        {
+          "to": "19",
+          "anchor": "lm",
+          "label": "货币市场怎样形成 LM 曲线",
+          "why": "把真实货币需求 L(Y,r) 放入短期模型。"
+        },
+        {
+          "to": "20",
+          "anchor": "causes",
+          "label": "名义支出怎样影响价格",
+          "why": "MV=PY 的统计恒等式不单独决定通胀因果。"
+        }
+      ]
+    },
+    {
+      "chapter": "17",
+      "related": [
+        {
+          "to": "10",
+          "anchor": "operations",
+          "label": "央行工具如何进入央行资产负债表",
+          "why": "公开市场、准备金和贷款便利改变不同项目。"
+        },
+        {
+          "to": "18",
+          "anchor": "interest",
+          "label": "政策利率为什么不能直接决定支出",
+          "why": "从资金价格到信贷和消费存在多个环节。"
+        },
+        {
+          "to": "23",
+          "anchor": "read-pboc",
+          "label": "如何验证政策工具确实使用过",
+          "why": "用央行报告核对操作对象、日期与规模。"
+        }
+      ]
+    },
+    {
+      "chapter": "18",
+      "related": [
+        {
+          "to": "17",
+          "anchor": "framework",
+          "label": "哪些政策操作启动传导",
+          "why": "区分政策目标、操作工具与实际市场响应。"
+        },
+        {
+          "to": "19",
+          "anchor": "shifts",
+          "label": "在 IS–LM 中怎样比较政策方向",
+          "why": "将多渠道机制简化为商品与货币市场均衡。"
+        },
+        {
+          "to": "20",
+          "anchor": "policy",
+          "label": "通胀目标与政策传导的边界",
+          "why": "政策影响总需求，却不能立即解决供给冲击。"
+        }
+      ]
+    },
+    {
+      "chapter": "19",
+      "related": [
+        {
+          "to": "16",
+          "anchor": "keynes",
+          "label": "货币需求对利率为何敏感",
+          "why": "流动性偏好是 LM 曲线的重要行为基础。"
+        },
+        {
+          "to": "18",
+          "anchor": "blockages",
+          "label": "为什么模型方向不等于现实效果",
+          "why": "金融摩擦和政策时滞不会自动出现在两条曲线中。"
+        },
+        {
+          "to": "25",
+          "anchor": "rule",
+          "label": "现代政策规则与简单 LM 有何区别",
+          "why": "利率操作框架与泰勒规则引入不同制度假设。"
+        }
+      ]
+    },
+    {
+      "chapter": "20",
+      "related": [
+        {
+          "to": "06",
+          "anchor": "fisher",
+          "label": "通胀预期如何改变实际利率",
+          "why": "区分事前和事后实际回报。"
+        },
+        {
+          "to": "21",
+          "anchor": "distinction",
+          "label": "通胀放缓不等于通缩",
+          "why": "价格涨得更慢和价格水平下降是两回事。"
+        },
+        {
+          "to": "23",
+          "anchor": "document-types",
+          "label": "央行报告怎样讨论通胀目标",
+          "why": "将物价数据与政策判断及成员预测区分。"
+        }
+      ]
+    },
+    {
+      "chapter": "21",
+      "related": [
+        {
+          "to": "20",
+          "anchor": "definition",
+          "label": "如何判断价格水平真的下降",
+          "why": "通缩需要广泛价格指标，不是个别商品降价。"
+        },
+        {
+          "to": "22",
+          "anchor": "minsky",
+          "label": "债务通缩与系统性危机如何连接",
+          "why": "名义债务刚性可能推动抛售和信贷反馈。"
+        },
+        {
+          "to": "25",
+          "anchor": "uncertainty",
+          "label": "零利率下限怎样影响政策情景",
+          "why": "预测要考虑实际利率、预期和政策工具约束。"
+        }
+      ]
+    },
+    {
+      "chapter": "22",
+      "related": [
+        {
+          "to": "09",
+          "anchor": "capital",
+          "label": "银行资本何以吸收损失",
+          "why": "微观资本缓冲与宏观金融风险相互补充。"
+        },
+        {
+          "to": "14",
+          "anchor": "vulnerabilities",
+          "label": "非银行市场如何传染到银行",
+          "why": "保证金、回购和共同持仓改变系统性风险。"
+        },
+        {
+          "to": "21",
+          "anchor": "debt",
+          "label": "价格下跌为何增加债务负担",
+          "why": "债务通缩会放大高杠杆融资结构的脆弱性。"
+        }
+      ]
+    },
+    {
+      "chapter": "23",
+      "related": [
+        {
+          "to": "17",
+          "anchor": "conventional",
+          "label": "政策报告提及哪些操作工具",
+          "why": "阅读之前先区分政策目标与工具。"
+        },
+        {
+          "to": "24",
+          "anchor": "dictionary",
+          "label": "用哪些数据验证政策判断",
+          "why": "社融、M2 与利率对应不同统计对象。"
+        },
+        {
+          "to": "25",
+          "anchor": "baseline",
+          "label": "政策预测如何进行样本外检验",
+          "why": "保存声明当时可见的数据而不是后来的修订值。"
+        }
+      ]
+    },
+    {
+      "chapter": "24",
+      "related": [
+        {
+          "to": "03",
+          "anchor": "china",
+          "label": "M1 口径调整如何影响序列可比性",
+          "why": "货币统计调整前后不能直接机械同比。"
+        },
+        {
+          "to": "23",
+          "anchor": "protocol",
+          "label": "数据如何转成可检验的政策解释",
+          "why": "每条结论都应有官方原文、日期与反证条件。"
+        },
+        {
+          "to": "28",
+          "anchor": "run",
+          "label": "用 Python 复现增速计算",
+          "why": "从虚构 CSV 出发练习完整数据处理过程。"
+        }
+      ]
+    },
+    {
+      "chapter": "25",
+      "related": [
+        {
+          "to": "19",
+          "anchor": "limits",
+          "label": "模型参数何时失去解释力",
+          "why": "在预测中承认 IS–LM 的静态条件和遗漏变量。"
+        },
+        {
+          "to": "24",
+          "anchor": "errors",
+          "label": "避免实时数据泄漏和频率错配",
+          "why": "保存经济数据的发布版本与可用日期。"
+        },
+        {
+          "to": "28",
+          "anchor": "report",
+          "label": "把预测组织成可复盘研究",
+          "why": "用基准、风险情景、误差与证据链写报告。"
+        }
+      ]
+    },
+    {
+      "chapter": "26",
+      "related": [
+        {
+          "to": "01",
+          "anchor": "banks",
+          "label": "央行货币与商业银行存款有何区别",
+          "why": "钱包使用相同界面不代表法律债权相同。"
+        },
+        {
+          "to": "03",
+          "anchor": "china",
+          "label": "钱包制度变化与货币统计如何联系",
+          "why": "理解不同存款和货币负债的口径。"
+        },
+        {
+          "to": "27",
+          "anchor": "types",
+          "label": "稳定币与数字人民币差在哪里",
+          "why": "从发行人、兑付权、储备和清算最终性比较。"
+        }
+      ]
+    },
+    {
+      "chapter": "27",
+      "related": [
+        {
+          "to": "14",
+          "anchor": "intermediation",
+          "label": "新金融与非银行中介的共同风险",
+          "why": "流动性转换、杠杆和机构关联仍然存在。"
+        },
+        {
+          "to": "26",
+          "anchor": "2026",
+          "label": "数字人民币如何改变钱包监管",
+          "why": "把央行制度安排与私人稳定币承诺区分。"
+        },
+        {
+          "to": "22",
+          "anchor": "channels",
+          "label": "自动清算怎样触发价格反馈",
+          "why": "链上清算并不能杜绝共同抛售与流动性挤兑。"
+        }
+      ]
+    },
+    {
+      "chapter": "28",
+      "related": [
+        {
+          "to": "23",
+          "anchor": "protocol",
+          "label": "政策报告怎样留下可复盘记录",
+          "why": "从官方文本区分事实、推断与替代解释。"
+        },
+        {
+          "to": "24",
+          "anchor": "stock-flow",
+          "label": "指标计算为何先核对存量与流量",
+          "why": "否则增长率和社融—M2差值会被误读。"
+        },
+        {
+          "to": "25",
+          "anchor": "baseline",
+          "label": "预测误差怎样检验模型价值",
+          "why": "需要基准预测、真实信息集和留出期。"
+        }
+      ]
+    },
+    {
+      "chapter": "01",
+      "related": [
+        {
+          "to": "02",
+          "anchor": "origins",
+          "label": "货币的历史不是单一路线",
+          "why": "从商品、记账和信用等多条路径解释货币为何被接受。"
+        },
+        {
+          "to": "15",
+          "anchor": "creation",
+          "label": "现代银行怎样创造存款",
+          "why": "把货币的概念转化为银行贷款与存款的双重记账。"
+        },
+        {
+          "to": "26",
+          "anchor": "money",
+          "label": "数字人民币与存款的法律区别",
+          "why": "手机中的余额需按发行人与负债关系分类。"
+        }
+      ]
+    },
+    {
+      "chapter": "02",
+      "related": [
+        {
+          "to": "01",
+          "anchor": "money",
+          "label": "先辨认什么是货币",
+          "why": "用支付、计价和价值贮藏功能识别货币。"
+        },
+        {
+          "to": "04",
+          "anchor": "gold",
+          "label": "金本位如何约束制度",
+          "why": "把黄金作为货币的历史与汇率承诺联系起来。"
+        },
+        {
+          "to": "26",
+          "anchor": "2026",
+          "label": "数字货币的制度演变",
+          "why": "观察数字人民币钱包在 2026 年的法律和会计变化。"
+        }
+      ]
+    },
+    {
+      "chapter": "03",
+      "related": [
+        {
+          "to": "15",
+          "anchor": "boundaries",
+          "label": "M2 不是基础货币",
+          "why": "将统计口径与央行负债、银行存款及准备金区分。"
+        },
+        {
+          "to": "24",
+          "anchor": "dictionary",
+          "label": "融资存量与货币存量不同",
+          "why": "跨越货币与社融数据时先核对统计主体。"
+        },
+        {
+          "to": "26",
+          "anchor": "2026",
+          "label": "数字人民币影响什么统计口径",
+          "why": "理解特定钱包的存款属性为什么不能忽略。"
+        }
+      ]
+    },
+    {
+      "chapter": "04",
+      "related": [
+        {
+          "to": "13",
+          "anchor": "regime",
+          "label": "汇率安排中的不可能三角",
+          "why": "把固定汇率与资本流动和政策自主联系起来。"
+        },
+        {
+          "to": "18",
+          "anchor": "exchange",
+          "label": "政策怎样通过汇率传导",
+          "why": "从制度选择延伸到开放经济中的贸易与外币负债。"
+        },
+        {
+          "to": "02",
+          "anchor": "coinage",
+          "label": "金属货币并非唯一起源",
+          "why": "历史货币形态与国家制度发展相互作用。"
+        }
+      ]
+    },
+    {
+      "chapter": "05",
+      "related": [
+        {
+          "to": "08",
+          "anchor": "balance",
+          "label": "银行信贷留下什么资产负债",
+          "why": "一笔贷款对应银行资产与客户存款负债。"
+        },
+        {
+          "to": "09",
+          "anchor": "risk",
+          "label": "信用风险怎样侵蚀资本",
+          "why": "把不履约风险与银行监管资本联系起来。"
+        },
+        {
+          "to": "22",
+          "anchor": "minsky",
+          "label": "债务结构为何放大危机",
+          "why": "从个体信用关系走向杠杆与融资滚动风险。"
+        }
+      ]
+    },
+    {
+      "chapter": "06",
+      "related": [
+        {
+          "to": "07",
+          "anchor": "curve",
+          "label": "不同期限利率为什么不同",
+          "why": "由名义和实际利率深入收益率曲线。"
+        },
+        {
+          "to": "20",
+          "anchor": "definition",
+          "label": "通胀怎样改变实际回报",
+          "why": "避免将名义利率与购买力变化混为一谈。"
+        },
+        {
+          "to": "25",
+          "anchor": "rule",
+          "label": "政策规则怎样参考真实利率",
+          "why": "从费雪关系衔接到泰勒规则的条件性基准。"
+        }
+      ]
+    },
+    {
+      "chapter": "07",
+      "related": [
+        {
+          "to": "06",
+          "anchor": "fisher",
+          "label": "收益率中隐含哪些通胀因素",
+          "why": "区分名义利率、预期通胀和实际回报。"
+        },
+        {
+          "to": "12",
+          "anchor": "pricing",
+          "label": "债券收益率与价格反向变化",
+          "why": "用贴现公式解释收益率曲线对债券价值的影响。"
+        },
+        {
+          "to": "18",
+          "anchor": "interest",
+          "label": "期限结构如何接受政策信号",
+          "why": "观察市场利率到企业融资成本的传导。"
+        }
+      ]
+    },
+    {
+      "chapter": "08",
+      "related": [
+        {
+          "to": "05",
+          "anchor": "bank-credit",
+          "label": "贷款创造存款的会计路径",
+          "why": "银行不是简单把既有存款转贷给借款人。"
+        },
+        {
+          "to": "09",
+          "anchor": "capital",
+          "label": "资本与流动性不是同一种缓冲",
+          "why": "损失吸收能力和及时付款能力需要分别衡量。"
+        },
+        {
+          "to": "15",
+          "anchor": "creation",
+          "label": "贷款与还款如何改变存款",
+          "why": "从单家银行账簿进入整个银行体系的货币创造。"
+        }
+      ]
+    },
+    {
+      "chapter": "09",
+      "related": [
+        {
+          "to": "08",
+          "anchor": "alm",
+          "label": "期限错配为何产生银行风险",
+          "why": "固定利率资产与短期负债重新定价不同步。"
+        },
+        {
+          "to": "14",
+          "anchor": "vulnerabilities",
+          "label": "非银行机构也会有相似风险",
+          "why": "把银行资本监管与基金、保险和回购融资联系起来。"
+        },
+        {
+          "to": "22",
+          "anchor": "macroprudential",
+          "label": "从单家监管走向系统风险",
+          "why": "宏观审慎政策关注共同敞口与金融周期。"
+        }
+      ]
+    }
+  ]
+}

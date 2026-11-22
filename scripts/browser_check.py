@@ -9,7 +9,7 @@ from threading import Thread
 from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
-PAGES=["index.html"]+[f"{n:02d}.html" for n in range(1,29)]
+PAGES=["index.html","knowledge-map.html"]+[f"{n:02d}.html" for n in range(1,29)]
 VIEWPORTS=[(1440,900),(768,1024),(390,844),(360,800)]
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -93,14 +93,27 @@ def main():
                     response=page.goto(f"{base}/{name}",wait_until="networkidle")
                     if not response or response.status!=200:
                         report["errors"].append(f"{name}: HTTP response not 200"); continue
-                    metrics=page.evaluate("""() => ({width:innerWidth,docWidth:document.documentElement.scrollWidth,h1:document.querySelectorAll('h1').length,images:[...document.images].map(i=>({src:i.getAttribute('src'),loaded:i.complete&&i.naturalWidth>0}))})""")
+                    metrics=page.evaluate("""() => ({width:innerWidth,docWidth:document.documentElement.scrollWidth,h1:document.querySelectorAll('h1').length,images:[...document.images].map(i=>({src:i.getAttribute('src'),loaded:i.complete&&i.naturalWidth>0})),math:[...document.querySelectorAll('math')].map(m=>({ns:m.namespaceURI,width:m.getBoundingClientRect().width,height:m.getBoundingClientRect().height})),crossLinks:document.querySelectorAll('.concept-link').length})""")
                     page_report["viewports"][f"{width}x{height}"]=metrics
                     if metrics["docWidth"]>metrics["width"]: report["errors"].append(f"{name}: horizontal overflow at {width}px")
                     if metrics["h1"]!=1: report["errors"].append(f"{name}: expected one H1 at {width}px")
+                    for math in metrics["math"]:
+                        if math["ns"]!="http://www.w3.org/1998/Math/MathML" or math["width"]<=0 or math["height"]<=0:
+                            report["errors"].append(f"{name}: MathML has invalid namespace or zero geometry at {width}px")
+                    if name.endswith(".html") and name not in ("index.html","knowledge-map.html") and metrics["crossLinks"]!=3:
+                        report["errors"].append(f"{name}: expected three cross-topic concept links at {width}px")
+                    if name=="knowledge-map.html" and width==1440:
+                        if page.locator(".knowledge-card").count()!=28 or page.locator(".knowledge-edge").count()!=9:
+                            report["errors"].append("Knowledge map: expected 28 chapter cards and 9 causal bridges")
+                    if width==1440:
+                        page.keyboard.press("Tab")
+                        first_focus=page.evaluate("() => document.activeElement?.classList.contains('skip-link') === true")
+                        if not first_focus: report["errors"].append(f"{name}: keyboard first focus should be the skip link")
+
                     for image in metrics["images"]:
                         if not image["loaded"]: report["errors"].append(f"{name}: image failed: {image['src']}")
                     if width in (1440,390,360): page.screenshot(path=str(output/f"{name.replace('.html','')}-{width}.png"),full_page=True)
-                if name!="index.html":
+                if name not in ("index.html","knowledge-map.html"):
                     try: report["interactions"][name]=check_interaction(page,name)
                     except Exception as exc: report["errors"].append(str(exc))
                 page.emulate_media(media="print")
@@ -119,9 +132,9 @@ def main():
         print(f"Report: {output/'report.json'}")
         return 1
     print("BROWSER QA PASSED")
-    print("- homepage + chapters 01–28")
+    print("- homepage + knowledge map + chapters 01–28")
     print("- 1440, 768, 390 and 360px viewports; print emulation")
-    print("- 28 meaningful article interactions")
+    print("- 28 meaningful article interactions, 84 concept links, MathML geometry and first-tab focus")
     print(f"- artifacts: {output}")
     return 0
 

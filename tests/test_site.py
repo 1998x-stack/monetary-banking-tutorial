@@ -113,6 +113,52 @@ class SiteValidationTests(unittest.TestCase):
             doc.feed(text)
             self.assertGreaterEqual(len(doc.images),1)
             self.assertTrue(all(alt for src,alt in doc.images))
+    def test_knowledge_graph_has_84_verified_section_links(self):
+        from scripts.validate_site import Document
+        data=json.loads((ROOT/"knowledge"/"concept-links.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(data["chapters"]),28)
+        self.assertEqual(sum(len(c["related"]) for c in data["chapters"]),84)
+        for item in data["chapters"]:
+            article=ROOT/f'{item["chapter"]}.html'
+            text=article.read_text(encoding="utf-8")
+            self.assertIn('id="concept-bridge"',text)
+            self.assertEqual(text.count('class="concept-link"'),3)
+            for rel in item["related"]:
+                self.assertNotEqual(rel["to"],item["chapter"])
+                target=(ROOT/f'{rel["to"]}.html').read_text(encoding="utf-8")
+                doc=Document();doc.feed(target)
+                self.assertIn(rel["anchor"],doc.ids)
+                self.assertIn(f'href="{rel["to"]}.html#{rel["anchor"]}"',text)
+
+    def test_knowledge_map_is_static_and_complete(self):
+        raw=(ROOT/"knowledge-map.html").read_text(encoding="utf-8")
+        self.assertEqual(raw.count('class="knowledge-card"'),28)
+        self.assertEqual(raw.count('class="knowledge-edge"'),9)
+        self.assertNotIn('fetch(',raw)
+        self.assertIn('href="knowledge-map.html"',(ROOT/"index.html").read_text(encoding="utf-8"))
+
+    def test_fx_audit_preserves_preliminary_and_revised_values(self):
+        raw=(ROOT/"13.html").read_text(encoding="utf-8")
+        self.assertIn("9.6 万亿美元",raw)
+        self.assertIn("9.5 万亿美元",raw)
+        self.assertIn("增长 27%",raw)
+        self.assertIn("BPM7",raw)
+        ledger=json.loads((ROOT/"evidence"/"chapter-13.json").read_text(encoding="utf-8"))
+        claim_ids={x["id"] for x in ledger["claims"]}
+        self.assertTrue({"bis-fx-revised","bpm7-released","bpm7-transition"}.issubset(claim_ids))
+
+    def test_every_article_has_keyboard_scrollable_tables(self):
+        for i in range(1,29):
+            h=(ROOT/f"{i:02d}.html").read_text(encoding="utf-8")
+            self.assertNotIn('class="table-scroll"><table>',h)
+            self.assertNotIn('class="math-scroll"><math',h)
+
+    def test_fx_cip_diagram_matches_formula(self):
+        h=(ROOT/"13.html").read_text(encoding="utf-8")
+        self.assertIn("assets/diagrams/covered-interest-parity.svg",h)
+        svg=(ROOT/"assets"/"diagrams"/"covered-interest-parity.svg").read_text(encoding="utf-8")
+        self.assertIn("1.04 × 7.0615",svg)
+        self.assertIn("7.20 × 1.02",svg)
     def test_yield_curve_warning_is_not_deterministic(self):
         raw=(ROOT/"07.html").read_text(encoding="utf-8")
         self.assertIn("仅凭一次倒挂就预测衰退发生日期",raw)

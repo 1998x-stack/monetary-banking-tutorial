@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 370" role="img" aria-labelledby="fx-title fx-desc">
+<title id="fx-title">本币每外币报价下的有担保利率平价</title>
+<desc id="fx-desc">从一美元出发，两条无套利路径：美元以4%投资一年，得到1.04美元，按远期价格7.0615人民币每美元兑换约7.344人民币；或今天按7.20兑换成人民币，以2%投资一年也得到7.344人民币。</desc>
+<defs><marker id="fx-arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3 Z" fill="#147f80"/></marker></defs>
+<rect width="900" height="370" rx="16" fill="#fffdf9"/>
+<text x="450" y="35" text-anchor="middle" font-size="18" font-weight="700" fill="#203035">1 USD 的两条无套利路径</text>
+<rect x="30" y="150" width="130" height="86" rx="12" fill="#e8f4f1" stroke="#147f80" stroke-width="2"/>
+<text x="95" y="184" text-anchor="middle" font-weight="700" font-size="18" fill="#203035">t=0</text>
+<text x="95" y="211" text-anchor="middle" font-size="17" fill="#203035">1 USD</text>
+<rect x="245" y="70" width="205" height="94" rx="12" fill="#f4effb" stroke="#7461ba" stroke-width="2"/>
+<text x="347" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="#203035">美元存款 rᶠ = 4%</text>
+<text x="347" y="134" text-anchor="middle" font-size="16" fill="#53676d">到期：1.04 USD</text>
+<rect x="245" y="220" width="205" height="94" rx="12" fill="#e8f4f1" stroke="#147f80" stroke-width="2"/>
+<text x="347" y="254" text-anchor="middle" font-size="16" font-weight="700" fill="#203035">即期换汇：S = 7.20</text>
+<text x="347" y="284" text-anchor="middle" font-size="16" fill="#53676d">获得：7.20 CNY</text>
+<rect x="545" y="70" width="185" height="94" rx="12" fill="#fff0e9" stroke="#d06d4d" stroke-width="2"/>
+<text x="637" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="#203035">按远期 F 卖 USD</text>
+<text x="637" y="134" text-anchor="middle" font-size="16" fill="#53676d">1.04 × 7.0615</text>
+<rect x="545" y="220" width="185" height="94" rx="12" fill="#fbf4df" stroke="#916c22" stroke-width="2"/>
+<text x="637" y="254" text-anchor="middle" font-size="16" font-weight="700" fill="#203035">人民币存款 rᵈ=2%</text>
+<text x="637" y="284" text-anchor="middle" font-size="16" fill="#53676d">7.20 × 1.02</text>
+<rect x="790" y="151" width="100" height="86" rx="12" fill="#e8f4f1" stroke="#147f80" stroke-width="2"/>
+<text x="840" y="181" text-anchor="middle" font-size="16" font-weight="700" fill="#203035">t=1</text>
+<text x="840" y="209" text-anchor="middle" font-size="16" fill="#203035">7.344</text>
+<text x="840" y="228" text-anchor="middle" font-size="13" fill="#53676d">CNY</text>
+<path d="M160 184 L245 117 M160 202 L245 267 M450 117 L545 117 M450 267 L545 267 M730 117 L790 181 M730 267 L790 208" stroke="#147f80" stroke-width="3" fill="none" marker-end="url(#fx-arrow)"/>
+<text x="450" y="351" text-anchor="middle" font-size="14" fill="#53676d">同期限、可融资且无交易摩擦时：S(1+rᵈ)=F(1+rᶠ)；远期 F 不是未来即期汇率预测</text>
+</svg>
