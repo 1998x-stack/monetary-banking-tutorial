@@ -11,7 +11,16 @@
 <section id="repo"><h2>回购：以证券换取短期资金</h2>
 <p>回购交易把证券与短期资金联系起来。以现金借入方的视角看，它交付或质押证券，获得现金，到期再按约定条件偿还现金并取回证券。质押式回购与买断式回购在所有权转移、质押登记和交易结构上不同，不能把两者简单视为同一种合同。</p>
 <p>中国人民银行关于银行间债券买断式回购的规定，将其定义为债券持有人将债券卖给买入方，同时约定未来以约定价格买回相等数量同种债券的交易<a href="#ref-2">[2]</a>。质押式回购则以债券质押为担保，债券所有权安排不同。</p>
-<figure><img src="assets/diagrams/money-market-repo.svg" alt="资金需求方以债券作为抵押品获得短期资金，到期支付本息并解除抵押的回购流程"><figcaption>图 1：回购将抵押品与短期现金流联系起来。折扣率、追加担保和抵押品质量决定交易可获得的融资额。</figcaption></figure>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="fig-title fig-desc"><title id="g1-fig-title">回购融资流程</title><desc id="g1-fig-desc">资金需求方以债券作为抵押品获得短期现金，到期支付资金成本并取回证券。</desc><defs><marker id="g1-arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#147f80"/></marker><marker id="g1-arr-warm" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#d06d4d"/></marker></defs><rect width="960" height="480" rx="24" fill="#fffdf9"/>
+<rect x="45" y="120" width="245" height="100" rx="16" fill="#e8f4f1" stroke="#147f80" stroke-width="2"/><text x="63" y="154" fill="#203035" font-size="20" font-weight="700">资金需求方</text><text x="63" y="186" fill="#42565a" font-size="16">提供抵押品 · 融入现金</text>
+<rect x="670" y="120" width="245" height="100" rx="16" fill="#fbf4df" stroke="#916c22" stroke-width="2"/><text x="688" y="154" fill="#203035" font-size="20" font-weight="700">资金提供方</text><text x="688" y="186" fill="#42565a" font-size="16">提供现金 · 接收抵押品</text>
+<path d="M300 145 H655" stroke="#147f80" stroke-width="4" marker-end="url(#g1-arr)"/>
+<text x="480" y="130" text-anchor="middle" font-size="18" fill="#147f80" font-weight="700">现金流向借款方</text>
+<path d="M655 195 H300" stroke="#d06d4d" stroke-width="4" marker-end="url(#g1-arr-warm)"/>
+<text x="480" y="225" text-anchor="middle" font-size="18" fill="#d06d4d" font-weight="700">抵押品 / 证券安排</text>
+<rect x="255" y="300" width="450" height="85" rx="18" fill="#203035"/>
+<text x="480" y="336" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">到期结算</text>
+<text x="480" y="365" text-anchor="middle" font-size="16" fill="#d8e7e1">偿还本金 + 利息 · 解除质押 / 返还债券</text></svg><figcaption>图 1：回购将抵押品与短期现金流联系起来。折扣率、追加担保和抵押品质量决定交易可获得的融资额。</figcaption></figure>
 <p>若抵押品市场价值为 1,000 万元，折扣率（haircut）为 5%，理论融资额约为 950 万元。折扣率越高，资金提供方对抵押品价格波动和处置成本的保护越厚，但借款方需要提供更多抵押品。压力时期，抵押品折扣可能上升，形成“融资需求上升—抵押品折扣提高—融资能力下降”的反馈。</p>
 </section>
 <section id="rates"><h2>短期利率如何形成</h2>
