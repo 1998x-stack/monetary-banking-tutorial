@@ -46,6 +46,15 @@
       "locator": "Chapter 11 calculator",
       "status": "illustrative",
       "notes": "实际合同以交易约定计息基准为准。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "在ACT/365、1000万元本金、2%年化、实际占款7天的教学回购案例中，利息约3835.62元。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://www.chinamoney.com.cn/english/rarrmrrudmrl/20161111/2025.html",
+      "locator": "Rules for Bond Transactions, financing/securities loan day-count convention Act/365",
+      "status": "derived",
+      "notes": "来源核对制度或学术框架，示例数字不属于真实经济观测。"
     }
   ]
 }

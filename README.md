@@ -77,12 +77,22 @@ xdg-open index.html
 - [本轮证据与工程审计记录](reports/deep-audit-2026-11-22.md) 明确列出已核对的官方来源、修复范围和仍需滚动检查的事项。
 - 自动化检查增加 84 个跨章节链接的目标锚点验证、知识地图页面验收、MathML 呈现几何检查、首个 Tab 键可用性，以及新增图解的关键数字断言。
 
+## 第三轮逐页核验（2026-11-22）
+
+本轮不是增加新章节，而是逐篇检查和完善现有的 28 篇独立 HTML 教程。每篇新增一段**可复算的具体情景与反例**（正文目录「推演核验」），并同步登记到相应 `evidence/chapter-NN.json`：
+
+- [28 篇逐章检查矩阵、核算结果和官方出处](reports/html-by-html-audit-2026-11-22.md)：说明每个页面核查了什么、修改了什么、尚未验证什么。
+- 债券 YTM 与实际持有回报的再投资条件已在第 07 章重新区分；其他重要改进包括回购 ACT/365、CET1 分母变动、IS–LM 双方程反代、CPI/PCE 口径及数字人民币钱包制度时间。
+- 全部证据台账支持离线结构审核：`python scripts/audit_sources.py`。可选 `--live` 只检查 HTTP 状态，403/429/超时不当成确定死链，也不把 HTTP 200 当作事实证明。
+- `tests/test_worked_audit.py` 独立验算关键数字，浏览器额外检查手机目录能跳转到各章的「推演核验」。
+
 ## 本地质量检查
 
 Python 3.10+：
 
 ```bash
 python scripts/validate_site.py
+python scripts/audit_sources.py --output artifacts/source-audit/offline.json
 python -m unittest discover -s tests -v
 ```
 
@@ -94,7 +104,7 @@ python -m playwright install chromium
 python scripts/browser_check.py --output artifacts/browser-qa
 ```
 
-浏览器检查覆盖首页、知识地图和第 01–28 章的 1440、768、390、360 像素视口、图片加载、页面溢出、控制台错误、打印模式及每篇文章的交互控件。未运行的检查不得标记为通过；CI 运行结果以 GitHub Actions 为准。
+浏览器检查覆盖首页、知识地图和第 01–28 章，包含逐篇计算核验板块的 1440、768、390、360 像素视口、图片加载、页面溢出、控制台错误、打印模式及每篇文章的交互控件。未运行的检查不得标记为通过；CI 运行结果以 GitHub Actions 为准。
 
 ## 可复现综合项目
 

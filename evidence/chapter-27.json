@@ -55,6 +55,15 @@
       "locator": "Article 27 calculator",
       "status": "illustrative",
       "notes": "仅用于教学，不是实际观测数据。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "假设稳定币负债100、储备市值105且压力折价10%，储备价值94.5、面值覆盖率94.5%；OCC GENIUS规则于2027-01-18生效。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-50.html",
+      "locator": "2026-10 OCC Bulletin 2026-50, effective date Jan 18 2027",
+      "status": "derived",
+      "notes": "制度事实引用官方来源；案例金额与将来日期为虚构教学数据。"
     }
   ]
 }

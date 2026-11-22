@@ -46,6 +46,13 @@ Use progressive disclosure: each figure should answer one question. Captions mus
 - The IMF published BPM7 in March 2025 while countries may still compile using BPM6 as standards are phased in. Specify which standard a country uses and do not assume same-day global implementation.
 - Use `reports/deep-audit-2026-11-22.md` for this audit's traceability. Keep future audit reports separate and never replace dated official evidence with unsupported remembered values.
 
+## Third-pass per-HTML verification and evidence integrity
+- Every `NN.html` (01–28) now contains a unique `#audit-case`: an independently useful numeric worked example or mechanism counterexample, with assumptions, units, a checkable result, limitations and desktop/mobile TOC anchors. A one-line boilerplate substitution is not acceptable.
+- Update `evidence/chapter-NN.json` with `second-pass-worked-case`. Use `illustrative` for a fictional calculation without a source; use `derived` with a real source URL when deriving a sourced institutional/mechanistic claim. Never mark hypothetical numbers themselves as real official observations.
+- Run `python scripts/audit_sources.py` to check all 28 ledgers for unique IDs, URL syntax, missing references and evidence status. An HTTP 200 only tests reachability; it does not validate the proposition. HTTP 403/429 and timeouts are inconclusive.
+- Run `python -m unittest discover -s tests -v` for independent numeric oracles and the existing site tests, and execute Chromium responsive, keyboard anchor, image, MathML, interaction and print checks.
+- Use `reports/html-by-html-audit-2026-11-22.md` as the individual chapter audit trail, with explicit caveats and official sources. Reassess date-scoped facts each time a new update is added.
+
 ## Repository workflow
 1. Preserve existing chapter URLs unless an explicit migration plan includes redirects. Chapters 01–28 use the shared article design system.
 2. Update `courses.json` whenever chapter title, topic, group or file path changes; keep the homepage's 28 static chapter cards in sync.

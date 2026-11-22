@@ -55,6 +55,15 @@
       "locator": "IMF Country Report 03/149, discussion of liquidity trap and deflation",
       "status": "verified",
       "notes": "两者可能互相强化，但不是逻辑等价。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "固定名义100万元债务在价格指数1降为0.95时实值约105.26万，通胀放缓至正2%时实值约98.04万；名义1%预期-3%精确实际利率约4.12%。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case worked scenario",
+      "status": "illustrative",
+      "notes": "严格区分官方来源与虚构教学数值。"
     }
   ]
 }

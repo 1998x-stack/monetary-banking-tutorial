@@ -55,6 +55,15 @@
       "locator": "Example CSV / Article 28",
       "status": "illustrative",
       "notes": "包含未来日期的明确虚构数据，不代表 2026 年真实发布结果。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "虚构2025-12至2026-12 CSV 中社融400至424和M2 300至318均为6%，CPI101至102.5变化约1.485%，不是2026-12真实发布结果。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case worked scenario",
+      "status": "illustrative",
+      "notes": "制度事实引用官方来源；案例金额与将来日期为虚构教学数据。"
     }
   ]
 }

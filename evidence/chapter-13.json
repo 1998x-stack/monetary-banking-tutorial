@@ -73,6 +73,15 @@
       "locator": "December 2025 Quarterly Review foreword, FX turnover paragraph",
       "status": "verified",
       "notes": "应优先展示后续更完整版本，并保留初值可追溯。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "CNY/USD=7.20、人民币利率2%、美元利率4%的教学一年期CIP远期约7.0615 CNY/USD；与7.344 CNY终值一致。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case worked scenario",
+      "status": "illustrative",
+      "notes": "来源核对制度或学术框架，示例数字不属于真实经济观测。"
     }
   ]
 }

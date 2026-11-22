@@ -46,6 +46,15 @@
       "locator": "Article 23 exercise",
       "status": "illustrative",
       "notes": "假设数值；不对应真实经济体或真实政策操作。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "FOMC SEP点是参与者独立假设下适当政策路径，不是未来决策；教学点阵3,3,4,4,5的中位数为4。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm",
+      "locator": "September 2026 SEP, projection assumptions, uncertainty and dot data",
+      "status": "derived",
+      "notes": "严格区分官方来源与虚构教学数值。"
     }
   ]
 }

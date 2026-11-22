@@ -46,6 +46,15 @@
       "locator": "Article 25 worked MAE example",
       "status": "illustrative",
       "notes": "仅用于教学，不是实际观测数据。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "三个教学误差-0.5,-0.5,1.0百分点的MAE约0.67、RMSE约0.71；必须在相同实时信息集下计算。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://fred.stlouisfed.org/docs/api/fred/realtime_period.html",
+      "locator": "FRED API real-time period and revisions documentation",
+      "status": "derived",
+      "notes": "严格区分官方来源与虚构教学数值。"
     }
   ]
 }

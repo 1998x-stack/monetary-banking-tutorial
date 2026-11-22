@@ -55,6 +55,15 @@
       "locator": "Article 26 interactive comparison",
       "status": "illustrative",
       "notes": "仅用于教学，不是实际观测数据。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "农业银行数字人民币钱包服务协议明确一、二、三类实名钱包在2026-01-01起按人行规定的活期存款利息规则计息；同一100元在两个支付界面间转换不应重复计量。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://www.abchina.com/cn/PublicPlate/szrmb2021/szrmben2021/202111/t20211115_2067431.htm",
+      "locator": "Agreement Section 2.9 real-name e-CNY wallets Categories 1–3",
+      "status": "derived",
+      "notes": "制度事实引用官方来源；案例金额与将来日期为虚构教学数据。"
     }
   ]
 }

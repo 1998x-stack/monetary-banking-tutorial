@@ -55,6 +55,15 @@
       "locator": "Article 24 worked example",
       "status": "illustrative",
       "notes": "假设数值；不对应真实经济体或真实政策操作。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "教学期初社融存量400、期间流量30、其他调整-6，期末存量424；期间流量不必与期末减期初一致。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case worked scenario",
+      "status": "illustrative",
+      "notes": "严格区分官方来源与虚构教学数值。"
     }
   ]
 }

@@ -114,6 +114,17 @@ def main():
                         if not image["loaded"]: report["errors"].append(f"{name}: image failed: {image['src']}")
                     if width in (1440,390,360): page.screenshot(path=str(output/f"{name.replace('.html','')}-{width}.png"),full_page=True)
                 if name not in ("index.html","knowledge-map.html"):
+                    if page.locator('section#audit-case').count()!=1:
+                        report["errors"].append(f"{name}: independently checked worked example missing")
+                    else:
+                        try:
+                            page.locator(".mobile-toc summary").click()
+                            page.locator('.mobile-toc a[href="#audit-case"]').click()
+                            target_hash=page.evaluate("() => window.location.hash")
+                            if target_hash!="#audit-case":
+                                report["errors"].append(f"{name}: mobile worked-example TOC fails")
+                        except Exception as exc:
+                            report["errors"].append(f"{name}: mobile worked-example navigation error: {exc}")
                     try: report["interactions"][name]=check_interaction(page,name)
                     except Exception as exc: report["errors"].append(str(exc))
                 page.emulate_media(media="print")
@@ -134,7 +145,7 @@ def main():
     print("BROWSER QA PASSED")
     print("- homepage + knowledge map + chapters 01–28")
     print("- 1440, 768, 390 and 360px viewports; print emulation")
-    print("- 28 meaningful article interactions, 84 concept links, MathML geometry and first-tab focus")
+    print("- 28 article interactions, 28 mobile worked-example navigation checks, 84 concept links, MathML geometry and first-tab focus")
     print(f"- artifacts: {output}")
     return 0
 

@@ -55,6 +55,15 @@
       "locator": "Decision on Access Management of Financial Holding Companies, scope and definitions",
       "status": "verified",
       "notes": "文章概括集团层面风险识别目的，不展开具体资产门槛。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "FSB2025年12月所公布的2024年末非银行金融中介资产为256.8万亿美元，约占所覆盖全球金融资产51%，并不等于窄口径影子银行。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://www.fsb.org/2025/12/fsb-reports-continued-growth-in-nonbank-financial-intermediation-in-2024-to-256-8-trillion/",
+      "locator": "FSB December 2025 news release; end-2024 sector assets and share",
+      "status": "derived",
+      "notes": "来源核对制度或学术框架，示例数字不属于真实经济观测。"
     }
   ]
 }

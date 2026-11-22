@@ -46,6 +46,15 @@
       "locator": "Chapter 17 interactive tool selector",
       "status": "illustrative",
       "notes": "为简化机制示意，不代表某次实际操作的数量影响。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "教学情境基准1.5%加信用加点2.0百分点为3.5%，基准降至1.3%但加点升至2.6百分点时客户报价升至3.9%。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case worked scenario",
+      "status": "illustrative",
+      "notes": "教学数值和模型假设均写明，不等于真实经济体参数估计。"
     }
   ]
 }

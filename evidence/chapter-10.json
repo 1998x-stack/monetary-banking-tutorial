@@ -46,6 +46,15 @@
       "locator": "Discount Window Loans",
       "status": "derived",
       "notes": "白芝浩原则作为经典分析框架，而非跨国统一法律规则。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "同额央行购债，从银行购买主要变更银行证券与准备金资产构成；从非银行购买可能同时增加非银行公众存款，需追踪交易对手。",
+      "kind": "source_grounded_and_illustrative",
+      "source_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
+      "locator": "Asset purchases and central bank money vs bank deposits",
+      "status": "derived",
+      "notes": "定性机制由资料支持；具体数值为假设示例；不作实时市场声明。"
     }
   ]
 }

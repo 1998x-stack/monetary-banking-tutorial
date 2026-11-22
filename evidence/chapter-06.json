@@ -46,6 +46,15 @@
       "locator": "Yield curve models and expectations / term premium components",
       "status": "derived",
       "notes": "文中明确这是分析分解而非所有产品通用的会计恒等式。"
+    },
+    {
+      "id": "second-pass-worked-case",
+      "claim": "名义利率2%、预期通胀-2%的教学精确费雪实际利率为约4.08%；应与对应期限预期而非事后已实现通胀配对。",
+      "kind": "teaching_example",
+      "source_url": "",
+      "locator": "Article #audit-case worked scenario",
+      "status": "illustrative",
+      "notes": "定性机制由资料支持；具体数值为假设示例；不作实时市场声明。"
     }
   ]
 }
