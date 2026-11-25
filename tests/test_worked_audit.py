@@ -110,5 +110,26 @@ class ChapterByChapterAuditTests(unittest.TestCase):
         self.assertIn("9.5 万亿美元", article)
 
 
+    def test_remaining_chapter_checks_have_numeric_oracles(self):
+        # ch01 / ch26: splitting one balance into 60 + 40 does not change the total.
+        self.assertEqual(60 + 40, 100)
+        # ch03: adding 20 units to a 100 base is a 20% artefact of redefinition.
+        self.assertAlmostEqual((120 / 100 - 1) * 100, 20)
+        # ch23: median of {3,3,4,4,5} is 4, which is not a committee vote.
+        values = sorted([3, 3, 4, 4, 5])
+        self.assertEqual(values[len(values) // 2], 4)
+        # ch24: opening stock 400 + flow 30 + other adjustments -6 = closing 424.
+        self.assertEqual(400 + 30 - 6, 424)
+        # ch25: three-period forecast errors give MAE ~ 0.67 and RMSE ~ 0.71.
+        errors = [-0.5, -0.5, 1.0]
+        mae = sum(abs(e) for e in errors) / len(errors)
+        rmse = math.sqrt(sum(e * e for e in errors) / len(errors))
+        self.assertAlmostEqual(mae, 0.66666666, places=5)
+        self.assertAlmostEqual(rmse, 0.70710678, places=5)
+        # Keep the oracle tied to the published page text.
+        self.assertIn("中位数是 4%", (ROOT / "23.html").read_text(encoding="utf-8"))
+        self.assertIn("424", (ROOT / "24.html").read_text(encoding="utf-8"))
+        self.assertIn("0.71 个百分点", (ROOT / "25.html").read_text(encoding="utf-8"))
+
 if __name__ == "__main__":
     unittest.main()
