@@ -110,3 +110,18 @@ math[display="block"]{font-size:1.25rem;margin:.25rem auto}
 .audit-case{min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:normal}
 .audit-case p,.audit-case strong{max-width:100%;overflow-wrap:anywhere}
 @media(max-width:400px){.audit-case{overflow-wrap:anywhere}.audit-case p{hyphens:auto}}
+
+/* Diagrams: on narrow viewports the inline SVG would otherwise scale its text
+   labels down to roughly 5px. Keep a legible minimum width and let the figure
+   pan horizontally; the caption stays visible while the diagram scrolls. */
+.article-main figure:focus-visible{outline:3px solid #e19a52;outline-offset:3px}
+@media(max-width:900px){
+.article-main figure{overflow-x:auto;overscroll-behavior-x:contain}
+.article-main figure>svg{min-width:46rem;max-width:none}
+.article-main figure>figcaption{position:sticky;left:0}
+}
+@media print{
+.article-main figure{overflow:visible}
+.article-main figure>svg{min-width:0}
+.article-main figure>figcaption{position:static}
+}
