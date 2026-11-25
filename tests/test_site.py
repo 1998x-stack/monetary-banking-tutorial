@@ -169,4 +169,16 @@ class SiteValidationTests(unittest.TestCase):
         self.assertIn("仅凭一次倒挂就预测衰退发生日期",raw)
         self.assertIn("期限溢价",raw)
 
+    def test_every_diagram_is_a_keyboard_pannable_figure(self):
+        css=(ROOT/"assets"/"css"/"article.css").read_text(encoding="utf-8")
+        self.assertIn(".article-main figure{overflow-x:auto",css)
+        self.assertIn(".article-main figure>svg{min-width:46rem",css)
+        for i in range(1,29):
+            h=(ROOT/f"{i:02d}.html").read_text(encoding="utf-8")
+            with self.subTest(chapter=i):
+                figures=h.count('<figure tabindex="0">')
+                self.assertGreaterEqual(figures,1)
+                self.assertEqual(figures,h.count("<figcaption>"))
+                self.assertNotIn("<figure>",h)
+
 if __name__=="__main__": unittest.main()
