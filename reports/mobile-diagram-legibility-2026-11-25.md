@@ -35,9 +35,10 @@
 ## 三、验证证据
 
 - 站点结构：`python scripts/validate_site.py` → `SITE VALIDATION PASSED`。
-- 单元测试：`python -m unittest discover -s tests` → 42 项全部通过；新增
+- 单元测试：`python -m unittest discover -s tests` → 43 项全部通过；新增
   `test_every_diagram_is_a_keyboard_pannable_figure` 守卫每个图解都是可聚焦、
-  带图注、且使用 46rem 最小宽度的滚动区域。
+  带图注、且使用 46rem 最小宽度的滚动区域；`test_remaining_chapter_checks_have_numeric_oracles`
+  为第 01/03/23/24/25/26 章的推演核验补充可独立复算的数值断言。
 - 浏览器：脚本 `qa/verify_legibility.py`（运行日志目录，未提交仓库）对
   首页、知识地图与第 01–28 章在 1440、390、360px 下逐页实测，结论
   `PROBLEMS: []`：无横向溢出、无 JS 报错、每个图解可聚焦、最小标签高度 ≥11px。
