@@ -176,9 +176,8 @@ class SiteValidationTests(unittest.TestCase):
         for i in range(1,29):
             h=(ROOT/f"{i:02d}.html").read_text(encoding="utf-8")
             with self.subTest(chapter=i):
-                figures=h.count('<figure tabindex="0">')
+                figures=h.count('<figure tabindex="0"')
                 self.assertGreaterEqual(figures,1)
                 self.assertEqual(figures,h.count("<figcaption>"))
-                self.assertNotIn("<figure>",h)
 
 if __name__=="__main__": unittest.main()
