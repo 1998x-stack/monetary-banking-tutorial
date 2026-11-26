@@ -179,5 +179,8 @@ class SiteValidationTests(unittest.TestCase):
                 figures=h.count('<figure tabindex="0"')
                 self.assertGreaterEqual(figures,1)
                 self.assertEqual(figures,h.count("<figcaption>"))
+                # Each pannable diagram must expose a named scroll region for
+                # keyboard and screen-reader users, matching the table pattern.
+                self.assertEqual(figures,h.count('role="region" aria-label="图解：'))
 
 if __name__=="__main__": unittest.main()
